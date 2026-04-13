@@ -1,37 +1,22 @@
----
-TÍTULO: Mapeamento e Chamada de Variantes
-Versão:
-  - 1.0
----
+# Mapeamento e Chamada de Variantes
 
-{% comment %}
-Follow the instructions in https://docs.github.com/contributing/writing-for-github-docs/content-model#quickstart to write this article.
-Great intros clarify who the tutorial is intended for, state what the user will accomplish, and state the technologies that will be used.
-For product callout info, see https://github.com/github/docs/tree/main/content#product
-For product version instructions, see https://github.com/github/docs/tree/main/content#versioning
-Remove these comments from your article file when you're done writing
-{% endcomment %}
+"Nesse tutorial falaremos sobre o procedimento de mapeamento e chamada de variantes. Daremos algumas opções de acordo com cada dado que você disponibiliza. Começaremos explorando tecnologias de sequenciamento e algoritmos de mapeamento, asssim como os programas utilizados para realizar tais procedimentos. 
+Seguindo o processamento, partindo de um arquivo fastq, obtendo um arquivo bam, se necessário, você pode passar para a chamada de variantes."
 
-## Introduction
+## Introdução Mapeamento
 
-{% comment %}
-The tutorial introduction should include the following in a short paragraph -
+"Atualmente, há diversas tecnologias de sequenciamento que possuem diferentes objetivos: 
+- Sequenciamento ultra-long reads (sequencias ultra-longas):
+- Sequenciamento long reads (sequencias longas):
+- Sequenciamento short reads (sequencias curtas): "
 
-- Clarify audience
-- State prerequisites and prior knowledge needed
-- State what the user will accomplish or build and the user problem it solves
-- Link to an example of the project the user will complete
-{% endcomment %}
+### Algoritmos de sequenciamento
 
-## Step 1: Action the user will take
+" Os algoritmos são: 
+-: 
+"
 
-{% comment %}
-In one sentence, describe what the user will do in this step
-Steps should break down the tasks the user will complete in sequential order
-Avoid replicating conceptual information that is covered elsewhere, provide inline links instead. Only include conceptual information unique to this use case.
-{% endcomment %}
-
-### Task chunk
+#### Task chunk
 
 {% comment %}
 A step may require the user to perform several tasks - break those tasks down into chunks, allowing the user to scan quickly to find their place if they navigated away from this screen to perform the task.
@@ -42,14 +27,17 @@ If the task adds code, include the code in context (don't just show `needs: setu
 
 ### Another task chunk
 
-## Step 2: Do the next thing
+### Mapeamento
 
-{% comment %}
-Rinse and repeat, adding steps and tasks until the tutorial is complete
-Remember to show code snippets in context
-{% endcomment %}
+"De acordo com cada tipo de mapeamento escolha o software que você gostaria de seguir:
+- PacBio + Hi-C + Illumina:
+- Hi-C + Illumina:
+- Illumina:
 
-## Further reading
+" 
+" Após terminar os tutoriais acima, volte a essa página para fazer a Chamada de variantes."
+
+## Chamada de Variantes
 
 {% comment %}
 Include a bulleted list of tutorials or articles the user can reference to extend the concepts taught in this tutorial
