@@ -1,4 +1,4 @@
-# GenomicData_Guide
+# Guia de processamento de dados genômicos
 Esse tutorial tem como objetivo desenvolver habilidades básicas no processamento análises de dados genômicos. 
 Os tópicos abordados são os seguintes: 
 1. Mapeamento e Chamada de Variantes
