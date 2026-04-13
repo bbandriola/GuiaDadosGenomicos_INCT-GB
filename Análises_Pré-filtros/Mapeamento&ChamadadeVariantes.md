@@ -47,6 +47,7 @@ bcftools query -f'%CHROM\t%POS\t%REF\t%ALT\t%QUAL\t%AN\t%DP\n' seuarquivo.vcf.gz
 ```
 O código acima resultará no seguinte arquivo: 
 | Região | Posição | Alelo da referência | Alelo alternativo | Qualidade Phread da base | Número de alelos | Média da profundidade do sítio entre todos os ind. | 
+| --- | --- | --- | --- | --- | --- | --- |
 | chr.1 | 122 | A | G | 4990.21 | 116 | 819 |
 | chr.1 | 143 | A | C | 6191.18 | 116 | 834 |
 | chr.1 | 155 | T | G | 6892.26 | 116 | 954 |
