@@ -65,10 +65,11 @@ Vamos supor que após o mapeamento, a média de profundidade ficou em cerca de 3
 # colocar aqui um plot de cobertura ao longo do genoma
 ```
 Após analisar esses valores, podemos escolher a filtragem por profundidade de acordo com: 
-- Filtro de profundidade miníma: menor do que 1,5x a média de profundidade [^1]
-- Filtro de profundidade máxima: profundidade superior ao percentil de 25% [^1]
+- Filtro de profundidade miníma: 1/3 da profundidade média por indivíduos. [^1]
+- Filtro de profundidade máxima: 3x a profundidade média por indivíduo. [^1] Outros artigos trazem também valores como: superior ao percentil de 25% da profundidade média [^2];
 
-[^1]: Reference genome choice compromises population genetic analyses. DOI: 10.1016/j.cell.2025.08.034 
+[^1]: Whole genome sequences of 297 Duolang sheep for litter size. DOI: 10.1038/s41597-025-05448-0
+[^2]: Reference genome choice compromises population genetic analyses. DOI: 10.1016/j.cell.2025.08.034 
 
 
 
