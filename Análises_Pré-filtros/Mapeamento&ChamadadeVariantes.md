@@ -6,14 +6,14 @@ Seguindo o processamento, partindo de um arquivo fastq, obtendo um arquivo bam, 
 ## Introdução Mapeamento
 
 Atualmente, há diversas tecnologias de sequenciamento que possuem diferentes objetivos: 
-- Sequenciamento ultra-long reads (sequencias ultra-longas):
-- Sequenciamento long reads (sequencias longas):
-- Sequenciamento short reads (sequencias curtas): 
+- Sequenciamento ultra-long reads (sequencias ultra-longas): blabla
+- Sequenciamento long reads (sequencias longas): blabla
+- Sequenciamento short reads (sequencias curtas): blabla
 
 ### Algoritmos de sequenciamento
 
 Os algoritmos são: 
--: 
+-blabla: blabla
 
 
 #### Task chunk
@@ -28,7 +28,7 @@ De acordo com cada tipo de mapeamento escolha o software que você gostaria de s
 - Illumina:
 
 
-Após terminar os tutoriais acima, volte a essa página para fazer a Chamada de variantes."
+Após terminar os tutoriais acima, volte a essa página para fazer a Chamada de variantes.
 
 ## Chamada de Variantes
 
