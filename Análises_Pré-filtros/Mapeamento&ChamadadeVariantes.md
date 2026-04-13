@@ -1,11 +1,7 @@
 ---
-title: Mapeamento e Chamada de Variantes
-shortTitle: <subject> # Max 31 characters
-intro: 'Article intro. See tips for a great intro below'
-product: "{{ optional product callout }}"
-contentType: tutorials
-versions:
-  - <version>
+TÍTULO: Mapeamento e Chamada de Variantes
+Versão:
+  - 1.0
 ---
 
 {% comment %}
