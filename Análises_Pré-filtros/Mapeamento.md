@@ -27,6 +27,8 @@ De acordo com cada tipo de mapeamento escolha o software que você gostaria de s
 - Hi-C + Illumina:
 - Illumina:
 
+Software: https://academic.oup.com/bioinformaticsadvances/article/6/1/vbaf326/8416060?guestAccessKey=
+
 
 Após terminar os tutoriais acima, se você pretende fazer uma Chamada de variantes, acesse o [tutorial](https://github.com/bbandriola/GuiaDadosGenomico_INCT-GB/blob/472b9dd920d725e7a5c8f18b5e606e321dc7b01a/An%C3%A1lises_Pr%C3%A9-filtros/ChamadadeVariantes.md). Caso queria prosseguir para outras análises, volte a [página inicial do repositório](https://github.com/bbandriola/GuiaDadosGenomico_INCT-GB.git).
 
