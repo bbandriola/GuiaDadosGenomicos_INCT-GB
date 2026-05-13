@@ -1,4 +1,4 @@
-## Comandos básicos de Linux
+# Comandos básicos de Linux
 
 O principal sistema operacional (SO) utilizado na bioinformática é o Linux. Esse SO é de código aberto e gratuito. A maioria das tarefas em bioinformárica a serem utilizadas não possuem uma interface gráfica e são realizadas a partir de uma *Shell* ou Terminal. 
 
@@ -43,16 +43,18 @@ Além dos comandos, o Linux também apresenta Expressões Regulares (regex) que 
 
 Quando utilizando regex para manipular ou especificar padrões, utilizados a expressão entre aspas simples. 
 Temos um arquivo chamado **diálogo.txt** com o seguinte conteúdo:
-> Bom dia, pessoal! Como vocês estão hoje?
-> Bom te ver por aqui, Lucas!
-> Eu trouxe os documentos que vocês pediram.
-> A reunião vai começar em cinco minutos.
-> Bom lembrar que amanhã é o prazo final da inscrição.
-> Eu quase tinha esquecido disso.
-> Bom trabalho no relatório, ficou excelente.
-> Que alivio ouvir isso depois de tantas revisões!
-> Bom, então podemos encerrar por hoje?
-> Até amanhã!
+```
+Bom dia, pessoal! Como vocês estão hoje?
+Bom te ver por aqui, Lucas!
+Eu trouxe os documentos que vocês pediram.
+A reunião vai começar em cinco minutos.
+Bom lembrar que amanhã é o prazo final da inscrição.
+Eu quase tinha esquecido disso.
+Bom trabalho no relatório, ficou excelente.
+Que alivio ouvir isso depois de tantas revisões!
+Bom, então podemos encerrar por hoje?
+Até amanhã!
+```
 
 Para procurar por todas as linhas que começam com a palavra **Bom** podemos utilizar o comando grep:
 ```Linux
