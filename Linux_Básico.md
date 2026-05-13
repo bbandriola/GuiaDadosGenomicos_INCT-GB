@@ -42,7 +42,7 @@ Além dos comandos, o Linux também apresenta Expressões Regulares (regex) que 
 |  |  |
 
 Quando utilizando regex para manipular ou especificar padrões, utilizados a expressão entre aspas simples. 
-Temos um arquivo chamado **diálogo.txt** com o seguinte conteúdo:
+Por exemplo, o arquivo abaixo é o **diálogo.txt** e contem com o seguinte conteúdo:
 ```
 Bom dia, pessoal! Como vocês estão hoje?
 Bom te ver por aqui, Lucas!
@@ -56,7 +56,7 @@ Bom, então podemos encerrar por hoje?
 Até amanhã!
 ```
 
-Para procurar por todas as linhas que começam com a palavra **Bom** podemos utilizar o comando grep:
+Nosso objetivo é achar todas as linhas que começem com a palavra **Bom** dentro do arquivo. Para isso, podemos utilizar o comando grep:
 ```Linux
 grep '^Bom' diálogo.txt
 ```
