@@ -38,8 +38,6 @@ Além dos comandos, o Linux também apresenta Expressões Regulares (regex) que 
 |  |  |
 |  |  |
 |  |  |
-|  |  |
-|  |  |
 
 Quando utilizando regex para manipular ou especificar padrões, utilizados a expressão entre aspas simples. 
 Por exemplo, o arquivo abaixo é o **diálogo.txt** e contem com o seguinte conteúdo:
@@ -61,3 +59,22 @@ Nosso objetivo é achar todas as linhas que começem com a palavra **Bom** dentr
 grep '^Bom' diálogo.txt
 ```
 !(file:///Users/brunandriola/Desktop/Screen%20Shot%202026-05-13%20at%2010.33.41.png)
+
+Além dos comandos, básicos e dos regex, também há comandos de **redirecionamento e condutores**. Os principais são: 
+- > : Criar ou sobrescrever um arquivo.
+- >> : Adiciona a saída ao final de um arquivo existente.
+- | ou pipe : redirecionar uma saída para otra entrada.
+
+Podemos juntar esses redirecionadores com números para especificar saídas especificas.
+- 1 > saída.log : Redirecionando a saída do programa para um arquivo log. 
+- 2 > erro.log : Redireciona todos os erros de um determinado comando para um arquivo log.
+- > saídaeerro.log 2>&1 : Redirecionar a saída padrão e os erros para o mesmo arquivo.
+- > saída.log 2> erro.log : Redirecionar a saída padrão para um arquivo e os erros para outro.
+
+Para finalizer, também vamos abordar os caracteres curingas (no inglês eles são chamados de *wildcard*).
+- ? : Representa qualquer caractere individual. Ou seja, qualquer letra de a-z e número de 0-9. Pode ser utilizado para localizar sequências onde se sabe que há uma variante em um região específica. Por exemplo:
+```
+Sequência: ACGTACAGTAC?
+```
+- * : Representa qualquer número de caracteres. 
+
