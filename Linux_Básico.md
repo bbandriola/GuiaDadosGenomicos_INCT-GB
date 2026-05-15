@@ -1,6 +1,22 @@
 # Comandos básicos de Linux
 
-O principal sistema operacional (SO) utilizado na bioinformática é o Linux. Esse SO é de código aberto e gratuito. A maioria das tarefas em bioinformárica a serem utilizadas não possuem uma interface gráfica e são realizadas a partir de uma *Shell* ou Terminal. 
+O principal sistema operacional (SO) utilizado na bioinformática é o Linux. Esse SO é o mais escolhido, pois o código aberto e gratuito, tornando o processo de processamento de grandes volumes de dados reprodutível e eficiente. Na bioinformática utilizamos o SO Linux devido a rapídez do sistema e sua fácil utilização. Além disso, a maioria das tarefas em bioinformárica não possuem uma interface gráfica e são realizadas a partir de uma *Shell* ou Terminal, o qual possibilita acesso a ferramentas indispensáveis para o processamento dos dados genômicos e a realização de tarefas repetitivas (como os *loops*). Por esse motivo, saber comandos básicos, expressões regulares (**regex**) e manipuladores, é importante para conseguir realizar tarefas rotineiras, como acessar pastas e manipular arquivos.
+
+A organização de diretórios em Linux é defida de forma hierárquica, na qual, as pastas são delimitadas por um separador /. Se quisermos saber onde estamos, podemos utilizar o comando **pdw** no nosso terminal de Linux. 
+```
+$ pwd
+```
+O retorno desse comando será algo como: /GuiaDadosGenomicos_INCT-GB/Linux/PraticaLinux. Ou seja, o diretório <ins>PraticaLinux</ins> está dentro do diretóro <ins>Linux</ins>, dentro do diretório <ins>GuiaDadosGenomicos_INCT-GB</ins>. Mas onde está o diretório **GuiaDadosGenomicos_INCT-GB**? Ele pode estar em qualquer lugar do computador, mas geralmente estará no nosso usuário. A pasta de cada usuário pode ser acessada com o comando:
+```
+$ cd ~
+```
+Além dessa organização básica a partir de cada usuário do computador, ainda há uma organização da própria máquina. Geralmente, essa organização se localiza na _root_ (raiz) do computador. Para acessar esse local podemos utilizar o comando: 
+```
+$ cd /
+```
+O / nesse caso, redireciona para a raiz do computador. Lá são encontrados documentos básicos de funcionamento do servidor e aplicações compartilhadas entre todos os usuários da máquina. Algumas dessas pastas e arquivos são:
+
+- <br> /bin: 
 
 Abaixo estão apresentados alguns comandos básicos utilizados com frequência no dia a dia de quem trabalha com Linux. 
 
@@ -61,9 +77,9 @@ grep '^Bom' diálogo.txt
 !(file:///Users/brunandriola/Desktop/Screen%20Shot%202026-05-13%20at%2010.33.41.png)
 
 Além dos comandos, básicos e dos regex, também há comandos de **redirecionamento e condutores**. Os principais são: 
-- > : Criar ou sobrescrever um arquivo.
-- >> : Adiciona a saída ao final de um arquivo existente.
-- | ou pipe : redirecionar uma saída para otra entrada.
+- <br> > : Criar ou sobrescrever um arquivo.
+- <br> >> : Adiciona a saída ao final de um arquivo existente.
+- <br> | ou pipe : redirecionar uma saída para otra entrada.
 
 Podemos juntar esses redirecionadores com números para especificar saídas especificas.
 - 1 > saída.log : Redirecionando a saída do programa para um arquivo log. 
