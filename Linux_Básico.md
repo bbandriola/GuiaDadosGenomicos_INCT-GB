@@ -185,7 +185,9 @@ Agora que já aprendemos boa parte da syntax, podemos aprofundar nosso conhecime
  
 Esse tutorial foi construido a partir das seguintes referências: 
 > https://sites.google.com/view/intro-to-unix-2026/
+
 > https://www.ibm.com/br-pt/think/topics/linux
+
 > https://reqchecker.eu/manual/extract_syntax.html
 
 
