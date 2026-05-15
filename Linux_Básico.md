@@ -13,15 +13,19 @@ O ```/``` nesse caso, redireciona para a raiz do computador. Lá são encontrado
 - &nbsp; /bin: local onde estão instalado os comandos que podem ser utilizados por todos os usuários.
 
 Para navegarmos pelos diretórios sem precisar escrever o caminho completo, utilizamos _caminhos relativos_, como a utilização do ponto ```.```. 
+
 ```.``` representa o diretório atual. 
+
 ```..``` representa o diretório anterior.
 
 Imaginamos que queremos desconbrir em qual pasta do computador estamos. Qual o comando podemos utilizar para descobrir isso?
+
 Opção 1: ```cd```
 
 Opção 2: ```pwd```
 
 <details>
+  
   <summary> Clique aqui para ver a resposta</summary>
   
 ```
@@ -32,6 +36,7 @@ $ pwd
 </details>
 
 Agora que sabemos que estamos na página <ins>PraticaLinux</ins>, nosso objetivo é chegar no diretório anterior, chamado de <ins>Linux</ins>. Para isso, precisamos utilizar uma combinação do que já vimos até o momento. Qual é a opção correta? 
+
 Opção 1: ```cd ../../```
 
 Opção 2: ```cd ../```
@@ -39,6 +44,7 @@ Opção 2: ```cd ../```
 Opção 3: ```pwd ../```
 
 <details>
+  
   <summary> Clique aqui para ver a resposta</summary>
   
 ```
@@ -102,6 +108,7 @@ Até amanhã!
 ```
 
 Nosso objetivo é achar todas as linhas que começem com a palavra **Bom** dentro do arquivo. Para isso, quais comandos podemos utilizar?
+
 Opção 1: ```$ grep '^Bom' diálogo.txt```
 
 Opção 2: ```$ cat '^Bom' diálogo.txt```
@@ -109,6 +116,7 @@ Opção 2: ```$ cat '^Bom' diálogo.txt```
 Opção 3: ```$ awk '^Bom' diálogo.txt```
 
 <details>
+  
   <summary> Clique aqui para ver a resposta</summary>
   
 ```Linux
@@ -125,17 +133,25 @@ Bom, então podemos encerrar por hoje?
 !(file:///Users/brunandriola/Desktop/Screen%20Shot%202026-05-13%20at%2010.33.41.png)
 
 Além dos comandos, básicos e dos regex, também há comandos de **redirecionamento e condutores**. Os principais são: 
+
 ```>``` : Criar ou sobrescrever um arquivo.
+
 ```>>``` : Adiciona a saída ao final de um arquivo existente.
+
 ```|``` ou pipe : redirecionar uma saída para otra entrada.
 
 Podemos juntar esses redirecionadores com números para especificar saídas especificas.
+
 ```1 > saída.log``` : Redirecionando a saída do programa para um arquivo log. 
+
 ```2 > erro.log``` : Redireciona todos os erros de um determinado comando para um arquivo log.
+
 ```> saídaeerro.log 2>&1``` : Redirecionar a saída padrão e os erros para o mesmo arquivo.
+
 ```> saída.log 2> erro.log``` : Redirecionar a saída padrão para um arquivo e os erros para outro.
 
 Para finalizer, também vamos abordar os caracteres curingas (no inglês eles são chamados de *wildcard*).
+
 ```?``` : Representa qualquer caractere individual. Ou seja, qualquer letra de a-z e número de 0-9. Pode ser utilizado para localizar sequências onde se sabe que há uma variante em um região específica. Por exemplo:
 ```
 Sequência: ACGTACAGTAC?
