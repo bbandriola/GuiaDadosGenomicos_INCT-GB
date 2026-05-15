@@ -19,12 +19,15 @@ Para navegarmos pelos diretórios sem precisar escrever o caminho completo, util
 Imaginamos que queremos desconbrir em qual pasta do computador estamos. Qual o comando podemos utilizar para descobrir isso?
 Opção 1: ```cd```
 Opção 2: ```pwd```
+
 <details>
   <summary> Click to check the answer</summary>
-```bash
+  
+```
 $ pwd
 /GuiaDadosGenomicos_INCT-GB/Linux/PraticaLinux
 ```
+
 </details>
 
 Agora que sabemos que estamos na página <ins>PraticaLinux</ins>, nosso objetivo é chegar no diretório anterior, chamado de <ins>Linux</ins>. Para isso, precisamos utilizar uma combinação do que já vimos até o momento. Qual é a opção correta? 
@@ -32,7 +35,16 @@ Opção 1: ```cd ../../```
 Opção 2: ```cd ../```
 Opção 3: ```pwd ../```
 
+<details>
+  <summary> Click to check the answer</summary>
+  
+```
+$ cd ../
+$ pwd 
+/GuiaDadosGenomicos_INCT-GB/Linux
+```
 
+</details>
 
 Abaixo estão apresentados alguns comandos básicos utilizados com frequência no dia a dia de quem trabalha com Linux. 
 
