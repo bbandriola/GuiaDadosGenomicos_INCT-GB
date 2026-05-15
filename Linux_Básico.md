@@ -1,11 +1,11 @@
 Bem vindo a esse manual. Ele está organizado em três tópicos: 
-1. Introdução a Linux [Link Text](#Introducao-a-Linux)
+1. Introdução a Linux 
 2. Introdução a scripts/comandos em Bash [Link Text](#Introducao-a-scripts-comandos-em-Bash)
 3. Exercícios [Link Text](#Exercicios)
 
 Você não precisa ler todo tutorial para partir para o tópico que deseja. Basta clicar no tópico desejado. 
 
-# Introdução a Linux
+# Introdução a Linux [Link Text](#1-.-Introducao-a-Linux)
 
 O principal sistema operacional (SO) utilizado na bioinformática é o Linux. Esse SO é o mais escolhido, pois o código aberto e gratuito, tornando o processo de processamento de grandes volumes de dados reprodutível e eficiente. Na bioinformática utilizamos o SO Linux devido a rapídez do sistema e sua fácil utilização. Além disso, a maioria das tarefas em bioinformárica não possuem uma interface gráfica e são realizadas a partir de uma *Shell* ou Terminal, o qual possibilita acesso a ferramentas indispensáveis para o processamento dos dados genômicos e a realização de tarefas repetitivas (como os *loops*). Por esse motivo, saber comandos básicos, expressões regulares (**regex**) e manipuladores, é importante para conseguir realizar tarefas rotineiras, como acessar pastas e manipular arquivos.
 
