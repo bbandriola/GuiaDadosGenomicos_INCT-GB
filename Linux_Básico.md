@@ -25,7 +25,8 @@ Opção 2: ```pwd```
 \$ pwd\
 \/GuiaDadosGenomicos_INCT-GB/Linux/PraticaLinux\
 ```
-  
+</details>
+
 Agora que sabemos que estamos na página <ins>PraticaLinux</ins>, nosso objetivo é chegar no diretório anterior, chamado de <ins>Linux</ins>. Para isso, precisamos utilizar uma combinação do que já vimos até o momento. Qual é a opção correta? 
 Opção 1: ```cd ../../```
 Opção 2: ```cd ../```
