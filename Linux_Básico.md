@@ -2,17 +2,36 @@
 
 O principal sistema operacional (SO) utilizado na bioinformática é o Linux. Esse SO é o mais escolhido, pois o código aberto e gratuito, tornando o processo de processamento de grandes volumes de dados reprodutível e eficiente. Na bioinformática utilizamos o SO Linux devido a rapídez do sistema e sua fácil utilização. Além disso, a maioria das tarefas em bioinformárica não possuem uma interface gráfica e são realizadas a partir de uma *Shell* ou Terminal, o qual possibilita acesso a ferramentas indispensáveis para o processamento dos dados genômicos e a realização de tarefas repetitivas (como os *loops*). Por esse motivo, saber comandos básicos, expressões regulares (**regex**) e manipuladores, é importante para conseguir realizar tarefas rotineiras, como acessar pastas e manipular arquivos.
 
-A organização de diretórios em Linux é defida de forma hierárquica, na qual, as pastas são delimitadas por um separador /. Se quisermos saber onde estamos, podemos utilizar o comando **pdw** no nosso terminal de Linux: ```$ pwd```
+A organização de diretórios em Linux é defida de forma hierárquica, na qual, as pastas são delimitadas por um separador /. Se quisermos saber onde estamos, podemos utilizar o comando ```pdw``` no nosso terminal de Linux.
+
 O retorno desse comando será algo como: /GuiaDadosGenomicos_INCT-GB/Linux/PraticaLinux. Ou seja, o diretório <ins>PraticaLinux</ins> está dentro do diretóro <ins>Linux</ins>, dentro do diretório <ins>GuiaDadosGenomicos_INCT-GB</ins>. Mas onde está o diretório **GuiaDadosGenomicos_INCT-GB**? Ele pode estar em qualquer lugar do computador, mas geralmente estará no nosso usuário. A pasta de cada usuário pode ser acessada com o comando: ```$ cd ~```
-Além dessa organização básica a partir de cada usuário do computador, ainda há uma organização da própria máquina. Geralmente, essa organização se localiza na _root_ (raiz) do computador. Para acessar esse local podemos utilizar o comando: ```$ cd /```
-O ```/``` nesse caso, redireciona para a raiz do computador. Lá são encontrados documentos básicos de funcionamento do servidor e aplicações compartilhadas entre todos os usuários da máquina. Algumas dessas pastas e arquivos são:
 
--&nbsp; /bin: local onde estão instalado os comandos que podem ser utilizados por todos os usuários.
--&nbsp; /apps: local onde estão os apps do computador (por exemplo: onde é instalado aplicativos como o conda).
+Além dessa organização básica a partir de cada usuário do computador, ainda há uma organização da própria máquina. Geralmente, essa organização se localiza na _root_ (raiz) do computador. Para acessar esse local podemos utilizar o comando: ```$ cd /```.
 
-Para navegarmos pelos diretórios sem precisar escrever o caminho completo, utilizamos _caminhos relativos_, como a utilização do ponto (.). 
+O ```/``` nesse caso, redireciona para a raiz do computador. Lá são encontrados documentos básicos de funcionamento do servidor e aplicações compartilhadas entre todos os usuários da máquina. Uma dessas pastas é:
+
+- &nbsp; /bin: local onde estão instalado os comandos que podem ser utilizados por todos os usuários.
+
+Para navegarmos pelos diretórios sem precisar escrever o caminho completo, utilizamos _caminhos relativos_, como a utilização do ponto ```.```. 
 ```.``` representa o diretório atual. 
 ```..``` representa o diretório anterior.
+
+Imaginamos que queremos desconbrir em qual pasta do computador estamos. Qual o comando podemos utilizar para descobrir isso?
+Opção 1: ```cd```
+Opção 2: ```pwd```
+<details>
+  <summary> Click to check the answer</summary>
+```
+\$ pwd\
+\/GuiaDadosGenomicos_INCT-GB/Linux/PraticaLinux\
+```
+  
+Agora que sabemos que estamos na página <ins>PraticaLinux</ins>, nosso objetivo é chegar no diretório anterior, chamado de <ins>Linux</ins>. Para isso, precisamos utilizar uma combinação do que já vimos até o momento. Qual é a opção correta? 
+Opção 1: ```cd ../../```
+Opção 2: ```cd ../```
+Opção 3: ```pwd ../```
+
+
 
 Abaixo estão apresentados alguns comandos básicos utilizados com frequência no dia a dia de quem trabalha com Linux. 
 
@@ -73,20 +92,23 @@ grep '^Bom' diálogo.txt
 !(file:///Users/brunandriola/Desktop/Screen%20Shot%202026-05-13%20at%2010.33.41.png)
 
 Além dos comandos, básicos e dos regex, também há comandos de **redirecionamento e condutores**. Os principais são: 
-- &nbsp; > : Criar ou sobrescrever um arquivo.
-- &nbsp; >> : Adiciona a saída ao final de um arquivo existente.
-- &nbsp; | ou pipe : redirecionar uma saída para otra entrada.
+```>``` : Criar ou sobrescrever um arquivo.
+```>>``` : Adiciona a saída ao final de um arquivo existente.
+```|``` ou pipe : redirecionar uma saída para otra entrada.
 
 Podemos juntar esses redirecionadores com números para especificar saídas especificas.
--&nbsp; 1 > saída.log : Redirecionando a saída do programa para um arquivo log. 
--&nbsp; 2 > erro.log : Redireciona todos os erros de um determinado comando para um arquivo log.
--&nbsp; > saídaeerro.log 2>&1 : Redirecionar a saída padrão e os erros para o mesmo arquivo.
--&nbsp; > saída.log 2> erro.log : Redirecionar a saída padrão para um arquivo e os erros para outro.
+```1 > saída.log``` : Redirecionando a saída do programa para um arquivo log. 
+```2 > erro.log``` : Redireciona todos os erros de um determinado comando para um arquivo log.
+```> saídaeerro.log 2>&1``` : Redirecionar a saída padrão e os erros para o mesmo arquivo.
+```> saída.log 2> erro.log``` : Redirecionar a saída padrão para um arquivo e os erros para outro.
 
 Para finalizer, também vamos abordar os caracteres curingas (no inglês eles são chamados de *wildcard*).
--&nbsp; ? : Representa qualquer caractere individual. Ou seja, qualquer letra de a-z e número de 0-9. Pode ser utilizado para localizar sequências onde se sabe que há uma variante em um região específica. Por exemplo:
+```?``` : Representa qualquer caractere individual. Ou seja, qualquer letra de a-z e número de 0-9. Pode ser utilizado para localizar sequências onde se sabe que há uma variante em um região específica. Por exemplo:
 ```
 Sequência: ACGTACAGTAC?
 ```
-- * : Representa qualquer número de caracteres. 
+```*``` : Representa qualquer número de caracteres.
+ 
+Esse tutorial foi construido a partir das seguintes referências: 
+
 
