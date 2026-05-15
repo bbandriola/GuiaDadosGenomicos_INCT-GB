@@ -62,44 +62,56 @@ Um último truque que podemos utilizar é a tecla *Tab*. A tecla *Tab* pode ser 
 Abaixo estão apresentados alguns comandos básicos utilizados com frequência no dia a dia de quem trabalha com Linux. 
 
 ### Comandos básicos 
-| Função| Comando | 
-| --- | --- |
-| Listar conteúdo | ls [opções] [caminho ou diretório] |
-| Mostrar diretório atual | pwd [opções] |
-| Acessar um diretório | cd [caminho ou diretório] |
-| Criar um diretório | mkdir [opções] [nome do diretório] |
-| Remover um arquivo | rm [opções] [arquivo] |
-| Remover uma pasta | rm [opções] [pasta] |
-| Copiar arquivos e diretórios | cp [opções] [arquivo a ser copiado] [destino do arquivo copiado + nome] |
-| Mover arquivos de local | mv [arquivo a ser movido] [destino do arquivo] |
-| Criar/editar arquivos | nano/vim/emacs [nome do arquivo] |
-| Compactar arquivos com final .gz/zip | gzip/zip [opções] [arquivo] |
-| Descompactar arquivos | gunzip/unzip [opções] [arquivo] |
-| Exibidir conteúdo de um arquivo | cat [opções] [arquivo] |
-| Procurar por padrões em um arquivo | grep [opções] [expressão a ser procurada] [arquivo de entrada] |
-| Substituir ou modificar padrões de texto | sed [opções] 's/padrão/novo padrão/' [arquivo de entrada] > [arquivo de saída] |
-| Processar e analisar textos | awk [opções] 'padrão {ação a ser executada}' [arquivo] |
-| Mostrar as 10 primeiras linhas de um arquivo | head [arquivo] |
-| Mostrar as 10 últimas linhas de um arquivo | tail [arquivo] |
-| Ordenar conteúdo de uma arquivo | sort [opções] [arquivo] |
-| Explicação dos comandos | [comando] --help |
-| Imprimir conteúdo na tela | echo [opções] "texto a ser imprimido" |
-| Criar link simbólico | ls -s /diretório/do/arquivo/que/você/quer/criar/um/link/simbólico/ /destino/desse/link/simbólico/ | 
-| Quantificador do conteúdo | wc [opções] |
-| Checar a diferença entre dois arquivos | diff [opções] |
+| **Comando** | **Função** |
+|---|---|
+| `ls [opções] [caminho ou diretório]` | Listar conteúdo |
+| `pwd [opções]` | Mostrar diretório atual |
+| `cd [caminho ou diretório]` | Acessar um diretório |
+| `mkdir [opções] [nome do diretório]` | Criar um diretório |
+| `rm [opções] [arquivo]` | Remover um arquivo |
+| `rm [opções] [pasta]` | Remover uma pasta |
+| `cp [opções] [arquivo a ser copiado] [destino do arquivo copiado + nome]` | Copiar arquivos e diretórios |
+| `mv [arquivo a ser movido] [destino do arquivo]` | Mover arquivos de local |
+| `nano/vim/emacs [nome do arquivo]` | Criar/editar arquivos |
+| `gzip/zip [opções] [arquivo]` | Compactar arquivos com final `.gz/.zip` |
+| `gunzip/unzip [opções] [arquivo]` | Descompactar arquivos |
+| `cat [opções] [arquivo]` | Exibir conteúdo de um arquivo |
+| `grep [opções] [expressão a ser procurada] [arquivo de entrada]` | Procurar por padrões em um arquivo |
+| `sed [opções] 's/padrão/novo padrão/' [arquivo de entrada] > [arquivo de saída]` | Substituir ou modificar padrões de texto |
+| `awk [opções] 'padrão {ação a ser executada}' [arquivo]` | Processar e analisar textos |
+| `head [arquivo]` | Mostrar as 10 primeiras linhas de um arquivo |
+| `tail [arquivo]` | Mostrar as 10 últimas linhas de um arquivo |
+| `sort [opções] [arquivo]` | Ordenar conteúdo de um arquivo |
+| `[comando] --help` | Explicação dos comandos |
+| `echo [opções] "texto a ser imprimido"` | Imprimir conteúdo na tela |
+| `ln -s /diretório/do/arquivo /destino/do/link` | Criar link simbólico |
+| `wc [opções]` | Quantificador do conteúdo |
+| `diff [opções]` | Checar a diferença entre dois arquivos |
 
 Quer saber mais sobre cada um desses programas? Você pode utilizar o comando ```man [comando]``` e será exibida todas as "flags" possíveis com aquela função.
 
-Além dos comandos, o Linux também apresenta Expressões Regulares (regex) que servem para especificar e manipular padrões ou definir ações:
+Além dos comandos, também vamos abordar os caracteres curingas (no inglês eles são chamados de *wildcard*).
+
+```?``` : Representa qualquer caractere individual. Ou seja, qualquer letra de a-z ou número de 0-9.
+
+```*``` : Representa múltiplos caracteres, incluindo espaço.
+
+
+Na programação encontramos o que chamamos de Expressões Regulares (*Regex*). Essas servem para especificar e manipular padrões ou definir ações:
 | Expressões Regulares | Descrição | 
 | --- | --- |
-| ^ | Início da linha |
-| $ | Final da linha |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
+| ^palavra | Corresponde ao início da linha |
+| palavra$ | Corresponde ao final da linha |
+| [] | Corresponde a qualquer uma das caracteres dentro dos []  |
+| [^] | Corresponde a qualquer carcatere, exceto as de dentro dos []  |
+| \\ | Corresponder ao ```\``` |
+| X|Z | Corresponde a **X** ou **Z** |
+| + | Quantificador de uma ou mais ocorrências |
+| * | Quantificador de zero ou mais ocorrências |
+| {n,m} | Quantificador, corresponde a, no mínimo **n** ocorrências e no máximo m ocorrências da expressão que anterior|
+| \w | Expressão que irá corresponder aos caractere de palavras |
+| \d | Expressão que irá corresponder a digitos (0-9) |
+| () | Agrupamento |
 
 Quando utilizando regex para manipular ou especificar padrões, utilizados a expressão entre aspas simples. 
 Por exemplo, o arquivo abaixo é o **diálogo.txt** e contem com o seguinte conteúdo:
@@ -139,7 +151,6 @@ Bom, então podemos encerrar por hoje?
 
 </details>
 
-!(file:///Users/brunandriola/Desktop/Screen%20Shot%202026-05-13%20at%2010.33.41.png)
 
 Além dos comandos, básicos e dos regex, também há comandos de **redirecionamento e condutores**. Os principais são: 
 
@@ -159,16 +170,11 @@ Podemos juntar esses redirecionadores com números para especificar saídas espe
 
 ```> saída.log 2> erro.log``` : Redirecionar a saída padrão para um arquivo e os erros para outro.
 
-Para finalizer, também vamos abordar os caracteres curingas (no inglês eles são chamados de *wildcard*).
-
-```?``` : Representa qualquer caractere individual. Ou seja, qualquer letra de a-z e número de 0-9. Pode ser utilizado para localizar sequências onde se sabe que há uma variante em um região específica. Por exemplo:
-```
-Sequência: ACGTACAGTAC?
-```
-```*``` : Representa qualquer número de caracteres.
 
  
 Esse tutorial foi construido a partir das seguintes referências: 
   > https://sites.google.com/view/intro-to-unix-2026/
+  > https://www.ibm.com/br-pt/think/topics/linux
+  > https://reqchecker.eu/manual/extract_syntax.html
 
 
