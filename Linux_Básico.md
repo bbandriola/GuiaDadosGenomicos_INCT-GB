@@ -1,4 +1,11 @@
-# Comandos básicos de Linux
+Bem vindo a esse manual. Ele está organizado em três tópicos: 
+1. Introdução a Linux [Link Text](#Introducao-a-Linux)
+2. Introdução a scripts/comandos em Bash [Link Text](#Introducao-a-scripts-comandos-em-Bash)
+3. Exercícios [Link Text](#Exercicios)
+
+Você não precisa ler todo tutorial para partir para o tópico que deseja. Basta clicar no tópico desejado. 
+
+# Introdução a Linux
 
 O principal sistema operacional (SO) utilizado na bioinformática é o Linux. Esse SO é o mais escolhido, pois o código aberto e gratuito, tornando o processo de processamento de grandes volumes de dados reprodutível e eficiente. Na bioinformática utilizamos o SO Linux devido a rapídez do sistema e sua fácil utilização. Além disso, a maioria das tarefas em bioinformárica não possuem uma interface gráfica e são realizadas a partir de uma *Shell* ou Terminal, o qual possibilita acesso a ferramentas indispensáveis para o processamento dos dados genômicos e a realização de tarefas repetitivas (como os *loops*). Por esse motivo, saber comandos básicos, expressões regulares (**regex**) e manipuladores, é importante para conseguir realizar tarefas rotineiras, como acessar pastas e manipular arquivos.
 
@@ -100,18 +107,18 @@ Além dos comandos, também vamos abordar os caracteres curingas (no inglês ele
 Na programação encontramos o que chamamos de Expressões Regulares (*Regex*). Essas servem para especificar e manipular padrões ou definir ações:
 | Expressões Regulares | Descrição | 
 | --- | --- |
-| ^palavra | Corresponde ao início da linha |
-| palavra$ | Corresponde ao final da linha |
-| [] | Corresponde a qualquer uma das caracteres dentro dos []  |
-| [^] | Corresponde a qualquer carcatere, exceto as de dentro dos []  |
-| \\ | Corresponder ao ```\``` |
-| X|Z | Corresponde a **X** ou **Z** |
-| + | Quantificador de uma ou mais ocorrências |
-| * | Quantificador de zero ou mais ocorrências |
-| {n,m} | Quantificador, corresponde a, no mínimo **n** ocorrências e no máximo m ocorrências da expressão que anterior|
-| \w | Expressão que irá corresponder aos caractere de palavras |
-| \d | Expressão que irá corresponder a digitos (0-9) |
-| () | Agrupamento |
+| `^palavra` | Corresponde ao início da linha |
+| `palavra$` | Corresponde ao final da linha |
+| `[]` | Corresponde a qualquer uma das caracteres dentro dos []  |
+| `[^]` | Corresponde a qualquer carcatere, exceto as de dentro dos []  |
+| `\\` | Corresponder ao ```\``` |
+| `X|Z` | Corresponde a **X** ou **Z** |
+| `+` | Quantificador de uma ou mais ocorrências |
+| `*` | Quantificador de zero ou mais ocorrências |
+| `{n,m}` | Quantificador, corresponde a, no mínimo **n** ocorrências e no máximo m ocorrências da expressão que anterior|
+| `\w` | Expressão que irá corresponder aos caractere de palavras |
+| `\d` | Expressão que irá corresponder a digitos (0-9) |
+| `()` | Agrupamento |
 
 Quando utilizando regex para manipular ou especificar padrões, utilizados a expressão entre aspas simples. 
 Por exemplo, o arquivo abaixo é o **diálogo.txt** e contem com o seguinte conteúdo:
@@ -170,11 +177,15 @@ Podemos juntar esses redirecionadores com números para especificar saídas espe
 
 ```> saída.log 2> erro.log``` : Redirecionar a saída padrão para um arquivo e os erros para outro.
 
+Agora que já aprendemos boa parte da syntax, podemos aprofundar nosso conhecimento e entrar na construção de _scripts_ ou linhas de comando em bash.
 
+# Introdução a scripts/comandos em Bash
+
+# Exercícios
  
 Esse tutorial foi construido a partir das seguintes referências: 
-  > https://sites.google.com/view/intro-to-unix-2026/
-  > https://www.ibm.com/br-pt/think/topics/linux
-  > https://reqchecker.eu/manual/extract_syntax.html
+> https://sites.google.com/view/intro-to-unix-2026/
+> https://www.ibm.com/br-pt/think/topics/linux
+> https://reqchecker.eu/manual/extract_syntax.html
 
 
