@@ -55,6 +55,10 @@ $ pwd
 
 </details>
 
+Um último truque que podemos utilizar é a tecla *Tab*. A tecla *Tab* pode ser utilizada: 
+- &nbsp; 1x: Autocompletar um caminho ou nome de arquivo.
+- &nbsp; 2x: exibir todas as opções de autocompletar.  
+
 Abaixo estão apresentados alguns comandos básicos utilizados com frequência no dia a dia de quem trabalha com Linux. 
 
 ### Comandos básicos 
@@ -68,18 +72,23 @@ Abaixo estão apresentados alguns comandos básicos utilizados com frequência n
 | Remover uma pasta | rm [opções] [pasta] |
 | Copiar arquivos e diretórios | cp [opções] [arquivo a ser copiado] [destino do arquivo copiado + nome] |
 | Mover arquivos de local | mv [arquivo a ser movido] [destino do arquivo] |
-| Criar/editar arquivos | nano [nome do arquivo] |
+| Criar/editar arquivos | nano/vim/emacs [nome do arquivo] |
 | Compactar arquivos com final .gz/zip | gzip/zip [opções] [arquivo] |
 | Descompactar arquivos | gunzip/unzip [opções] [arquivo] |
 | Exibidir conteúdo de um arquivo | cat [opções] [arquivo] |
 | Procurar por padrões em um arquivo | grep [opções] [expressão a ser procurada] [arquivo de entrada] |
-| Substituir ou modificar padrões de texto | sed [opções] 's/padrão/novo padrão/' [arquivo de entrada] > [arquivo de saída]* |
+| Substituir ou modificar padrões de texto | sed [opções] 's/padrão/novo padrão/' [arquivo de entrada] > [arquivo de saída] |
 | Processar e analisar textos | awk [opções] 'padrão {ação a ser executada}' [arquivo] |
 | Mostrar as 10 primeiras linhas de um arquivo | head [arquivo] |
 | Mostrar as 10 últimas linhas de um arquivo | tail [arquivo] |
 | Ordenar conteúdo de uma arquivo | sort [opções] [arquivo] |
 | Explicação dos comandos | [comando] --help |
 | Imprimir conteúdo na tela | echo [opções] "texto a ser imprimido" |
+| Criar link simbólico | ls -s /diretório/do/arquivo/que/você/quer/criar/um/link/simbólico/ /destino/desse/link/simbólico/ | 
+| Quantificador do conteúdo | wc [opções] |
+| Checar a diferença entre dois arquivos | diff [opções] |
+
+Quer saber mais sobre cada um desses programas? Você pode utilizar o comando ```man [comando]``` e será exibida todas as "flags" possíveis com aquela função.
 
 Além dos comandos, o Linux também apresenta Expressões Regulares (regex) que servem para especificar e manipular padrões ou definir ações:
 | Expressões Regulares | Descrição | 
@@ -138,7 +147,7 @@ Além dos comandos, básicos e dos regex, também há comandos de **redirecionam
 
 ```>>``` : Adiciona a saída ao final de um arquivo existente.
 
-```|``` ou pipe : redirecionar uma saída para otra entrada.
+```|``` ou pipe : quando queremos utilizar mais de um comando em uma mesma linha. Utilizado para redirecionar uma saída para outra entrada.
 
 Podemos juntar esses redirecionadores com números para especificar saídas especificas.
 
@@ -157,7 +166,9 @@ Para finalizer, também vamos abordar os caracteres curingas (no inglês eles s�
 Sequência: ACGTACAGTAC?
 ```
 ```*``` : Representa qualquer número de caracteres.
+
  
 Esse tutorial foi construido a partir das seguintes referências: 
+  > https://sites.google.com/view/intro-to-unix-2026/
 
 
