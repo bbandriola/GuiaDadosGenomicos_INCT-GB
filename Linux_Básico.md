@@ -18,6 +18,7 @@ Para navegarmos pelos diretórios sem precisar escrever o caminho completo, util
 
 Imaginamos que queremos desconbrir em qual pasta do computador estamos. Qual o comando podemos utilizar para descobrir isso?
 Opção 1: ```cd```
+
 Opção 2: ```pwd```
 
 <details>
@@ -32,7 +33,9 @@ $ pwd
 
 Agora que sabemos que estamos na página <ins>PraticaLinux</ins>, nosso objetivo é chegar no diretório anterior, chamado de <ins>Linux</ins>. Para isso, precisamos utilizar uma combinação do que já vimos até o momento. Qual é a opção correta? 
 Opção 1: ```cd ../../```
+
 Opção 2: ```cd ../```
+
 Opção 3: ```pwd ../```
 
 <details>
@@ -100,7 +103,9 @@ Até amanhã!
 
 Nosso objetivo é achar todas as linhas que começem com a palavra **Bom** dentro do arquivo. Para isso, quais comandos podemos utilizar?
 Opção 1: ```$ grep '^Bom' diálogo.txt```
+
 Opção 2: ```$ cat '^Bom' diálogo.txt```
+
 Opção 3: ```$ awk '^Bom' diálogo.txt```
 
 <details>
@@ -108,7 +113,7 @@ Opção 3: ```$ awk '^Bom' diálogo.txt```
   
 ```Linux
 $ grep '^Bom' diálogo.txt
-<span style="color:red">Bom<span style="color:red"> dia, pessoal! Como vocês estão hoje?
+Bom dia, pessoal! Como vocês estão hoje?
 Bom te ver por aqui, Lucas!
 Bom lembrar que amanhã é o prazo final da inscrição.
 Bom trabalho no relatório, ficou excelente.
