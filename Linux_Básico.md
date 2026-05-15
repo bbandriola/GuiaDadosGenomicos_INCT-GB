@@ -16,7 +16,7 @@ $ cd /
 ```
 O / nesse caso, redireciona para a raiz do computador. Lá são encontrados documentos básicos de funcionamento do servidor e aplicações compartilhadas entre todos os usuários da máquina. Algumas dessas pastas e arquivos são:
 
-- <br> /bin: 
+- &nbsp; /bin: 
 
 Abaixo estão apresentados alguns comandos básicos utilizados com frequência no dia a dia de quem trabalha com Linux. 
 
