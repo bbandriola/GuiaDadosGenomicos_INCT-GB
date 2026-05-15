@@ -22,8 +22,8 @@ Opção 2: ```pwd```
 <details>
   <summary> Click to check the answer</summary>
 ```
-\$ pwd\
-\/GuiaDadosGenomicos_INCT-GB/Linux/PraticaLinux\
+$ pwd
+/GuiaDadosGenomicos_INCT-GB/Linux/PraticaLinux
 ```
 </details>
 
