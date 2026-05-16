@@ -186,10 +186,10 @@ Agora que já aprendemos boa parte da syntax, podemos aprofundar nosso conhecime
 
 <details>
   <summary>  Referências </summary> 
-  
-  - https://sites.google.com/view/intro-to-unix-2026/ 
-  - https://www.ibm.com/br-pt/think/topics/linux 
-  - https://reqchecker.eu/manual/extract_syntax.html
+
+  - <a href="https://sites.google.com/view/intro-to-unix-2026/">Intro to Unix</a>
+  - <a href="https://www.ibm.com/br-pt/think/topics/linux">IBM Linux</a>
+  - <a href="https://reqchecker.eu/manual/extract_syntax.html">Regex Manual</a>
 
 </details>
 
