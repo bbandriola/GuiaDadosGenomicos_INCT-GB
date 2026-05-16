@@ -36,8 +36,8 @@ Para navegarmos pelos diretórios sem precisar escrever o caminho completo, util
 
 :books: Exercício: Imagine que queremos descobrir em qual diretório do computador estamos. Qual o comando podemos utilizar para realizar essa tarefa?
 
-- ```cd```
-- ```pwd```
+Opçāo 1: ```cd```
+Opçāo 2: ```pwd```
 
 <details>  
   <summary> Clique aqui para ver a resposta</summary>
@@ -51,9 +51,9 @@ $ pwd
 
 :books: Exercício: Agora que sabemos que estamos no diretório <ins>Linux</ins>, nosso objetivo é chegar no diretório anterior, <ins>GuiaDadosGenomicos_INCT-GB</ins>. Para isso, precisamos utilizar uma combinação do que já vimos até o momento. Qual é a opção correta? 
 
-- ```cd ../../```
-- ```cd ../```
-- ```pwd ../```
+Opçāo 1: ```cd ../../```
+Opçāo 2: ```cd ../```
+Opçāo 3: ```pwd ../```
 
 <details>
   
@@ -141,11 +141,9 @@ Até amanhã!
 ```
 Nosso objetivo é achar todas as linhas que começem com a palavra **Bom** dentro do arquivo. Para isso, qual comando podemos utilizar?
 
--  ```$ grep '^Bom' diálogo.txt```
-
--  ```$ cat '^Bom' diálogo.txt```
-
--  ```$ awk '^Bom' diálogo.txt```
+Opçāo 1: ```$ grep '^Bom' diálogo.txt```
+Opçāo 2: ```$ cat '^Bom' diálogo.txt```
+Opçāo 3: ```$ awk '^Bom' diálogo.txt```
 
 <details>
   
