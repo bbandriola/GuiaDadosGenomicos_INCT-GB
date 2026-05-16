@@ -25,18 +25,10 @@ Para navegarmos pelos diretórios sem precisar escrever o caminho completo, util
 ```.``` representa o diretório atual. 
 ```..``` representa o diretório anterior.
 
-:books: Exercício: Imagine que queremos descobrir em qual pasta do computador estamos. Qual o comando podemos utilizar para realizar essa tarefa?
+:memo::pencil: Exercício: Imagine que queremos descobrir em qual pasta do computador estamos. Qual o comando podemos utilizar para realizar essa tarefa?
 
-<p>
-  <input type="checkbox" id="q1_cd"> 
-  <label for="q1_cd"><b>I tried using <code>cd</code></b></label>
-</p>
-
-<p>
-  <input type="checkbox" id="q1_pwd"> 
-  <label for="q1_pwd"><b>I tried using <code>pwd</code></b></label>
-</p>
-<details>
+- Opção 1:```cd```
+- Opção 2:```pwd```
   
   <summary> Clique aqui para ver a resposta</summary>
   
