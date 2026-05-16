@@ -1,6 +1,6 @@
 Bem vindo a esse manual. Ele está organizado em dois tópicos: 
-1. [Introdução a Linux](GuiaDadosGenomicos_INCT-GB/blob/main/Linux_Básico.md)
-2. [Introdução a scripts/comandos em Bash](GuiaDadosGenomicos_INCT-GB/blob/main/Introdução_ao_Bash.md)
+1. [Introdução a Linux](./GuiaDadosGenomicos_INCT-GB/Linux_Básico.md)
+2. [Introdução a scripts/comandos em Bash](./GuiaDadosGenomicos_INCT-GB/Introdução_ao_Bash.md)
 
 Você não precisa ler todo tutorial para partir para o tópico que deseja. Basta clicar no tópico desejado. 
 
