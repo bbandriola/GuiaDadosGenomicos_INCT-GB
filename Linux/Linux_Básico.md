@@ -61,11 +61,15 @@ $ pwd
 
 </details>
 
-Um último truque que podemos utilizar é a tecla *Tab*. A tecla *Tab* pode ser utilizada: 
-- &nbsp; 1x: Autocompletar um caminho ou nome de arquivo.
-- &nbsp; 2x: exibir todas as opções de autocompletar.  
+### Continuando...
 
-Abaixo estão apresentados alguns comandos básicos utilizados com frequência no dia a dia de quem trabalha com Linux. 
+Um dos truques que podemos fazer é utilizar a tecla *Tab* para autocompletar nome de arquivos ou exibir as opções: 
+- 1x: Autocompletar um caminho ou nome de arquivo.
+- 2x: exibir todas as opções de autocompletar.
+
+## Comandos do Linux
+
+O Linux trabalha com uma gama de comandos que podem ser executados através do terminal. Abaixo estão citados alguns comandos utilizados com frequência no dia a dia de quem trabalha com o sistema :arrow_heading_down: 
 
 ### Comandos básicos 
 | **Comando** | **Função** |
@@ -79,7 +83,7 @@ Abaixo estão apresentados alguns comandos básicos utilizados com frequência n
 | `cp [opções] [arquivo a ser copiado] [destino do arquivo copiado + nome]` | Copiar arquivos e diretórios |
 | `mv [arquivo a ser movido] [destino do arquivo]` | Mover arquivos de local |
 | `nano/vim/emacs [nome do arquivo]` | Criar/editar arquivos |
-| `gzip/zip [opções] [arquivo]` | Compactar arquivos com final `.gz/.zip` |
+| `gzip/zip [opções] [arquivo]` | Compactar arquivos `.gz/.zip` |
 | `gunzip/unzip [opções] [arquivo]` | Descompactar arquivos |
 | `cat [opções] [arquivo]` | Exibir conteúdo de um arquivo |
 | `grep [opções] [expressão a ser procurada] [arquivo de entrada]` | Procurar por padrões em um arquivo |
@@ -88,22 +92,27 @@ Abaixo estão apresentados alguns comandos básicos utilizados com frequência n
 | `head [arquivo]` | Mostrar as 10 primeiras linhas de um arquivo |
 | `tail [arquivo]` | Mostrar as 10 últimas linhas de um arquivo |
 | `sort [opções] [arquivo]` | Ordenar conteúdo de um arquivo |
-| `[comando] --help` | Explicação dos comandos |
+| `[comando] --help` | Explicação das funções de um comando |
 | `echo [opções] "texto a ser imprimido"` | Imprimir conteúdo na tela |
 | `ln -s /diretório/do/arquivo /destino/do/link` | Criar link simbólico |
 | `wc [opções]` | Quantificador do conteúdo |
 | `diff [opções]` | Checar a diferença entre dois arquivos |
 
-Quer saber mais sobre cada um desses programas? Você pode utilizar o comando ```man [comando]``` e será exibida todas as "flags" possíveis com aquela função.
+:thought_balloon: Quer saber mais sobre cada um desses comandos? Você pode utilizar o comando ```man [comando]``` e será exibido todas as "flags" possíveis de serem utilizadas com a função.
 
-Além dos comandos, também vamos abordar os caracteres curingas (no inglês eles são chamados de *wildcard*).
+Além dos comandos, também vamos abordar os... 
+## **caracteres curingas** (no inglês, são os chamados *wildcard*).
 
 ```?``` : Representa qualquer caractere individual. Ou seja, qualquer letra de a-z ou número de 0-9.
 
 ```*``` : Representa múltiplos caracteres, incluindo espaço.
 
 
-Na programação encontramos o que chamamos de Expressões Regulares (*Regex*). Essas servem para especificar e manipular padrões ou definir ações:
+Além disso, também precisamos conhecer sobre as...
+## Expressões Regulares (*Regex*)
+
+As expressões regulares servem para especificar e manipular padrões ou definir ações. A tabela abaixo contém algumas dessas expressões :arrow_heading_down:
+
 | Expressões Regulares | Descrição | 
 | --- | --- |
 | `^palavra` | Corresponde ao início da linha |
@@ -119,8 +128,11 @@ Na programação encontramos o que chamamos de Expressões Regulares (*Regex*). 
 | `\d` | Expressão que irá corresponder a digitos (0-9) |
 | `()` | Agrupamento |
 
-Quando utilizando regex para manipular ou especificar padrões, utilizados a expressão entre aspas simples. 
-Por exemplo, o arquivo abaixo é o **diálogo.txt** e contem com o seguinte conteúdo:
+:warning:Quando utilizando uma regex para manipular ou especificar padrões, utilizados a expressão entre aspas simples.
+
+### Seção de prática :elf_woman:
+
+:books: Exercício: O arquivo  **diálogo.txt** e contém com o seguinte conteúdo:
 ```
 Bom dia, pessoal! Como vocês estão hoje?
 Bom te ver por aqui, Lucas!
@@ -133,14 +145,13 @@ Que alivio ouvir isso depois de tantas revisões!
 Bom, então podemos encerrar por hoje?
 Até amanhã!
 ```
+Nosso objetivo é achar todas as linhas que começem com a palavra **Bom** dentro do arquivo. Para isso, qual comando podemos utilizar?
 
-Nosso objetivo é achar todas as linhas que começem com a palavra **Bom** dentro do arquivo. Para isso, quais comandos podemos utilizar?
+-  ```$ grep '^Bom' diálogo.txt```
 
-Opção 1: ```$ grep '^Bom' diálogo.txt```
+-  ```$ cat '^Bom' diálogo.txt```
 
-Opção 2: ```$ cat '^Bom' diálogo.txt```
-
-Opção 3: ```$ awk '^Bom' diálogo.txt```
+-  ```$ awk '^Bom' diálogo.txt```
 
 <details>
   
@@ -158,7 +169,10 @@ Bom, então podemos encerrar por hoje?
 </details>
 
 
-Além dos comandos, básicos e dos regex, também há comandos de **redirecionamento e condutores**. Os principais são: 
+Além dos comandos e dos regex, também há simbolos que chamamos de...
+## **Redirecionamento e condutores**
+
+Os principais são: 
 
 ```>``` : Criar ou sobrescrever um arquivo.
 
