@@ -126,7 +126,7 @@ As expressões regulares servem para especificar, manipular padrões ou definir 
 
 ### :elf_woman: Seção de prática
 
-:books: Exercício: O arquivo  **diálogo.txt** e contém com o seguinte conteúdo:
+:books: Exercício: O arquivo  **diálogo.txt** contém com o seguinte conteúdo:
 ```
 Bom dia, pessoal! Como vocês estão hoje?
 Bom te ver por aqui, Lucas!
@@ -153,6 +153,9 @@ Nosso objetivo é achar todas as linhas que começem com a palavra **Bom** dentr
   
 ```Linux
 $ grep '^Bom' diálogo.txt
+```
+O retorno é o seguinte:
+```Linux
 Bom dia, pessoal! Como vocês estão hoje?
 Bom te ver por aqui, Lucas!
 Bom lembrar que amanhã é o prazo final da inscrição.
