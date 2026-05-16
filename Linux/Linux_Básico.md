@@ -12,7 +12,11 @@ Na bioinformática, muitas tarefas são realizadas por meio de um terminal (bast
 
 Para começar a entender o sistema do Linux, precisamos entender que a organização de diretórios é defida de forma hierárquica :card_index_dividers:, na qual, as pastas são delimitadas por um separador ```/```. Se quisermos saber em qual diretório estamos, podemos utilizar o comando ```pdw``` no nosso terminal.
 
-O retorno desse comando será algo como: ```/GuiaDadosGenomicos_INCT-GB/Linux/Linux_Básico.md```. Ou seja, o arquivo <ins>Linux_Básico.md</ins> está dentro do diretóro <ins>Linux</ins>, dentro do diretório <ins>GuiaDadosGenomicos_INCT-GB</ins>. Mas onde está o diretório <ins>GuiaDadosGenomicos_INCT-GB</ins>? Ele pode estar em qualquer lugar do computador, mas geralmente estará no diretório padrão do seu usuário. A pasta de cada usuário pode ser acessada com o comando: ```$ cd ~```.
+O retorno desse comando será algo como: ```/GuiaDadosGenomicos_INCT-GB/Linux/Linux_Básico.md``` :round_pushpin:
+
+Ou seja, o arquivo <ins>Linux_Básico.md</ins> está dentro do diretóro <ins>Linux</ins>, dentro do diretório <ins>GuiaDadosGenomicos_INCT-GB</ins>. 
+
+Mas onde está o diretório <ins>GuiaDadosGenomicos_INCT-GB</ins>? Ele pode estar em qualquer lugar do computador, mas geralmente estará no diretório padrão do seu usuário. A pasta de cada usuário pode ser acessada com o comando: ```$ cd ~```.
 
 Além dessa organização de cada usuário, o computador possui uma organização própria localizada na _root_ (raiz) do computador. Para acessar esse local podemos utilizar o comando: ```$ cd /```. 
 
