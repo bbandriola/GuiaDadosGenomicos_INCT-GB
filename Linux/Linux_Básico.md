@@ -179,17 +179,17 @@ Os principais são:
 
 ```>>``` : Adiciona a saída ao final de um arquivo existente.
 
-```|``` ou pipe : quando queremos utilizar mais de um comando em uma mesma linha. Utilizado para redirecionar uma saída para outra entrada.
+```|``` ou pipe : Quando queremos utilizar mais de um comando em uma mesma linha. Utilizado para redirecionar uma saída para outra entrada.
 
-Podemos juntar esses redirecionadores com números para especificar saídas especificas.
+Podemos juntar esses redirecionadores com números para especificar saídas especificas:
 
-```1 > saída.log``` : Redirecionando a saída do programa para um arquivo log. 
+- ```1 > saída.log``` : Redirecionando a saída do programa para um arquivo log. 
 
-```2 > erro.log``` : Redireciona todos os erros de um determinado comando para um arquivo log.
+- ```2 > erro.log``` : Redireciona todos os erros de um determinado comando para um arquivo log.
 
-```> saídaeerro.log 2>&1``` : Redirecionar a saída padrão e os erros para o mesmo arquivo.
+- ```> saídaeerro.log 2>&1``` : Redirecionar a saída padrão e os erros para o mesmo arquivo.
 
-```> saída.log 2> erro.log``` : Redirecionar a saída padrão para um arquivo e os erros para outro.
+- ```> saída.log 2> erro.log``` : Redirecionar a saída padrão para um arquivo e os erros para outro.
 
 Agora que já aprendemos boa parte da syntax, podemos aprofundar nosso conhecimento e entrar na construção de [_scripts_ e linhas de comando em bash](./Introdução_ao_Bash.md).
 
