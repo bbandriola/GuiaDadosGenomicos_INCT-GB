@@ -97,7 +97,6 @@ O Linux trabalha com uma gama de comandos que podem ser executados através do t
 
 :thought_balloon: Quer saber mais sobre cada um desses comandos? Você pode utilizar o comando ```man [comando]``` e será exibido todas as "flags" possíveis de serem utilizadas com a função.
 
-Além disso, também precisamos conhecer sobre as...
 ## Expressões Regulares (*Regex*)
 
 As expressões regulares servem para especificar e manipular padrões ou definir ações. A tabela abaixo contém algumas dessas expressões :arrow_heading_down:
@@ -163,7 +162,6 @@ No Linux também trabalhamos com **Caracteres curingas (*wildcard*)**:
 
 ```*``` : Representa múltiplos caracteres, incluindo espaço.
 
-Além dos comandos e dos regex, também há simbolos que chamamos de...
 ## Redirecionamento e condutores
 
 Os principais são: 
