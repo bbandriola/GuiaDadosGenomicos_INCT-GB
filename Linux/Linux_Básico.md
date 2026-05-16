@@ -26,7 +26,7 @@ Para navegarmos pelos diretórios sem precisar escrever o caminho completo, util
 
 ```..``` representa o diretório anterior :back:
 
-### Seção de prática :elf_woman:
+### :elf_woman: Seção de prática 
 
 :books: Exercício: Imagine que queremos descobrir em qual diretório do computador estamos. Qual o comando podemos utilizar para realizar essa tarefa?
 
@@ -71,7 +71,6 @@ Um dos truques que podemos fazer é utilizar a tecla *Tab* para autocompletar no
 
 O Linux trabalha com uma gama de comandos que podem ser executados através do terminal. Abaixo estão citados alguns comandos utilizados com frequência no dia a dia de quem trabalha com o sistema :arrow_heading_down: 
 
-### Comandos básicos 
 | **Comando** | **Função** |
 |---|---|
 | `ls [opções] [caminho ou diretório]` | Listar conteúdo |
@@ -100,14 +99,6 @@ O Linux trabalha com uma gama de comandos que podem ser executados através do t
 
 :thought_balloon: Quer saber mais sobre cada um desses comandos? Você pode utilizar o comando ```man [comando]``` e será exibido todas as "flags" possíveis de serem utilizadas com a função.
 
-Além dos comandos, também vamos abordar os... 
-## **caracteres curingas** (no inglês, são os chamados *wildcard*).
-
-```?``` : Representa qualquer caractere individual. Ou seja, qualquer letra de a-z ou número de 0-9.
-
-```*``` : Representa múltiplos caracteres, incluindo espaço.
-
-
 Além disso, também precisamos conhecer sobre as...
 ## Expressões Regulares (*Regex*)
 
@@ -130,7 +121,7 @@ As expressões regulares servem para especificar e manipular padrões ou definir
 
 :warning:Quando utilizando uma regex para manipular ou especificar padrões, utilizados a expressão entre aspas simples.
 
-### Seção de prática :elf_woman:
+### :elf_woman: Seção de prática
 
 :books: Exercício: O arquivo  **diálogo.txt** e contém com o seguinte conteúdo:
 ```
@@ -168,9 +159,14 @@ Bom, então podemos encerrar por hoje?
 
 </details>
 
+No Linux também trabalhamos com **Caracteres curingas (*wildcard*)**:
+
+```?``` : Representa qualquer caractere individual. Ou seja, qualquer letra de a-z ou número de 0-9.
+
+```*``` : Representa múltiplos caracteres, incluindo espaço.
 
 Além dos comandos e dos regex, também há simbolos que chamamos de...
-## **Redirecionamento e condutores**
+## Redirecionamento e condutores
 
 Os principais são: 
 
