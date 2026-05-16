@@ -22,8 +22,7 @@ O ```/``` nesse caso, redireciona para a raiz do computador. Lá são encontrado
 
 Para navegarmos pelos diretórios sem precisar escrever o caminho completo, utilizamos _caminhos relativos_, como a utilização do ponto ```.```. 
 
-```.``` representa o diretório atual. 
-```..``` representa o diretório anterior.
+```.``` representa o diretório atual. &nbsp; ```..``` representa o diretório anterior.
 
 :books: Exercício: Imagine que queremos descobrir em qual diretório do computador estamos. Qual o comando podemos utilizar para realizar essa tarefa?
 
