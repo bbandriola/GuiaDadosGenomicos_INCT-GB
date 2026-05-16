@@ -27,10 +27,15 @@ Para navegarmos pelos diretórios sem precisar escrever o caminho completo, util
 
 :books: Exercício: Imagine que queremos descobrir em qual pasta do computador estamos. Qual o comando podemos utilizar para realizar essa tarefa?
 
-<input type="checkbox">
-<label for="q1"><b> ```cd```
-<label for="q1"><b> ```pwd```
+<p>
+  <input type="checkbox" id="q1_cd"> 
+  <label for="q1_cd"><b>I tried using <code>cd</code></b></label>
+</p>
 
+<p>
+  <input type="checkbox" id="q1_pwd"> 
+  <label for="q1_pwd"><b>I tried using <code>pwd</code></b></label>
+</p>
 <details>
   
   <summary> Clique aqui para ver a resposta</summary>
