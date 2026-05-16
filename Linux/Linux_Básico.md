@@ -18,11 +18,13 @@ Além dessa organização básica, de cada usuário, o computador possui uma org
 
 O ```/``` nesse caso, redireciona para a raiz do computador. Lá são encontrados documentos básicos de funcionamento do servidor e aplicações compartilhadas entre todos os usuários da máquina. Uma dessas pastas é:
 
-- &nbsp; /bin: local onde estão instalado os comandos comportilhados por todos os usuários.
+- ```/bin```: local onde estão instalado os comandos comportilhados por todos os usuários.
 
 Para navegarmos pelos diretórios sem precisar escrever o caminho completo, utilizamos _caminhos relativos_, como a utilização do ponto ```.```. 
 
-```.``` representa o diretório atual. &nbsp; ```..``` representa o diretório anterior.
+```.``` representa o diretório atual.
+
+```..``` representa o diretório anterior.
 
 :books: Exercício: Imagine que queremos descobrir em qual diretório do computador estamos. Qual o comando podemos utilizar para realizar essa tarefa?
 
@@ -39,11 +41,11 @@ $ pwd
 
 </details>
 
-:books: Exercício: Agora que sabemos que estamos nao diretório <ins>Linux</ins>, nosso objetivo é chegar no diretório anterior, <ins>GuiaDadosGenomicos_INCT-GB</ins>. Para isso, precisamos utilizar uma combinação do que já vimos até o momento. Qual é a opção correta? 
+:books: Exercício: Agora que sabemos que estamos no diretório <ins>Linux</ins>, nosso objetivo é chegar no diretório anterior, <ins>GuiaDadosGenomicos_INCT-GB</ins>. Para isso, precisamos utilizar uma combinação do que já vimos até o momento. Qual é a opção correta? 
 
-- [ ] ```cd ../../```
-- [ ] ```cd ../```
-- [ ] ```pwd ../```
+* ```cd ../../```
+- ```cd ../```
+- ```pwd ../```
 
 <details>
   
