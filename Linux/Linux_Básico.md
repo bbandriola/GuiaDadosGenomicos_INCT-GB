@@ -61,8 +61,6 @@ $ pwd
 
 </details>
 
-### Continuando...
-
 Um dos truques que podemos fazer é utilizar a tecla *Tab* para autocompletar nome de arquivos ou exibir as opções: 
 - 1x: Autocompletar um caminho ou nome de arquivo.
 - 2x: exibir todas as opções de autocompletar.
@@ -119,7 +117,7 @@ As expressões regulares servem para especificar e manipular padrões ou definir
 | `\d` | Expressão que irá corresponder a digitos (0-9) |
 | `()` | Agrupamento |
 
-:warning:Quando utilizando uma regex para manipular ou especificar padrões, utilizados a expressão entre aspas simples.
+:warning: Quando utilizando uma regex para manipular ou especificar padrões, utilizados a expressão entre aspas simples.
 
 ### :elf_woman: Seção de prática
 
