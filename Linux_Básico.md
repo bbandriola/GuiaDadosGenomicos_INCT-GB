@@ -1,12 +1,14 @@
-Bem vindo a esse manual. Ele está organizado em dois tópicos: 
+Essa seção está dividida em duas partes: 
 1. [Introdução a Linux](./Linux_Básico.md)
 2. [Introdução a scripts/comandos em Bash](./Introdução_ao_Bash.md)
 
-Você não precisa ler todo tutorial para partir para o tópico que deseja. Basta clicar no tópico desejado. 
+Sinta-se a vontade para acessar na ordem desejada e de acordo com o tópico de interesse. 
 
 # Introdução a Linux
 
-O principal sistema operacional (SO) utilizado na bioinformática é o Linux. Esse SO é o mais escolhido, pois o código aberto e gratuito, tornando o processo de processamento de grandes volumes de dados reprodutível e eficiente. Na bioinformática utilizamos o SO Linux devido a rapídez do sistema e sua fácil utilização. Além disso, a maioria das tarefas em bioinformárica não possuem uma interface gráfica e são realizadas a partir de uma *Shell* ou Terminal, o qual possibilita acesso a ferramentas indispensáveis para o processamento dos dados genômicos e a realização de tarefas repetitivas (como os *loops*). Por esse motivo, saber comandos básicos, expressões regulares (**regex**) e manipuladores, é importante para conseguir realizar tarefas rotineiras, como acessar pastas e manipular arquivos.
+Linux é um sistema operacional (SO) amplamente utilizado na bioinformática, disponível em distribuições como o Ubuntu. Esse sistema é gratuito e de código aberto, favorecendo a reprodutibilidade e a eficiência no processamento de grandes volumes de dados, como é o caso de análises de dados genômicos.
+
+Na bioinformática, muitas tarefas são realizadas por meio de uma *shell* ou Terminal, já que diversas ferramentas não possuem interface gráfica. O terminal permite acessar programas essenciais para o processamento de dados genômicos e automatizar tarefas repetitivas, como a execução de *loops* e *pipelines*. Por esse motivo, o conhecimento de **comandos** do Linux, **expressões regulares (regex)** e **manipuladores de texto** é fundamental para atividades rotineiras, como navegar entre diretórios, organizar arquivos e processar dados.:computer:
 
 A organização de diretórios em Linux é defida de forma hierárquica, na qual, as pastas são delimitadas por um separador /. Se quisermos saber onde estamos, podemos utilizar o comando ```pdw``` no nosso terminal de Linux.
 
