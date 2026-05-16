@@ -185,9 +185,9 @@ Podemos juntar esses redirecionadores com números para especificar saídas espe
 Agora que já aprendemos boa parte da syntax, podemos aprofundar nosso conhecimento e entrar na construção de [_scripts_ ou linhas de comando em bash](./Introdução_ao_Bash.md).
 
 <details>
-  <summary>  Referências </summary>
-  > https://sites.google.com/view/intro-to-unix-2026/ 
-  > https://www.ibm.com/br-pt/think/topics/linux 
-  > https://reqchecker.eu/manual/extract_syntax.html
+  <summary>  Referências </summary> 
+  > https://sites.google.com/view/intro-to-unix-2026/  
+  > https://www.ibm.com/br-pt/think/topics/linux   
+  > https://reqchecker.eu/manual/extract_syntax.html  
 </details>
 
