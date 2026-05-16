@@ -16,9 +16,11 @@ O retorno desse comando será algo como: ```/GuiaDadosGenomicos_INCT-GB/Linux/Li
 
 Ou seja, o arquivo <ins>Linux_Básico.md</ins> está dentro do diretóro <ins>Linux</ins>, dentro do diretório <ins>GuiaDadosGenomicos_INCT-GB</ins>. 
 
-Mas onde está o diretório <ins>GuiaDadosGenomicos_INCT-GB</ins>? Ele pode estar em qualquer lugar do computador, mas geralmente estará no diretório padrão do seu usuário. A pasta de cada usuário pode ser acessada com o comando: ```$ cd ~```.
+Mas onde está o diretório <ins>GuiaDadosGenomicos_INCT-GB</ins>? :man_shrugging:
 
-Além dessa organização de cada usuário, o computador possui uma organização própria localizada na _root_ (raiz) do computador. Para acessar esse local podemos utilizar o comando: ```$ cd /```. 
+Ele pode estar em qualquer lugar do computador, mas geralmente estará no diretório padrão do seu usuário. A pasta de cada usuário pode ser acessada com o comando: ```$ cd ~```.
+
+Além dessa organização, o computador possui uma organização própria localizada na _root_ (raiz) do computador. Para acessar esse local podemos utilizar o comando: ```$ cd /```. 
 
 O ```/``` nesse caso, redireciona para a raiz do computador. Lá são encontrados documentos de funcionamento do servidor e aplicações compartilhadas entre todos os usuários da máquina. Uma dessas pastas é:
 
