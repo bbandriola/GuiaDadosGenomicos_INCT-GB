@@ -186,8 +186,10 @@ Agora que já aprendemos boa parte da syntax, podemos aprofundar nosso conhecime
 
 <details>
   <summary>  Referências </summary> 
+  
   - https://sites.google.com/view/intro-to-unix-2026/ 
   - https://www.ibm.com/br-pt/think/topics/linux 
-  - https://reqchecker.eu/manual/extract_syntax.html  
+  - https://reqchecker.eu/manual/extract_syntax.html
+
 </details>
 
