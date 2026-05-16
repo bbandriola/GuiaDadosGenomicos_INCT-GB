@@ -105,7 +105,7 @@ O Linux trabalha com uma gama de comandos que podem ser executados através do t
 
 ## Expressões Regulares (*Regex*)
 
-As expressões regulares servem para especificar e manipular padrões ou definir ações. A tabela abaixo contém algumas dessas expressões :arrow_heading_down:
+As expressões regulares servem para especificar, manipular padrões ou definir ações dentro de comandos. A tabela abaixo contém algumas dessas expressões :arrow_heading_down:
 
 | Expressões Regulares | Descrição | 
 | --- | --- |
