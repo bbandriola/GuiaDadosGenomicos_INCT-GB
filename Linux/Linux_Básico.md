@@ -182,7 +182,7 @@ Podemos juntar esses redirecionadores com números para especificar saídas espe
 
 ```> saída.log 2> erro.log``` : Redirecionar a saída padrão para um arquivo e os erros para outro.
 
-Agora que já aprendemos boa parte da syntax, podemos aprofundar nosso conhecimento e entrar na construção de [_scripts_ ou linhas de comando em bash](./Introdução_ao_Bash.md).
+Agora que já aprendemos boa parte da syntax, podemos aprofundar nosso conhecimento e entrar na construção de [_scripts_ e linhas de comando em bash](./Introdução_ao_Bash.md).
 
 <details>
   <summary>  Referências </summary> 
