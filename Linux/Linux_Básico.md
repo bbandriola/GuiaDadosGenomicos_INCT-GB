@@ -8,29 +8,27 @@ Sinta-se a vontade para acessar na ordem desejada e de acordo com o tópico de i
 
 Linux é um sistema operacional (SO), disponível em distribuições como o Ubuntu, amplamente utilizado na bioinformática. Esse sistema é gratuito e de código aberto, favorecendo a reprodutibilidade e a eficiência no processamento de grandes volumes de dados, como é o caso de [análises de dados genômicos](https://www.notion.so/3626457f0f6d806a85b5ca14bc6f123e?v=3626457f0f6d8012aec0000cfedda990&source=copy_link).
 
-Na bioinformática, muitas tarefas são realizadas por meio de uma *shell* ou Terminal, já que diversas ferramentas não possuem interface gráfica. Através do terminal, é possível acessar programas essenciais para o processamento de dados genômicos e automatizar tarefas repetitivas, como a execução de *loops* e *pipelines*. Por esse motivo, o conhecimento de **comandos** do Linux, **expressões regulares (regex)** e **manipuladores de texto** é fundamental para atividades rotineiras, como navegar entre diretórios, organizar arquivos e processar dados.
+Na bioinformática, muitas tarefas são realizadas por meio de um terminal (basta digitar "terminal" no macOS ou "cmd" no Windows para abrir), já que diversas ferramentas não possuem interface gráfica. Através do terminal, é possível acessar programas essenciais para o processamento de dados genômicos e automatizar tarefas repetitivas, como a execução de *loops* e *pipelines*. Por esse motivo, o conhecimento de **comandos** do Linux, **expressões regulares (regex)** e **manipuladores de texto** é fundamental para atividades rotineiras, como navegar entre diretórios, organizar arquivos e processar dados.
 
-A organização de diretórios em Linux é defida de forma hierárquica, na qual, as pastas são delimitadas por um separador /. Se quisermos saber onde estamos, podemos utilizar o comando ```pdw``` no nosso terminal de Linux.
+Para começar a entender o sistema do Linux, precisamos entender que a organização de diretórios é defida de forma hierárquica, na qual, as pastas são delimitadas por um separador ```/```. Se quisermos saber em qual diretório estamos, podemos utilizar o comando ```pdw``` no nosso terminal.
 
-O retorno desse comando será algo como: /GuiaDadosGenomicos_INCT-GB/Linux/PraticaLinux. Ou seja, o diretório <ins>PraticaLinux</ins> está dentro do diretóro <ins>Linux</ins>, dentro do diretório <ins>GuiaDadosGenomicos_INCT-GB</ins>. Mas onde está o diretório **GuiaDadosGenomicos_INCT-GB**? Ele pode estar em qualquer lugar do computador, mas geralmente estará no nosso usuário. A pasta de cada usuário pode ser acessada com o comando: ```$ cd ~```
+O retorno desse comando será algo como: /GuiaDadosGenomicos_INCT-GB/Linux/Linux_Básico.md. Ou seja, o arquivo <ins>Linux_Básico.md</ins> está dentro do diretóro <ins>Linux</ins>, dentro do diretório <ins>GuiaDadosGenomicos_INCT-GB</ins>. Mas onde está o diretório **GuiaDadosGenomicos_INCT-GB**? Ele pode estar em qualquer lugar do computador, mas geralmente estará no nosso usuário. A pasta de cada usuário pode ser acessada com o comando: ```$ cd ~```.
 
-Além dessa organização básica a partir de cada usuário do computador, ainda há uma organização da própria máquina. Geralmente, essa organização se localiza na _root_ (raiz) do computador. Para acessar esse local podemos utilizar o comando: ```$ cd /```.
+Além dessa organização básica, de cada usuário, o computador possui uma organização própria. Geralmente, essa organização se localiza na _root_ (raiz) do computador. Para acessar esse local podemos utilizar o comando: ```$ cd /```. 
 
 O ```/``` nesse caso, redireciona para a raiz do computador. Lá são encontrados documentos básicos de funcionamento do servidor e aplicações compartilhadas entre todos os usuários da máquina. Uma dessas pastas é:
 
-- &nbsp; /bin: local onde estão instalado os comandos que podem ser utilizados por todos os usuários.
+- &nbsp; /bin: local onde estão instalado os comandos comportilhados por todos os usuários.
 
 Para navegarmos pelos diretórios sem precisar escrever o caminho completo, utilizamos _caminhos relativos_, como a utilização do ponto ```.```. 
 
 ```.``` representa o diretório atual. 
-
 ```..``` representa o diretório anterior.
 
-Imaginamos que queremos desconbrir em qual pasta do computador estamos. Qual o comando podemos utilizar para descobrir isso?
+:books: Exercício: Imagine que queremos descobrir em qual pasta do computador estamos. Qual o comando podemos utilizar para realizar essa tarefa?
 
-Opção 1: ```cd```
-
-Opção 2: ```pwd```
+- [ ] ```cd```
+- [ ] ```pwd```
 
 <details>
   
@@ -43,13 +41,11 @@ $ pwd
 
 </details>
 
-Agora que sabemos que estamos na página <ins>PraticaLinux</ins>, nosso objetivo é chegar no diretório anterior, chamado de <ins>Linux</ins>. Para isso, precisamos utilizar uma combinação do que já vimos até o momento. Qual é a opção correta? 
+:books: Exercício: Agora que sabemos que estamos nao diretório <ins>Linux</ins>, nosso objetivo é chegar no diretório anterior, <ins>GuiaDadosGenomicos_INCT-GB</ins>. Para isso, precisamos utilizar uma combinação do que já vimos até o momento. Qual é a opção correta? 
 
-Opção 1: ```cd ../../```
-
-Opção 2: ```cd ../```
-
-Opção 3: ```pwd ../```
+- [ ] ```cd ../../```
+- [ ] ```cd ../```
+- [ ] ```pwd ../```
 
 <details>
   
