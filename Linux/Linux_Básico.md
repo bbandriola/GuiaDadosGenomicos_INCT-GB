@@ -29,7 +29,7 @@ Para navegarmos pelos diretórios sem precisar escrever o caminho completo, util
 <p>
     <input type="checkbox" id="q1">
     <label for="q1"><b> ```cd```
-- [ ] ```pwd```
+    <label for="q1"><b> ```pwd```
 </p>
 <details>
   
