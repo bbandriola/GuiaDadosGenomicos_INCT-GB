@@ -1,1 +1,1 @@
-# Introdução a scripts/comandos em Bash
+# Introdução a scripts e comandos em Bash
