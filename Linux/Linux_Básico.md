@@ -10,21 +10,23 @@ Linux é um sistema operacional (SO), disponível em distribuições como o Ubun
 
 Na bioinformática, muitas tarefas são realizadas por meio de um terminal (basta digitar "terminal" no macOS ou "cmd" no Windows para abrir), já que diversas ferramentas não possuem interface gráfica. Através do terminal, é possível acessar programas essenciais para o processamento de dados genômicos e automatizar tarefas repetitivas, como a execução de *loops* e *pipelines*. Por esse motivo, o conhecimento de **comandos** do Linux, **expressões regulares (regex)** e **manipuladores de texto** é fundamental para atividades rotineiras, como navegar entre diretórios, organizar arquivos e processar dados.
 
-Para começar a entender o sistema do Linux, precisamos entender que a organização de diretórios é defida de forma hierárquica, na qual, as pastas são delimitadas por um separador ```/```. Se quisermos saber em qual diretório estamos, podemos utilizar o comando ```pdw``` no nosso terminal.
+Para começar a entender o sistema do Linux, precisamos entender que a organização de diretórios é defida de forma hierárquica :card_index_dividers:, na qual, as pastas são delimitadas por um separador ```/```. Se quisermos saber em qual diretório estamos, podemos utilizar o comando ```pdw``` no nosso terminal.
 
-O retorno desse comando será algo como: /GuiaDadosGenomicos_INCT-GB/Linux/Linux_Básico.md. Ou seja, o arquivo <ins>Linux_Básico.md</ins> está dentro do diretóro <ins>Linux</ins>, dentro do diretório <ins>GuiaDadosGenomicos_INCT-GB</ins>. Mas onde está o diretório **GuiaDadosGenomicos_INCT-GB**? Ele pode estar em qualquer lugar do computador, mas geralmente estará no nosso usuário. A pasta de cada usuário pode ser acessada com o comando: ```$ cd ~```.
+O retorno desse comando será algo como: ```/GuiaDadosGenomicos_INCT-GB/Linux/Linux_Básico.md```. Ou seja, o arquivo <ins>Linux_Básico.md</ins> está dentro do diretóro <ins>Linux</ins>, dentro do diretório <ins>GuiaDadosGenomicos_INCT-GB</ins>. Mas onde está o diretório <ins>GuiaDadosGenomicos_INCT-GB</ins>? Ele pode estar em qualquer lugar do computador, mas geralmente estará no diretório padrão do seu usuário. A pasta de cada usuário pode ser acessada com o comando: ```$ cd ~```.
 
-Além dessa organização básica, de cada usuário, o computador possui uma organização própria. Geralmente, essa organização se localiza na _root_ (raiz) do computador. Para acessar esse local podemos utilizar o comando: ```$ cd /```. 
+Além dessa organização de cada usuário, o computador possui uma organização própria localizada na _root_ (raiz) do computador. Para acessar esse local podemos utilizar o comando: ```$ cd /```. 
 
-O ```/``` nesse caso, redireciona para a raiz do computador. Lá são encontrados documentos básicos de funcionamento do servidor e aplicações compartilhadas entre todos os usuários da máquina. Uma dessas pastas é:
+O ```/``` nesse caso, redireciona para a raiz do computador. Lá são encontrados documentos de funcionamento do servidor e aplicações compartilhadas entre todos os usuários da máquina. Uma dessas pastas é:
 
-- ```/bin```: local onde estão instalado os comandos comportilhados por todos os usuários.
+:file_folder: ```/bin```: local onde estão instalado os comandos compartilhados por todos os usuários.
 
-Para navegarmos pelos diretórios sem precisar escrever o caminho completo, utilizamos _caminhos relativos_, como a utilização do ponto ```.```. 
+Para navegarmos pelos diretórios sem precisar escrever o caminho completo, utilizamos **caminhos relativos**, como a utilização do ponto ```.```. O ```.``` pode significar dois estados:
 
-```.``` representa o diretório atual.
+```.``` representa o diretório atual :round_pushpin:
 
-```..``` representa o diretório anterior.
+```..``` representa o diretório anterior :back:
+
+### Seção de prática :elf_woman:
 
 :books: Exercício: Imagine que queremos descobrir em qual diretório do computador estamos. Qual o comando podemos utilizar para realizar essa tarefa?
 
@@ -43,7 +45,7 @@ $ pwd
 
 :books: Exercício: Agora que sabemos que estamos no diretório <ins>Linux</ins>, nosso objetivo é chegar no diretório anterior, <ins>GuiaDadosGenomicos_INCT-GB</ins>. Para isso, precisamos utilizar uma combinação do que já vimos até o momento. Qual é a opção correta? 
 
-* ```cd ../../```
+- ```cd ../../```
 - ```cd ../```
 - ```pwd ../```
 
