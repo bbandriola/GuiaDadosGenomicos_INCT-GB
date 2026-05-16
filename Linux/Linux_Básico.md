@@ -28,9 +28,9 @@ O ```/``` nesse caso, redireciona para a raiz do computador. Lá são encontrado
 
 Para navegarmos pelos diretórios sem precisar escrever o caminho completo, utilizamos **caminhos relativos**, como a utilização do ponto ```.```. O número de ```.``` tem diferentes significados:
 
-```.``` representa o diretório atual :round_pushpin:
+- ```.``` representa o diretório atual :round_pushpin:
 
-```..``` representa o diretório anterior :back:
+- ```..``` representa o diretório anterior :back:
 
 ### :elf_woman: Seção de prática 
 
@@ -167,19 +167,19 @@ Bom, então podemos encerrar por hoje?
 
 No Linux também trabalhamos com **Caracteres curingas (*wildcard*)**:
 
-```?``` : Representa qualquer caractere individual. Ou seja, qualquer letra de a-z ou número de 0-9.
+- ```?``` : Representa qualquer caractere individual. Ou seja, qualquer letra de a-z ou número de 0-9.
 
-```*``` : Representa múltiplos caracteres, incluindo espaço.
+- ```*``` : Representa múltiplos caracteres, incluindo espaço.
 
 ## Redirecionamento e condutores
 
 Os principais são: 
 
-```>``` : Criar ou sobrescrever um arquivo.
+- ```>``` : Criar ou sobrescrever um arquivo.
 
-```>>``` : Adiciona a saída ao final de um arquivo existente.
+- ```>>``` : Adiciona a saída ao final de um arquivo existente.
 
-```|``` ou pipe : Quando queremos utilizar mais de um comando em uma mesma linha. Utilizado para redirecionar uma saída para outra entrada.
+- ```|``` ou pipe : Quando queremos utilizar mais de um comando em uma mesma linha. Utilizado para redirecionar uma saída para outra entrada.
 
 Podemos juntar esses redirecionadores com números para especificar saídas especificas:
 
