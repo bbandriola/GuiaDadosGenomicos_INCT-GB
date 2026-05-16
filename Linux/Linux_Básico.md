@@ -26,11 +26,11 @@ Para navegarmos pelos diretórios sem precisar escrever o caminho completo, util
 ```..``` representa o diretório anterior.
 
 :books: Exercício: Imagine que queremos descobrir em qual pasta do computador estamos. Qual o comando podemos utilizar para realizar essa tarefa?
-<p>
-    <input type="checkbox" id="q1">
-    <label for="q1"><b> ```cd```
-    <label for="q1"><b> ```pwd```
-</p>
+
+<input type="checkbox">
+<label for="q1"><b> ```cd```
+<label for="q1"><b> ```pwd```
+
 <details>
   
   <summary> Clique aqui para ver a resposta</summary>
