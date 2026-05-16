@@ -26,7 +26,7 @@ O ```/``` nesse caso, redireciona para a raiz do computador. Lá são encontrado
 
 :file_folder: ```/bin```: local onde estão instalado os comandos compartilhados por todos os usuários.
 
-Para navegarmos pelos diretórios sem precisar escrever o caminho completo, utilizamos **caminhos relativos**, como a utilização do ponto ```.```. O ```.``` pode significar dois estados:
+Para navegarmos pelos diretórios sem precisar escrever o caminho completo, utilizamos **caminhos relativos**, como a utilização do ponto ```.```. O número de ```.``` tem diferentes significados:
 
 ```.``` representa o diretório atual :round_pushpin:
 
