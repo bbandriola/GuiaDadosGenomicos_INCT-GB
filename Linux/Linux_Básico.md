@@ -183,9 +183,11 @@ Podemos juntar esses redirecionadores com números para especificar saídas espe
 ```> saída.log 2> erro.log``` : Redirecionar a saída padrão para um arquivo e os erros para outro.
 
 Agora que já aprendemos boa parte da syntax, podemos aprofundar nosso conhecimento e entrar na construção de [_scripts_ ou linhas de comando em bash](./Introdução_ao_Bash.md).
- 
-Referências: 
+
 <details>
-  > https://sites.google.com/view/intro-to-unix-2026/ &nbsp; https://www.ibm.com/br-pt/think/topics/linux &nbsp; https://reqchecker.eu/manual/extract_syntax.html
+  <summary>  Referências </summary>
+  > https://sites.google.com/view/intro-to-unix-2026/ 
+  > https://www.ibm.com/br-pt/think/topics/linux 
+  > https://reqchecker.eu/manual/extract_syntax.html
 </details>
 
