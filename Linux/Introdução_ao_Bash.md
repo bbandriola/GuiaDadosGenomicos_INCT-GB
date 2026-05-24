@@ -1,4 +1,7 @@
 # Introdução a scripts e comandos em Bash
+Bash é um interpretador de comandos comum baseado no SO de Unix, como Linux.
+Caso seja necessário, você sempre pode voltar para o manual anterior de [Introdução a Linux](./Linux_Básico.md). 
+
 ## Uso de loops 
 ```for```
 ```while```
@@ -16,3 +19,11 @@ O mesmo comando pode ser escrito em uma única linha:
 ```bash
 for i in *fasta; do echo "===== $f =====" >> combined.txt | cat "$f" >> combinedfastas.fasta; done
 ```
+
+<details>
+  <summary>  Referências </summary> 
+
+  - <a href="https://sites.google.com/view/intro-to-unix-2026/">Intro to Unix</a>
+  - <a href="https">IBM Linux</a>
+
+</details>
