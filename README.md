@@ -8,9 +8,9 @@ Os tópicos abordados são os seguintes:
 3. [Montagem de genomas de novo](./GenomasDeReferência)
 4. Análises de estrutura genômica
 5. [Filogenômica](./Filogenômica)
-  - [Árvore de espécies](./Filogenômica/ÁrvoredeEspécies.md)
+    - [Árvore de espécies](./Filogenômica/ÁrvoredeEspécies.md)
 6. [Genômica populacional](./GenômicaPopulacional)
-  - Demográfia histórica e recente
+    - Demográfia histórica e recente
 7. Transcriptomas
 
 ## Rápido explicação 
