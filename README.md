@@ -29,7 +29,7 @@ Este tutorial está em constante desenvolvimento. E, como tudo na ciência, aqui
 
 Caso deseje contribuir com alguma modificação, basta editar o arquivo e encaminhar a modificação ao repositório principal. 
 
-:dna::computer: Boas análises :computer::dna:
+#:dna::computer: Boas análises :computer::dna:
 
-### Reconhecimento 
+## Reconhecimento 
 Este tutorial foi desenvolvido com base em diversos materiais disponíveis online. Todos eles estarão devidamente referenciados ao final de cada documento.
