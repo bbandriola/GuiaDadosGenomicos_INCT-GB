@@ -14,7 +14,7 @@ Os tópicos abordados são os seguintes:
 7. Transcriptomas
 
 ## Rápido explicação 
-Todo o material (ou quase todo) exige conhecimentos básicos de Linux e Bash. Se este for o seu primeiro contato com a análise de dados provenientes de sequenciamento genômico (sejam eles de sequencias curtas ou longas), um bom ponto de partida é a seção de [Linux](./Linux).Nessa seção, você compreenderá os conceitos básicos de navegação em um terminal e comandos úteis para executar as análises necessárias. Pode ser desafiador começar, mas garantimos que vale a pena :sweat_smile:
+Todo o material (ou quase todo) exige conhecimentos básicos de Linux e Bash. Se este for o seu primeiro contato com a análise de dados provenientes de sequenciamento genômico (sejam eles de sequencias curtas ou longas), um bom ponto de partida é a seção de [Linux](./Linux). Nessa seção, você compreenderá os conceitos básicos de navegação em um terminal e comandos úteis para executar as análises necessárias. Pode ser desafiador começar, mas garantimos que vale a pena :mage:
 
 Além disso, recomenda-se fortemente um conhecimento básico de outras linguagens de programação, como R e Python. Sempre que possível, os tutoriais incluirão links para materiais complementares. Vá além do conteúdo deste repositório. Aventure-se :dragon: 
 
