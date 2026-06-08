@@ -16,7 +16,7 @@ Os tópicos abordados são os seguintes:
 ## Rápido explicação 
 Todo o material (ou quase todo) exige conhecimentos básicos de Linux e Bash. Se este for o seu primeiro contato com a análise de dados provenientes de sequenciamento genômico (sejam eles de sequencias curtas ou longas), um bom ponto de partida é a seção de [Linux](./Linux). Nessa seção, você compreenderá os conceitos básicos de navegação em um terminal e comandos úteis para executar as análises necessárias. Pode ser desafiador começar, mas garantimos que vale a pena :mage:
 
-Além disso, recomenda-se fortemente um conhecimento básico de outras linguagens de programação, como R e Python. Sempre que possível, os tutoriais incluirão links para materiais complementares. Vá além do conteúdo deste repositório. Aventure-se :dragon: 
+Além disso, recomenda-se fortemente conhecimento básico de outras linguagens de programação, como R e Python. Sempre que possível, os tutoriais incluirão links para materiais complementares. Vá além do conteúdo deste repositório. Aventure-se :dragon: 
 
 Os demais tópicos são relacionados à análise de genomas. A relevância de cada tópico dependerá dos objetivos do seu projeto. Este repositório não tem como intuito ser seguido de forma linear. Sinta-se à vontade para explorar os materiais de acordo com as suas necessidades. 
 
