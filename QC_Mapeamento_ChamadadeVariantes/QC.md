@@ -1,14 +1,14 @@
-## Controle de qualidade do sequenciamento
+# Controle de qualidade do sequenciamento
 
-O primeiro passo após o recebimento dos dados do sequenciamento é analisar a qualidade das sequências geradas. 
+O primeiro passo após o recebimento dos dados de sequenciamento é avaliar a qualidade das sequências geradas.
 
 ## Avaliação de dados de sequenciamento Illumina 
-Para avaliar a qualidade das sequências provenientes do sequenciamento Illumina, você pode utilizar o programa [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/). 
+Para avaliar a qualidade das sequências obtidas por sequenciamento Illumina, você pode utilizar o programa [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/). O FastQC processa dados de sequências em formato BAM, SAM ou FastQ. Neste tutorial, nosso objetivo é avaliar arquivos de Fastq para identificar qualquer problema antes de realizarmos o mapeamento das amostras.
 
-A primeira coisa a se fazer é abrir o nosso terminal. Com o terminal aberto, queremos executar o programa. O FastQC é um aplicação em java, ou seja, requer um ambiente de java para ser executado. Há diversas formas se configurar esse sistema. Aqui, utilizaremos o [Conda](https://docs.conda.io/en/latest/), um gerenciador de pacotes que funciona através de ativação de ambientes especifícos de acordo com as configurações iniciais. 
-  - Caso você ainda não tenha o Conda instalado em seu sistema, converse com os mantenedores dos servidores para a implementação. 
+A primeira etapa é abrir o terminal. Com o terminal aberto, podemos executar o programa. O FastQC é uma aplicação desenvolvida em Java e, portanto, requer um ambiente Java configurado para sua execução. Há diversas formas de configurar esse ambiente. Neste tutorial, utilizaremos o [Conda](https://docs.conda.io/en/latest/), um gerenciador de pacotes que permite instalar e gerenciar programas por meio da criação e ativação de ambientes específicos, configurados de acordo com as necessidades de cada análise.
+  - Caso você ainda não tenha o **conda** instalado em seu sistema, converse com os mantenedores dos servidores para solicitar a implementação. 
 
-Vamos criar um ambiente Conda com o Java instalado para poder executar o FastQC: 
+Vamos criar um ambiente **conda** com o Java instalado para poder executar o FastQC: 
 ```linux
 conda create -n java conda-forge::openjdk
 ```
@@ -26,7 +26,7 @@ conda create -n java conda-forge::openjdk
   - ```::openjdk``` : especifica o programa e versão a ser baixado. Nesse caso, a versão é a mais nova.
 </details>
 
-Ao executar a linha de comando, o Conda irá listar os pacotes e dependências que serão instaladas e pedirá uma confirmação para prosseguir com a instalação. Apenas digite ```y``` e precione enter. 
+Ao executar essa linha de comando, o **conda** irá listar os pacotes e as dependências que serão instalados e solicitará uma confirmação para prosseguir com a instalação. Basta digitar ```y``` e precionar **Enter**. 
 
 Após a instalação, precisamos ativar o ambiente. Para isso utilizaremos o comando: 
 
@@ -44,7 +44,7 @@ conda activate java
 
 </details>
 
-Após a criação e ajuste do ambiente, podemos baixar o FastQC e executa-lo. Para isso precisamos visitar o website de distribuição do programa: [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/). No site, clique **Download Now**. Você será redirecionado para uma nova aba onde deve localizar o arquivo **FastQC v0.12.1 (Win/Linux zip file)**. Clique com o botão direito do mouse em cima desse arquivo e copie o caminho do arquivo. Você deve copiar algo como: ```https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.12.1.zip```. Uma vez que copiamos esse arquivo, vamos fazer o download para dentro do nosso servidor utilizando o comando ```wget```, descompactar o programa e ele estará pronto para ser utilizado. 
+Após a criação e configuração do ambiente, podemos baixar o FastQC e executá-lo. Para isso, precisamos acessar o site de distribuição do programa: [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/). No site, clique em **Download Now**. Você será redirecionado para uma nova página, onde deverá localizar o arquivo **FastQC v0.12.1 (Win/Linux zip file)**. Clique com o botão direito do mouse sobre o arquivo e copie o endereço do link. Você deve copiar algo como: ```https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.12.1.zip```. Com o endereço copiado, fazeremos o download do programa para o servidor utilizando o comando ```wget```. Em seguida, descompactaremos o programa e ele estará pronto para uso. 
 
 ```linux
 # download do pacote
@@ -79,12 +79,14 @@ Uma vez no diretório, execute o comando do FastQC que gerará um arquivo HTML p
 
 </details>
 
-O resultado do comando é a produção de dois arquivos para cada arquivo de entrada que retoma o prefixo dos arquivos ```.fastq```.
-* arquivo ```seq1.html``` relatório contendo estatísticas básicas identificadas pelo programa, qualidade das bases e das sequências, distribuição e tamanho do conteúdo das sequências, informações de duplicatas e adaptadores.
-  * [Exemplo de um sequenciamento excelente](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/good_sequence_short_fastqc.html)
-  * [Exemplo de um sequenciamento com problema](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/bad_sequence_fastqc.html)
-* arquivo compactado ```seq1_fastqc.zip``` com os mesmos gráficos do HTML, mas disposto de forma independente e em formato de png e svg, além de arquivos de texto com o dado utilizado para plotar os gráficos. 
+A execução do comando gera dois arquivos para cada arquivo de entrada, utilizando como base o prefixo do arquivo ```.fastq```.
+* Arquivo ```seq1.html``` é um relatório contendo estatísticas básicas identificadas pelo programa, incluindo qualidade das bases e das sequências, distribuição e tamanho do conteúdo das sequências, informações sobre duplicatas e a presença de adaptadores.
+  * [Exemplo de um sequenciamento excelente qualidade](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/good_sequence_short_fastqc.html)
+  * [Exemplo de um sequenciamento com problemas de qualidade](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/bad_sequence_fastqc.html)
+* Arquivo compactado ```seq1_fastqc.zip``` contém as mesmas informações do relatório em HTML dispostas de forma independente, em formato de png e svg, além de arquivos de texto contendo os dados utilizados para plotar os gráficos. 
 
-Após essa checagem você pode decidir questões importantes sobre os próximos passos do mapeamento, como o tamanho das suas sequências (caso, haja alguma contaminação ou a necessidade de utilizar tamanhos menores do que os estabelecidos previamente), excesso de duplicatas ou super representação de algumas sequências. Feito esse passo, podemos seguir para o [Mapeamento](./Mapeamento). 
+Após essa etapa de checagem, você poderá tomar decisões importantes sobre os próximos passos do mapeamento, como a necessidade de realizar filtragem ou remoção de contaminantes, ajustar o tamanho das sequências utilizadas nas análises, filtros para reduzir o excesso de duplicatas ou avaliar a super-representação de determinadas sequências.
+
+Concluída essa etapa, podemos seguir para o [Mapeamento](./Mapeamento) 
 
 
