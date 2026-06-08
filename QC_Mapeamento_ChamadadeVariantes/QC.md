@@ -13,11 +13,16 @@ conda create -n java conda-forge::openjdk
 ```
 <details>  
   <summary> Explicação comando</summary>
-* ```conda``` : chama o prograna.
-* ```create``` : comando para criar novos ambientes.
-* ```-n``` : define o nome do ambiente.
-* ```conda-forge``` : canal de disponibilidade do pacote do Java.
-* ```::openjdk``` : especifica o programa e versão a ser baixado. Nesse caso, a versão é a mais nova.
+  
+  - ```conda``` : chama o prograna.
+  
+  - ```create``` : comando para criar novos ambientes.
+  
+  - ```-n``` : define o nome do ambiente.
+  
+  - ```conda-forge``` : canal de disponibilidade do pacote do Java.
+  
+  - ```::openjdk``` : especifica o programa e versão a ser baixado. Nesse caso, a versão é a mais nova.
 
 </details>
 
