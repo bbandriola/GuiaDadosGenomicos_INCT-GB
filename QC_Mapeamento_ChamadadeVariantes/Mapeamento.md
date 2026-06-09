@@ -1,33 +1,99 @@
-# Mapeamento e Chamada de Variantes
+# Mapeamento de genomas
 
-"Nesse tutorial falaremos sobre o procedimento de mapeamento e chamada de variantes. Daremos algumas opções de acordo com cada dado que você disponibiliza. Começaremos explorando tecnologias de sequenciamento e algoritmos de mapeamento, asssim como os programas utilizados para realizar tais procedimentos. 
-Seguindo o processamento, partindo de um arquivo fastq, obtendo um arquivo bam, se necessário, você pode passar para a chamada de variantes."
+Quando falamos em mapeamento genômico, estamos nos referindo aos procedimentos que permitem organizar as sequências brutas obtidas do sequenciamento em relação a uma sequência guia, um genoma de referência. O genoma de referência pode ter sido montado pelo seu próprio grupo de pesquisa, utilizando técnicas discutidas em [outros tutoriais desse repositório](../GenomasDeReferência), ou pode ter sido gerado por outros grupos e disponibilizado em bancos de dados públicos, como o [NCBI](https://www.ncbi.nlm.nih.gov/datasets/genome/).
 
-## Introdução Mapeamento
+De modo geral, dados provenientes de diferentes tecnologias de sequenciamento podem ser utilizados para o mapeamento. Entretanto, essa abordagem é mais frequentemente aplicada quando sequenciamos sequências curtas. Para a obtenção de um bom resultado, dois fatores são importantes: a qualidade do genoma de referência escolhido (proximidade filogenética e qualidade da montagem) e a cobertura das sequências brutas geradas (5×, 10×, 20×...). Esses fatores influenciam diretamente a qualidade do mapeamento, sua contiguidade, a confiabilidade das bases identificadas e, consequentemente, influenciará as análises posteriores. 
 
-Atualmente, há diversas tecnologias de sequenciamento que possuem diferentes objetivos: 
-- Sequenciamento sequencias ultra-longas (ultra-long reads): blabla
-- Sequenciamento sequencias longas (long reads): blabla
-- Sequenciamento sequencias curtas (short reads): blabla
+Os processos que envolvem o mapeamento são: 
+1. Checagem de qualidade das [sequências brutas](./QC.md)
+2. Filtragem pré-mapeamento
+   - Remoção dos adaptadores
+   - Filtragem de sequências de baixa qualidade
+3. Mapeamento das sequências contra o genoma de referência
+4. Marcação das sequências de duplicata
+5. Geração da sequência consenso
 
-### Algoritmos de sequenciamento
+## Mapeamento de sequências Illumina 
 
-Os algoritmos são: 
--blabla: blabla
+Vamos supor que possuímos dois arquivos de sequenciamento pareado: um arquivo *foward* (leituras da fita na direção 5' -> 3') e um arquivo *reverse* (leituras da fita na direção 3' -> 5'), chamadas de ```seq1_1.fastq.gz``` e ```seq1_2.fastq.gz```, respectivamente. A primeira etapa é a remoção de sequências de adaptadores e filtragem de sequências indesejadas, como aquelas de baixa qualidade. Essas sequência trazem ruído na análise e compromete a eficiência do mapeamento. Para fazer isso, utilizaremos o programa [fastp](https://github.com/OpenGene/fastp).  
 
+Utilizaremos o comando: 
 
-#### Task chunk
+```linux
+fastp -i seq1_1.fastq.gz -I seq1_2.fastq.gz -o seq1_1_trimmed.fq.gz -O seq1_2_trimmed.fq.gz --qualified_quality_phred 15 --unqualified_percent_limit 40 --length_required 0  -h seq1_fastp.html -w 4
+```
+No comando acima os adaptadores serão automaticamente reconhecidos e removidos. Em relação aos demais parâmetros de filtragem, os citados acima são os valores padrões da análise, ou seja, **devem** ser revisados e escolhidos de acordo com os seus dados. Por exemplo, no filtro ```--qualified_quality_phred``` um valor de 15 é um valor razoavelmente baixo. Valores acima de 30 darão mais confiabilidade a base. Em relação ao filtro de ```--length_required``` é possível definir um tamanho minímo para a sua sequência. Além disso, o github do [fastq](https://github.com/OpenGene/fastp) apresenta outras opções de filtragem. Explore!!! 
 
-### Another task chunk
+<details>  
+  <summary> Explicação comando</summary>
+  
+  - ```-i``` : sequência *foward*.
+  - ```-I``` : sequência *reverse*.
+  - ```-o``` : resultado do arquivo filtrado da sequência *foward*.
+  - ```-O``` : resultado do arquivo filtrado da sequência *reverse*.
+  - ```-h```: relatório da qualidade dos dados em formato HTML.
+  - ```-w```: número de núcleos a serem utilizados na análise.
+</details>
 
-### Mapeamento
+O [fastp](https://github.com/OpenGene/fastp) é apenas uma das opções para realizar a etapa de pré-mapeamento, também é possível utilizar outras ferramentas, como [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic), [adapterremoval](https://github.com/MikkelSchubert/adapterremoval) e [Trim Galore!](https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/). 
 
-De acordo com cada tipo de mapeamento escolha o software que você gostaria de seguir:
-- PacBio + Hi-C + Illumina:
-- Hi-C + Illumina:
-- Illumina:
+Uma questão importante aqui é que, se você estiver utilizando sequências provenientes de outras tecnologias de sequenciamente (exemplo: Oxford Nanopore), outros programas devem ser utilizadas devido a arquitetura dos arquivos brutos provenientes dessas tecnologias. O pré-processamento dessas amostras não serão abordadas nesse tutorial, mas podem ser realizadas por outras ferramentas como [fastplong](https://github.com/OpenGene/fastplong). 
 
-Software: https://academic.oup.com/bioinformaticsadvances/article/6/1/vbaf326/8416060?guestAccessKey=
+Seguimos... :otter:
+
+Após a execução do comando acima, partimos para o mapeamento das sequências brutas contra nosso genoma de referência. Nessa etapa é importante que tenhamos o genoma de referência baixado em algum diretório do servidor e os arquivos resultantes do comando anterior. 
+
+Caso você não tenha baixado o genoma de referência de interesse, faça isso :mag_right:
+
+<details>  
+  <summary> Como baixar um genoma de referência do NCBI</summary>
+
+  A primeira etapa é encontrar o genoma de referência de interesse. Para isso, explore o banco do [NCBI](https://www.ncbi.nlm.nih.gov/datasets/genome/). Depois dessa escolha, precisamos localizar o endereço FTP onde os arquivos estão armazenados. Como exemplo, utilizaremos o genoma de referência da espécie [*Lepidochelys kempii*](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_965140285.1/). Para acessar o caminho do FTP, clique na opção **FTP**, localizada acima das informações gerais da montagem. Ao clicar nessa opção, você será redirecionado para uma página contendo todos os arquivos associados ao genoma de referência de [*Lepidochelys kempii*](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/965/140/285/GCF_965140285.1_rLepKem1.hap1/). Para fazer o download desse genoma, abra o terminal, navegue até o diretório onde os arquivos serão armazenar e execute o comando abaixo.
+  :warning: Certifique-se que há espaço suficiente na partição que deseja fazer o download desse arquivo. Você pode checar isso com ```df -h```. 
+  Comando para dowload do genoma de referência do NCBI:
+  ```linux
+wget --recursive --no-host-directories https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_965140285.1/ -P ./
+```
+- ```wget```: comando que recupera arquivos disponíveis na web. Suporta HTTP, HTTPS e FTP.
+- ```--recursive```: indica ao wget para fazer o download do diretório completo.
+- ```--no-host-directories```: impede que o wget crie uma pasta com o nome do domínio ou do nome do host do site ao baixar arquivos.
+- ```-P```: indica o diretório de saída. 
+Também há a possibilidade de fazer o download de apenas um arquivo. Na linha de comando apenas o arquivo ```GCF_965140285.1_rLepKem1.hap1_genomic.fna.gz``` irá ser baixado:
+ ```linux
+wget --recursive --no-host-directories https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_965140285.1/GCF_965140285.1_rLepKem1.hap1_genomic.fna.gz -P ./
+```
+</details>
+
+Uma vez que temos o genoma de referência de interesse, precisamos realizar a indexação desse arquivo. A indexação permite que o arquivo compilado ```.gz``` seja lido e processado sem a necessidade descompactar. Nesse caso, utilizaremos do comando *baw index*, *samtools faidx* e *samtools dict*. 
+```linux
+# index ref fasta
+```
+
+Para mapear as sequências já filtradas ao genoma de referência, utilizaremos o programa [**BWA**](https://github.com/lh3/BWA). O BWA é um programa muito popular para o mapeamento de genomas, mas há diversos outros, como o [minimap2](https://github.com/lh3/minimap2). Nesse caso, utilizaremos o algoritmo *bwa-mem*, um algoritmo de alinhamento local, eficiente e acurado para mapear dados provenientes de sequenciamento Illumina com tamanhos de sequência que variam de 70bp a maiores.
+:warning: Atenção: essa é uma etapa computacionalmente custosa. É normal ela levar um tempo considerável para ser finalizada. O importante é garantir memória suficiente para o processo ser finalizado sem nenhum problema. 
+
+O comando do **bwa mem** é extremamente simples: 
+```linux
+bwa mem GCF_965140285.1_rLepKem1.hap1_genomic.fna.gz seq1_1_trimmed.fq.gz seq1_2_trimmed.fq.gz > seq1_refLkempii.bam
+```
+Com as sequências brutas mapeadas, obtivemos nosso segundo tipo de arquivo: o arquivo BAM. O arquivo BAM é a versão binário de um SAM e contêm todas as informações do mapeamento: local em que cada sequência mapeaou, a profundidade de cada região do genoma de referência e contiguidade. A próxima etapa é marcar as sequências de duplicas. As sequências de duplicatas são resultados de cópias idênticas de fragmentos do DNA, podem ter origem biológica ou serem artefatos do sequênciamento (artefatos de PCR). É importante marcarmos essas regiões para posterior filtragem. A marcação das sequências de duplicata pode ser feita com o programa [**sambamba markup***](https://lomereiter.github.io/sambamba/docs/sambamba-markdup.html). 
+```linux
+sambamba markdup seq1_refLkempii.bam dupmark_seq1_refLkempii.bam
+```
+
+Por fim, para avaliar o resultado do nosso mapeamento, utilizaremos o programa *samtools* com o módulo [*flagstat*](https://www.htslib.org/doc/samtools-flagstat.html): 
+```linux
+samtools flagstat dupmark_seq1_refLkempii.bam
+```
+O resultado do comando acima é um relatório 
+
+## Pipelines de mapeamento 
+
+Os comandos apresentados anteriormente fornecem uma visão geral de como os dados devem ser processados para obter conjuntos de dados confiáveis para as análises subsequentes.. Entretanto, os avanços nas tecnologias de sequenciamento permitiram a geração de grandes volumes de dados a custos cada vez mais acessíveis, tornando comum o sequenciamento de centenas indivíduos em um mesmo projeto. Logo,  torna-se necessário adaptar e automatizar as etapas de processamento desses dados. Para otimizar o desempenho dessa fase do processamento dos dados genômicos, diversos *pipelines* foram desenvolvidos com o objetivo de integrar todas as etapas descritas anteriormente em um único fluxo de trabalho, permitindo a execução de todos esses passos por meio de uma única linha de comando (acompanhada de diversos arquivos de configuração para a definição das parâmetros do processamento :sweat_smile:). 
+
+Aqui iremos aprofundar em dois principais *pipelines*: 
+- **SNPArcher** [Repositório](./SNPArcher) [Artigo](https://academic.oup.com/mbe/article/41/1/msad270/7466717?login=true)
+- **Paleomix** [Repositório](./Paleomix) [Artigo]()
 
 
 Após terminar os tutoriais acima, se você pretende fazer uma Chamada de variantes, acesse o [tutorial](https://github.com/bbandriola/GuiaDadosGenomico_INCT-GB/blob/472b9dd920d725e7a5c8f18b5e606e321dc7b01a/An%C3%A1lises_Pr%C3%A9-filtros/ChamadadeVariantes.md). Caso queria prosseguir para outras análises, volte a [página inicial do repositório](https://github.com/bbandriola/GuiaDadosGenomico_INCT-GB.git).
