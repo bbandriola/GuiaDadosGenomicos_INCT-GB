@@ -4,8 +4,8 @@ Este tutorial tem como objetivo desenvolver habilidades básicas na compreensão
 Os tópicos abordados são os seguintes: 
 
 1. [Introdução a linguagem Linux](./Linux)
-2. [Controle de qualidade, Mapeamento e Chamada de Variantes](./QC_Mapeamento_ChamadadeVariantes)
-3. [Montagem de genomas de novo](./GenomasDeReferência)
+2. [Montagem de genomas de novo](./GenomasDeReferência)
+3. [Controle de qualidade, Mapeamento e Chamada de Variantes](./QC_Mapeamento_ChamadadeVariantes)
 4. Análises de estrutura genômica
 5. [Filogenômica](./Filogenômica)
     - [Árvore de espécies](./Filogenômica/ÁrvoredeEspécies.md)
