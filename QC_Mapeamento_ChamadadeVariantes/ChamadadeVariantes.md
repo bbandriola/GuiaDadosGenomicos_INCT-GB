@@ -5,8 +5,15 @@ O processo de chamada de variantes possui como intuito reduzir a matrix do dados
 - Qualidade da base
 - Número de alelos #BCFtools filter command with the ‘-i’ flag to include variants which had more than 90% of the maximum AN value (2∗ number of samples)
 
-### 1. Gerar um VCF incluindo apenas sítios variantes 
+São diversas as ferramentas para realizar a etapa de chamada de variantes. As mais comumente utilizadas são: 
+- [GATK](https://gatk.broadinstitute.org/hc/en-us/categories/360002302312)
+- [BCFtools](https://samtools.github.io/bcftools/bcftools.html)
+- [VCFtools](https://vcftools.github.io/man_latest.html)
 
+Além disso, outras ferramentas como [DeepVariant](https://github.com/google/deepvariant), programa baseado em redes neurais, e [strobealign](https://github.com/ksahlin/strobealign) são descritas como mais eficientes do que as citadas acima, mas não serão abordadas nesse tutorial. Para mais informações sobre esses programas, acesse seus manuais linkados aqui. 
+
+### 1. Gerar um VCF incluindo apenas sítios variantes 
+Em construção :technologist:
 
 ### 2. Calcular as estatísticas básicas para posterior filtragem 
 Com o VCF gerado, vamos calcular as estatísticas básicas para compreendermos sobre a qualidade das variantes que foram chamadas. Vamos começar calculando a Qualidade Phread da base (QUAL), o Número de Alelos por sítio (AN) e a Profundidade Absoluta da sítio (DP).
