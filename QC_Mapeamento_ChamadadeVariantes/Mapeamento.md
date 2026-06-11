@@ -15,18 +15,18 @@ Os processos que envolvem o mapeamento são:
 
 ## Mapeamento de sequências Illumina 
 
-Vamos supor que possuímos dois arquivos de sequenciamento pareado: um arquivo *foward* (leituras da fita na direção 5' -> 3') e um arquivo *reverse* (leituras da fita na direção 3' -> 5'), chamadas de ```seq1_1.fastq.gz``` e ```seq1_2.fastq.gz```, respectivamente. A primeira etapa é a remoção de sequências de adaptadores e filtragem de sequências indesejadas, como aquelas de baixa qualidade. Essas sequência trazem ruído na análise e compromete a eficiência do mapeamento. Para fazer isso, utilizaremos o programa [fastp](https://github.com/OpenGene/fastp).  
+Vamos supor que possuímos dois arquivos de sequenciamento Illumina pareados codificados no formato 1.9+: um arquivo *foward* (leituras da fita na direção 5' -> 3') e um arquivo *reverse* (leituras da fita na direção 3' -> 5'), chamadas de ```seq1_1.fastq.gz``` e ```seq1_2.fastq.gz```, respectivamente. A primeira etapa é a remoção de sequências de adaptadores e filtragem de sequências indesejadas, como aquelas de baixa qualidade. Essas sequência trazem ruído na análise e compromete a eficiência do mapeamento. Para fazer isso, utilizaremos o programa [fastp](https://github.com/OpenGene/fastp).  
 
-Utilizaremos o comando: 
+Um comando geral do [fastp](https://github.com/OpenGene/fastp) é o seguinte: 
 
 ```linux
 fastp -i seq1_1.fastq.gz -I seq1_2.fastq.gz -o seq1_1_trimmed.fq.gz -O seq1_2_trimmed.fq.gz --qualified_quality_phred 15 --unqualified_percent_limit 40 --length_required 0  -h seq1_fastp.html -w 4
 ```
-No comando acima os adaptadores serão automaticamente reconhecidos e removidos. Em relação aos demais parâmetros de filtragem, os citados acima são os valores padrões da análise, ou seja, **devem** ser revisados e escolhidos de acordo com os seus dados. Por exemplo, no filtro ```--qualified_quality_phred``` um valor de 15 é um valor razoavelmente baixo. Valores acima de 30 darão mais confiabilidade a base. Em relação ao filtro de ```--length_required``` é possível definir um tamanho minímo para a sua sequência. Além disso, o github do [fastq](https://github.com/OpenGene/fastp) apresenta outras opções de filtragem. Explore!!! 
 
 <details>  
   <summary> Explicação comando</summary>
-  
+
+  -```fastp```: chamar o comando.
   - ```-i``` : sequência *foward*.
   - ```-I``` : sequência *reverse*.
   - ```-o``` : resultado do arquivo filtrado da sequência *foward*.
@@ -35,18 +35,27 @@ No comando acima os adaptadores serão automaticamente reconhecidos e removidos.
   - ```-w```: número de núcleos a serem utilizados na análise.
 </details>
 
-O [fastp](https://github.com/OpenGene/fastp) é apenas uma das opções para realizar a etapa de pré-mapeamento, também é possível utilizar outras ferramentas, como [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic), [adapterremoval](https://github.com/MikkelSchubert/adapterremoval) e [Trim Galore!](https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/). 
+No comando acima os adaptadores serão automaticamente reconhecidos e removidos. Caso você tenha alguma sequência de adaptores especifícas, você pode utilizar o parâmetro ```--adapter_sequence``` para as sequências do arquivo de leitura *foward* e o ```--adapter_sequence_r2``` para as sequências do arquivo da leitura *reverse*. Em relação aos demais parâmetros de filtragem, os citados acima são os valores padrões da análise, ou seja, **devem** ser revisados e escolhidos de acordo com os seus dados. Por exemplo, no filtro ```--qualified_quality_phred``` um valor de 15 é um valor razoavelmente baixo. Neste caso, valores acima de 30 darão mais confiabilidade a base. Em relação ao filtro de ```--length_required``` é possível definir um tamanho minímo para suas sequências. Além disso, o github do [fastq](https://github.com/OpenGene/fastp) apresenta outras opções de filtragem. Explore!!! 
 
-Uma questão importante aqui é que, se você estiver utilizando sequências provenientes de outras tecnologias de sequenciamente (exemplo: Oxford Nanopore), outros programas devem ser utilizadas devido a arquitetura dos arquivos brutos provenientes dessas tecnologias. O pré-processamento dessas amostras não serão abordadas nesse tutorial, mas podem ser realizadas por outras ferramentas como [fastplong](https://github.com/OpenGene/fastplong). 
+O comando executado produzirá dois arquivos de saída importantes: ```seq1_1_trimmed.fq.gz``` e ```seq1_2_trimmed.fq.gz```. Ambos serão utilizados na próxima etapa do processamento. Você pode checar o número de sequências mantidas em cada um dos arquivos com o comando: 
+
+```linux
+zcat seq1_1_trimmed.fq.gz | wc -l
+zcat seq1_2_trimmed.fq.gz | wc -l
+```
+
+O [fastp](https://github.com/OpenGene/fastp) é apenas uma das opções para realizar a etapa de filtragem pré-mapeamento. Existem outras ferramentas disponíveis, como [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic), [adapterremoval](https://github.com/MikkelSchubert/adapterremoval) e [Trim Galore!](https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/). 
+
+Uma questão importante é se atentar ao tipo de tecnologia utilizada para o sequenciamento. Se você estiver utilizando sequências provenientes de outras tecnologias de sequenciamente (exemplo: Oxford Nanopore) outros programas devem ser utilizadas devido a arquitetura dos arquivos brutos provenientes dessas tecnologias. O pré-processamento dessas amostras não serão abordadas nesse tutorial, mas podem ser realizadas por outras ferramentas como [fastplong](https://github.com/OpenGene/fastplong). 
 
 Seguimos... :otter:
 
-Após a execução do comando acima, partimos para o mapeamento das sequências brutas contra nosso genoma de referência. Nessa etapa é importante que tenhamos o genoma de referência baixado em algum diretório do servidor e os arquivos resultantes do comando anterior. 
+Após a execução do comando do ```fastp```, partimos para o mapeamento das sequências brutas contra nosso genoma de referência. Nessa etapa é importante que tenhamos o genoma de referência baixado em algum diretório do servidor e os arquivos resultantes do comando anterior. 
 
 Caso você não tenha baixado o genoma de referência de interesse, faça isso :mag_right:
 
 <details>  
-  <summary> Como baixar um genoma de referência do NCBI</summary>
+  <summary> :pushpin: Como baixar um genoma de referência do NCBI </summary>
 
   A primeira etapa é encontrar o genoma de referência de interesse. Para isso, explore o banco do [NCBI](https://www.ncbi.nlm.nih.gov/datasets/genome/). Depois dessa escolha, precisamos localizar o endereço FTP onde os arquivos estão armazenados. Como exemplo, utilizaremos o genoma de referência da espécie [*Lepidochelys kempii*](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_965140285.1/). Para acessar o caminho do FTP, clique na opção **FTP**, localizada acima das informações gerais da montagem. Ao clicar nessa opção, você será redirecionado para uma página contendo todos os arquivos associados ao genoma de referência de [*Lepidochelys kempii*](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/965/140/285/GCF_965140285.1_rLepKem1.hap1/). Para fazer o download desse genoma, abra o terminal, navegue até o diretório onde os arquivos serão armazenar e execute o comando abaixo.
   :warning: Certifique-se que há espaço suficiente na partição que deseja fazer o download desse arquivo. Você pode checar isso com ```df -h```. 
@@ -62,20 +71,35 @@ Também há a possibilidade de fazer o download de apenas um arquivo. Na linha d
  ```linux
 wget --recursive --no-host-directories https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_965140285.1/GCF_965140285.1_rLepKem1.hap1_genomic.fna.gz -P ./
 ```
+
+Por fim, vamos descompactar o genoma de referência: 
+```linux
+gunzip GCF_965140285.1_rLepKem1.hap1_genomic.fna.gz
+```
 </details>
 
-Uma vez que temos o genoma de referência de interesse, precisamos realizar a indexação desse arquivo. A indexação permite que o arquivo compilado ```.gz``` seja lido e processado sem a necessidade descompactar. Nesse caso, utilizaremos do comando *baw index*, *samtools faidx* e *samtools dict*. 
+Uma vez que temos o genoma de referência de interesse, precisamos realizar a indexação desse arquivo. A indexação permite a ordenação do genoma de referência em porções, indicando a ordem das sequências ao longo do arquivo. Nesse caso, utilizaremos do comando *baw index*. 
 ```linux
-# index ref fasta
+bwa index reference_genomic.fna
 ```
 
-Para mapear as sequências já filtradas ao genoma de referência, utilizaremos o programa [**BWA**](https://github.com/lh3/BWA). O BWA é um programa muito popular para o mapeamento de genomas, mas há diversos outros, como o [minimap2](https://github.com/lh3/minimap2) e [strobealign](https://github.com/ksahlin/strobealign) (ambos descritos como mais eficientes que o BWA). Nesse caso, utilizaremos o algoritmo *bwa-mem*, um algoritmo de alinhamento local, eficiente e acurado para mapear dados provenientes de sequenciamento Illumina com tamanhos de sequência que variam de 70bp a maiores.
+Após a indexação, passamos para o mapeamento. 
+
+Para mapear as sequências já filtradas ao genoma de referência, utilizaremos o programa [**BWA**](https://github.com/lh3/BWA), mas há diversos outros, como o [minimap2](https://github.com/lh3/minimap2) e [strobealign](https://github.com/ksahlin/strobealign) (ambos descritos como mais eficientes que o BWA).
+
+Vamos utilizar o [**BWA**](https://github.com/lh3/BWA) por ser um programa muito popular para o mapeamento de sequências Illumina. Nesse caso, utilizaremos o comando *bwa-mem*, ele ultiliza de um algoritmo de alinhamento local, eficiente e acurado para mapear dados provenientes de sequenciamento Illumina com tamanhos de sequência que variam de 70bp a maiores.
 :warning: Atenção: essa é uma etapa computacionalmente custosa. É normal ela levar um tempo considerável para ser finalizada. O importante é garantir memória suficiente para o processo ser finalizado sem nenhum problema. 
 
 O comando do **bwa mem** é extremamente simples: 
 ```linux
-bwa mem GCF_965140285.1_rLepKem1.hap1_genomic.fna.gz seq1_1_trimmed.fq.gz seq1_2_trimmed.fq.gz > seq1_refLkempii.bam
+bwa mem reference_genomic.fna seq1_1_trimmed.fq.gz seq1_2_trimmed.fq.gz > seq1_ref.bam
 ```
+
+Caso você queria utilizar o [minimap2](https://github.com/lh3/minimap2), a linha de comando pode ser a seguinte:
+```linux
+minimap2 -ax sr reference_genomic.fna seq1_1_trimmed.fq.gz seq1_2_trimmed.fq.gz > seq1_ref.bam
+```
+
 Com as sequências brutas mapeadas, obtivemos nosso segundo tipo de arquivo: o arquivo BAM. O arquivo BAM é a versão binário de um SAM e contêm todas as informações do mapeamento: local em que cada sequência mapeaou, a profundidade de cada região do genoma de referência e contiguidade. A próxima etapa é marcar as sequências de duplicas. As sequências de duplicatas são resultados de cópias idênticas de fragmentos do DNA, podem ter origem biológica ou serem artefatos do sequênciamento (artefatos de PCR). É importante marcarmos essas regiões para posterior filtragem. A marcação das sequências de duplicata pode ser feita com o programa [**sambamba markup***](https://lomereiter.github.io/sambamba/docs/sambamba-markdup.html). 
 ```linux
 sambamba markdup seq1_refLkempii.bam dupmark_seq1_refLkempii.bam
