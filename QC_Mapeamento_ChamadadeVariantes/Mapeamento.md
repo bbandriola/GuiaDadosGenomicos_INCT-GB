@@ -87,12 +87,12 @@ Após a indexação, passamos para o mapeamento.
 
 Para mapear as sequências já filtradas ao genoma de referência, utilizaremos o programa [**BWA**](https://github.com/lh3/BWA), mas há diversos outros, como o [minimap2](https://github.com/lh3/minimap2) e [strobealign](https://github.com/ksahlin/strobealign) (ambos descritos como mais eficientes que o BWA).
 
-Vamos utilizar o [**BWA**](https://github.com/lh3/BWA) por ser um programa muito popular para o mapeamento de sequências Illumina. Nesse caso, utilizaremos o comando *bwa-mem*, ele ultiliza de um algoritmo de alinhamento local, eficiente e acurado para mapear dados provenientes de sequenciamento Illumina com tamanhos de sequência que variam de 70bp a maiores.
+Vamos utilizar o [**BWA**](https://github.com/lh3/BWA) por ser um programa muito popular para o mapeamento de sequências Illumina. Nesse caso, utilizaremos o comando *bwa-mem*, ele ultiliza de um algoritmo de alinhamento local, eficiente e acurado para mapear dados provenientes de sequenciamento Illumina com tamanhos de sequência que variam de 70bp a maiores. Além disso, vamos usar o programa *SAMtools* para gerar o arquivo final em formato BAM, uma versão binária do arquivo SAM. 
 :warning: Atenção: essa é uma etapa computacionalmente custosa. É normal ela levar um tempo considerável para ser finalizada. O importante é garantir memória suficiente para o processo ser finalizado sem nenhum problema. 
 
 O comando do **bwa mem** é extremamente simples: 
 ```linux
-bwa mem reference_genomic.fna seq1_1_trimmed.fq.gz seq1_2_trimmed.fq.gz > seq1_ref.bam
+bwa mem reference_genomic.fna seq1_1_trimmed.fq.gz seq1_2_trimmed.fq.gz | samtools sort -o seq1_ref.sam -
 ```
 
 Caso você queria utilizar o [minimap2](https://github.com/lh3/minimap2), a linha de comando pode ser a seguinte:
