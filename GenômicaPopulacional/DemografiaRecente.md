@@ -185,8 +185,9 @@ INGROUP	OUTGROUP1	OUTGROUP2
 ```
 Esse é o arquivo de entrada do est-sfs. Contudo, ainda é necessário fazer um último ajuste antes de estar pronto para ser utilizado no est-sfs. Como pode-se perceber, no arquivo há três colunas: 
 
-INGROUP - a frequência das bases A,C,G,T para cada alelos para cada indivíduo. Lembre-se que são alelos, ou seja, para cada um indivíduo teremos a contagem de dois sítios.
-OUGROUP1 e OUTGROUP2 - a frequência dos alelos para cada grupo externo.
+**INGROUP** - a frequência das bases A,C,G,T para cada alelos para cada indivíduo. Lembre-se que são alelos, ou seja, para cada um indivíduo teremos a contagem de dois sítios.
+
+**OUGROUP1 e OUTGROUP2** - a frequência dos alelos para cada grupo externo.
 
 Apesar da contagem de alelos estar correta quando as espécies são diploides, o est-sfs não aceita que os grupos externos possuam mais de um alelo. Portanto, iremos executar o comando abaixo para retirar o cabeçalho e modificar as colunas dos grupos externos para conterem apenas uma alelo:
 ```linux
