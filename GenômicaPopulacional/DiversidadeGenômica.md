@@ -1,1 +1,1 @@
-## Métricas de avaliar diversidade ao longo do genoma
+## Métricas de avaliação de diversidade ao longo do genoma
