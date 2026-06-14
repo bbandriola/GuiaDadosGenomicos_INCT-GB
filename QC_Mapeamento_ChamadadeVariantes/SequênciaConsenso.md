@@ -65,7 +65,7 @@ Para gerar a sequência consenso, precisamos do arquivo BAM (resultante do mapea
    
    3. Geração do arquivo consenso de cada amostra a partir de um VCF contendo <ins>apenas</ins> sítios variantes:
       ```linux
-      while read amostra; do echo "Processando $amostra"; bcftools consensus -f referência.fasta -M N -I -s "$amostra" input.vcf.gz > "${amostra}.consenso.fa"; done < amostras.txt
+      while read amostra; do echo "Processando $amostra"; bcftools consensus -f referência.fasta -M N -I -s "$amostra" sítiosvariantes_amostras.vcf.gz > "${amostra}.consenso.fa"; done < amostras.txt
       ```
 
 </details>
