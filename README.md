@@ -8,9 +8,7 @@ Os tópicos abordados são os seguintes:
 3. [Controle de qualidade, Mapeamento e Chamada de Variantes](./QC_Mapeamento_ChamadadeVariantes)
 4. Análises de estrutura genômica
 5. [Filogenômica](./Filogenômica)
-    - [Árvore de espécies](./Filogenômica/ÁrvoredeEspécies.md)
 6. [Genômica populacional](./GenômicaPopulacional)
-    - Demográfia histórica e recente
 7. Transcriptomas
 
 ## Rápida explicação 
@@ -32,4 +30,4 @@ Caso deseje contribuir com alguma modificação, basta editar o arquivo e encami
 :dna::computer: **Boas análises** :computer::dna:
 
 ## Reconhecimento 
-Este tutorial foi desenvolvido com base em diversos materiais disponíveis online. Todos eles estarão devidamente referenciados ao final de cada documento.
+Este tutorial foi desenvolvido com base em diversos materiais disponíveis online. Todos eles estarão devidamente referenciados ao longo ou no final de cada documento.
