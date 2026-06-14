@@ -24,7 +24,7 @@ fastp -i seq1_1.fastq.gz -I seq1_2.fastq.gz -o seq1_1_trimmed.fq.gz -O seq1_2_tr
 ```
 
 <details>  
-  <summary> Explicação comando</summary>
+  <summary> :writing_hand: Explicação do comando</summary>
 
   -```fastp```: chamar o comando.
   - ```-i``` : sequência *foward*.
@@ -92,34 +92,46 @@ Vamos utilizar o [**BWA**](https://github.com/lh3/BWA) por ser um programa muito
 
 O comando do **bwa mem** é extremamente simples: 
 ```linux
-bwa mem reference_genomic.fna seq1_1_trimmed.fq.gz seq1_2_trimmed.fq.gz | samtools sort -o seq1_ref.sam -
+bwa mem reference_genomic.fna seq1_1_trimmed.fq.gz seq1_2_trimmed.fq.gz | samtools sort -O bam -o seq1_ref.bam
 ```
 
 Caso você queria utilizar o [minimap2](https://github.com/lh3/minimap2), a linha de comando pode ser a seguinte:
 ```linux
-minimap2 -ax sr reference_genomic.fna seq1_1_trimmed.fq.gz seq1_2_trimmed.fq.gz > seq1_ref.bam
+minimap2 -ax sr reference_genomic.fna seq1_1_trimmed.fq.gz seq1_2_trimmed.fq.gz | samtools sort -O bam -o seq1_ref.bam
 ```
 
-Com as sequências brutas mapeadas, obtivemos nosso segundo tipo de arquivo: o arquivo BAM. O arquivo BAM é a versão binário de um SAM e contêm todas as informações do mapeamento: local em que cada sequência mapeaou, a profundidade de cada região do genoma de referência e contiguidade. A próxima etapa é marcar as sequências de duplicas. As sequências de duplicatas são resultados de cópias idênticas de fragmentos do DNA, podem ter origem biológica ou serem artefatos do sequênciamento (artefatos de PCR). É importante marcarmos essas regiões para posterior filtragem. A marcação das sequências de duplicata pode ser feita com o programa [**sambamba markup***](https://lomereiter.github.io/sambamba/docs/sambamba-markdup.html). 
-```linux
-sambamba markdup seq1_refLkempii.bam dupmark_seq1_refLkempii.bam
-```
+<details>
+   <summary> :writing_hand: Explicação do comando </summary>
+   
+   - ```-ax```: parâmetro para especificar sequências curtas provenientes de sequenciamento Illumina.
 
-Por fim, para avaliar o resultado do nosso mapeamento, utilizaremos o programa *samtools* com o módulo [*flagstat*](https://www.htslib.org/doc/samtools-flagstat.html): 
+</details>
+
+Com as sequências brutas mapeadas, obtivemos nosso segundo tipo de arquivo: o arquivo BAM. O arquivo BAM é a versão binário de um SAM e contêm todas as informações do mapeamento: local em que cada sequência mapeaou, a profundidade de cada região do genoma de referência e contiguidade. Em ambos casos, o resultado do **BWA** e do **minimap2** produzem um arquivo SAM, mas para economizar espaço e desempenho do processamento dos dados, utilizamos o **samtools** para gerar o arquivo final sem precisar escrever o SAM, pulando direto para um arquivo BAM. 
+
+A próxima etapa do processamento dos dados é marcar as sequências de duplicas. As sequências de duplicatas são resultados de cópias idênticas de fragmentos do DNA, podem ter origem biológica ou serem artefatos do sequênciamento (artefatos de PCR). É importante marcarmos essas regiões para posterior filtragem. A marcação das sequências de duplicata pode ser feita com o programa [**sambamba markup***](https://lomereiter.github.io/sambamba/docs/sambamba-markdup.html). 
 ```linux
-samtools flagstat dupmark_seq1_refLkempii.bam
+sambamba markdup seq1_ref.bam dupmark_seq1_ref.bam
 ```
-O resultado do comando acima é um relatório 
+Se você quiser não apenas marcar as duplicatas de PCR, mas também exclui-las, adicione o parâmetro ```-r``` na linha acima. 
+
+Por fim, para avaliar o resultado do nosso mapeamento, utilizaremos o programa **samtools** com o módulo [*flagstat*](https://www.htslib.org/doc/samtools-flagstat.html): 
+```linux
+samtools flagstat dupmark_seq1_ref.bam
+```
+O resultado do comando acima é um relatório de qualidade do mapeamento. Para uma explicação completa do resultado visite o site do [*flagstat*](https://www.htslib.org/doc/samtools-flagstat.html). 
+
+Após a finalização dessa etapa, é possível utilizar o arquivo BAM para gerar um [SFS](), estimar [regiões de homozigose](), [heterozigosidade ao longo do genoma](), entre outras análises. Além disso, o arquivo BAM é o primeiro passo para gerarmos um [consenso das sequências da amostra](./SequênciaConsenso.md) e realizarmos a [chamada de variantes](https://github.com/bbandriola/GuiaDadosGenomico_INCT-GB/blob/472b9dd920d725e7a5c8f18b5e606e321dc7b01a/An%C3%A1lises_Pr%C3%A9-filtros/ChamadadeVariantes.md). A partir daqui, siga o tutorial que melhor convém a você. 
+
+Caso queria olhar as demais opções, retorne a [página inicial do repositório](https://github.com/bbandriola/GuiaDadosGenomico_INCT-GB.git) .
 
 ## Pipelines de mapeamento 
 
-Os comandos apresentados anteriormente fornecem uma visão geral de como os dados devem ser processados para obter conjuntos de dados confiáveis para as análises subsequentes.. Entretanto, os avanços nas tecnologias de sequenciamento permitiram a geração de grandes volumes de dados a custos cada vez mais acessíveis, tornando comum o sequenciamento de centenas indivíduos em um mesmo projeto. Logo,  torna-se necessário adaptar e automatizar as etapas de processamento desses dados. Para otimizar o desempenho dessa fase do processamento dos dados genômicos, diversos *pipelines* foram desenvolvidos com o objetivo de integrar todas as etapas descritas anteriormente em um único fluxo de trabalho, permitindo a execução de todos esses passos por meio de uma única linha de comando (acompanhada de diversos arquivos de configuração para a definição das parâmetros do processamento :sweat_smile:). 
+Os comandos apresentados anteriormente fornecem uma visão geral de como os dados devem ser processados para obter conjuntos de dados confiáveis para as análises subsequentes. Entretanto, os avanços nas tecnologias de sequenciamento permitiram a geração de grandes volumes de dados a custos cada vez mais acessíveis, tornando comum o sequenciamento de centenas indivíduos para um mesmo projeto. Logo, torna-se necessário adaptar e automatizar as etapas de processamento desses dados. Para otimizar o desempenho e o tempo no processamento inicial dos dados genômicos, diversos *pipelines* foram desenvolvidos com o objetivo de integrar todas as etapas descritas anteriormente em um único fluxo de trabalho, permitindo a execução de todos esses passos por meio de uma única linha de comando (acompanhada de diversos arquivos de configuração para a definição das parâmetros do processamento :sweat_smile:). 
 
 Aqui iremos aprofundar em dois principais *pipelines*: 
-- **SNPArcher** [Repositório](./SNPArcher) [Artigo](https://academic.oup.com/mbe/article/41/1/msad270/7466717?login=true)
-- **Paleomix** [Repositório](./Paleomix) [Artigo]()
+- **SNPArcher** [Repositório](./SNPArcher) [Artigo](https://doi.org/10.1093/molbev/msad270)
+- **Paleomix** [Repositório](./Paleomix) [Artigo](https://doi.org/10.1038/nprot.2014.063)
 
-
-Após terminar os tutoriais acima, se você pretende fazer uma Chamada de variantes, acesse o [tutorial](https://github.com/bbandriola/GuiaDadosGenomico_INCT-GB/blob/472b9dd920d725e7a5c8f18b5e606e321dc7b01a/An%C3%A1lises_Pr%C3%A9-filtros/ChamadadeVariantes.md). Caso queria prosseguir para outras análises, volte a [página inicial do repositório](https://github.com/bbandriola/GuiaDadosGenomico_INCT-GB.git).
 
 
