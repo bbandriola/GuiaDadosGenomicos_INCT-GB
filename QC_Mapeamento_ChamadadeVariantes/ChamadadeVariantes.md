@@ -1,18 +1,21 @@
 ## Chamada de Variantes
 
-O processo de chamada de variantes possui como intuito reduzir a matrix do dados para aqueles sítios que possuem alguma variação, seja ela estrutural (ex: Indels, Inversões) ou variações nucleotídicas (do inglês, Single Nucleotide Polymorphism - SNPs). Inicialmente, faremos uma chamada de variantes incluindo todos os sítios variantes, sem nenhum filtro. Após disso, para gerar uma matrix de variantes confiável, aplicamos filtros básicos: 
+O processo de chamada de variantes possui como intuito reduzir a matrix do dados para aqueles sítios que possuem alguma variação, seja ela estrutural (ex: Indels, Inversões) ou variações nucleotídicas (do inglês, Single Nucleotide Polymorphism - SNPs). Inicialmente, faremos uma chamada de variantes incluindo todos os sítios variantes, sem nenhum filtro. Em seguida, para gerar uma matrix de variantes confiável, aplicamos filtros básicos: 
 - Profundidade
 - Qualidade da base
-- Número de alelos #BCFtools filter command with the ‘-i’ flag to include variants which had more than 90% of the maximum AN value (2∗ number of samples)
+- Número de alelos
 
 São diversas as ferramentas para realizar a etapa de chamada de variantes. As mais comumente utilizadas são: 
 - [GATK](https://gatk.broadinstitute.org/hc/en-us/categories/360002302312)
 - [BCFtools](https://samtools.github.io/bcftools/bcftools.html)
 - [VCFtools](https://vcftools.github.io/man_latest.html)
+- [ANGSD](https://www.popgen.dk/angsd/index.php/ANGSD)
+- [DeepVariant](https://github.com/google/deepvariant)
+- [strobealign](https://github.com/ksahlin/strobealign)
 
-Além disso, outras ferramentas como [DeepVariant](https://github.com/google/deepvariant), programa baseado em redes neurais, e [strobealign](https://github.com/ksahlin/strobealign) são descritas como mais eficientes do que as citadas acima, mas não serão abordadas nesse tutorial. Para mais informações sobre esses programas, acesse seus manuais linkados aqui. 
+Cada um dos programas citados acima possuem suas vantagens, desvantagens e tipo de dados necessários para execução correta. Abaixo serão exemplificados alguns dos comandos utilizados pata a geração de um arquivo de variantes. Para mais informações, acesse o manual do programa desejado. 
 
-### 1. Gerar um VCF incluindo apenas sítios variantes 
+### Geração de um VCF incluindo apenas sítios variantes 
 Em construção :technologist:
 
 Utilizando o programa [BCFtools]():
@@ -47,7 +50,7 @@ Utilizando o programa [deepVariants]():
 # em breve
 ```
 
-### 2. Calcular as estatísticas básicas para posterior filtragem 
+### Estatísticas básicas para posterior filtragem 
 Com o VCF gerado, vamos calcular as estatísticas básicas para compreendermos sobre a qualidade das variantes que foram chamadas. Vamos começar calculando a Qualidade Phread da base (QUAL), o Número de Alelos por sítio (AN) e a Profundidade Absoluta da sítio (DP).
 ```Linux
 # Calcular Profundidade, Qualidade das bases, Número de alelos
@@ -97,9 +100,37 @@ O resultado deve ser:
 | 1.926 | 15.887 | 16.981 | 17.280 | 17.982 | 3333.070 | 1 |
 
 Após analisar esses valores, podemos escolher a filtragem por profundidade de acordo com: 
-- Filtro de profundidade miníma: 1/3 da profundidade média por indivíduos. [^1]
+- Filtro de profundidade miníma: 1/3 da profundidade média por indivíduo. [^1]
 - Filtro de profundidade máxima: 2x ou 3x a profundidade média por indivíduo [^1].
+
+## Filtragem de um VCF 
+
+A filtragem de um arquivo VCF pode ser realizada em diversas etapas e composta por diferentes combinações de filtros. Abaixo serão exemplificados algumas opções recorrentes nesse processo: 
+
+### Quantidade máxima de indivíduos faltantes por sítio
+```linux
+bcftools view -i 'F_MISSING <= 0.2' -m2 -M2 -v snps -Oz -o arquivo_de_saída.vcf.gz arquivo_de_entrada.vcf.gz
+```
+
+### Frequência alélica miníma
+```linux
+bcftools view -q 0.05:minor -Oz -o arquivo_de_saída.vcf.gz arquivo_de_entrada.vcf.gz
+```
+
+### Exclusão de regiões 
+```linux
+vcftools --gzvcf arquivo_de_entrada.vcf.gz --not-chr mtCHR --recode | gzip > arquivo_de_saída.vcf.gz
+```
+- ```--not-chr```: especificar o nome da região a ser excluída do VCF. 
+
+### Obtenção de sítios independentes 
+```linux
+# em breve
+```
+
+Muitos desses comandos podem ser utilizados em conjunto para gerar um VCF final filtrado. Explore as possibilidades e se enfrentar qualquer problema, compartilhe na [aba de discussões](https://github.com/bbandriola/GuiaDadosGenomicos_INCT-GB/discussions) deste repositório. 
+
+Com o VCF devidamente filtrato e pronto para ser utilizado, retorne a [página inicial do repositório](../) para explorar as análises que podem ser realizada com o seu arquivo :dragon:
 
 [^1]: Whole genome sequences of 297 Duolang sheep for litter size. DOI: 10.1038/s41597-025-05448-0
 [^2]: Reference genome choice compromises population genetic analyses. DOI: 10.1016/j.cell.2025.08.034 
-
