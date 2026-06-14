@@ -38,7 +38,7 @@ Para gerar a sequência consenso, precisamos do arquivo BAM (resultante do mapea
 <details>
    <summary> :mag_right: com BCFtools </summary>
 
-  Para gerar uma sequência consenso com o BCFtools, é necessário já obter um arquivo de variants (em VCF). Nesse tutorial, será abordada a geração do arquivo de variantes seguido da geração do arquivo FASTA. Caso queira mais explicações sobre o arquivo VCF, visite o tutorial de [chamada de variantes](./ChamadadeVariantes.md).
+  Para gerar uma sequência consenso com o BCFtools, é necessário já obter um arquivo de variantes (em VCF). Nesse tutorial, será abordada a geração do arquivo de variantes seguido da geração do arquivo FASTA. Caso queira mais explicações sobre o arquivo VCF, visite o tutorial de [chamada de variantes](./ChamadadeVariantes.md).
  
    1. Realize a chamada de variantes para obtenção do arquivo VCF excluindo Indels:
       ```linux
