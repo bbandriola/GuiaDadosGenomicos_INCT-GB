@@ -72,7 +72,7 @@ Para gerar a sequência consenso, precisamos do arquivo BAM (resultante do mapea
 
 Para mais detalhes de possíveis parâmetros para cada um dos programas e etapas, visite os manuais. 
 
-Manuais: 
+### Manuais: 
 
 :books: [**ANGSD**](https://www.popgen.dk/angsd/index.php/ANGSD)
 
