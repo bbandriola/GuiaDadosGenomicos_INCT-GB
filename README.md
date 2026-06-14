@@ -18,6 +18,12 @@ Além disso, recomenda-se fortemente conhecimento básico de outras linguagens d
 
 Os demais tópicos são relacionados à análise de genomas. A relevância de cada tópico dependerá dos objetivos do seu projeto. Este repositório não tem como intuito ser seguido de forma linear. Sinta-se à vontade para explorar os materiais de acordo com as suas necessidades. 
 
+## Programas 
+
+Os programas utilizados em análises genômicas possuem diversas versões. Algumas funções estão disponíveis em todas as versões e outras não. Se atente a isso quando iniciar suas análises. Alguns comandos podem não funcionar por esse motivo. Nesse ponto entramos em uma questão muito importante, o gerenciamento do uso de programas ao longo das análises. 
+
+Cada servidor/super computador utilizará o gerenciador de pacote mais adequado ou estabelecido previamento pelo grupo de administradores da máquina. Portanto, converse com o administrador do servidor que você utilizará para saber como você deverá realizar o download de programas para conseguir executá-los da forma correta. Em alguns tutoriais, você verá a menção ao gerenciador de pacote [Conda](https://anaconda.org/). O Conda é um ótimo gerenciador de programas, de fácil implementação e uso. 
+
 ## Dicas 
 * Os tutoriais apresentam sugestões de linhas de comando, mas links para a documentação oficial de cada programa estarão sempre disponíveis. É encorajado consultar os manuais das ferramentas de interesse e explorar os demais parâmetros disponíveis, muitos deles podem ser úteis no seu caso.
 * Todos os comandos são acompanhados de explicações das suas funções :triangular_flag_on_post: Busque sempre compreender o que você está fazendo. Isso facilita na identifiação e resolução de problemas ao executar um comando (o que é bem comum :woman_shrugging:).
