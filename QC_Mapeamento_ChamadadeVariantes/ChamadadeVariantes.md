@@ -130,7 +130,7 @@ vcftools --gzvcf arquivo_de_entrada.vcf.gz --not-chr mtCHR --recode | gzip > arq
 
 Muitos desses comandos podem ser utilizados em conjunto para gerar um VCF final filtrado. Explore as possibilidades e se enfrentar qualquer problema, compartilhe na [aba de discussões](https://github.com/bbandriola/GuiaDadosGenomicos_INCT-GB/discussions) deste repositório. 
 
-Com o VCF devidamente filtrato e pronto para ser utilizado, retorne a [página inicial do repositório](../) para explorar as análises que podem ser realizada com o seu arquivo :dragon:
+Com o VCF devidamente filtrato e pronto para ser utilizado, retorne a [página inicial do repositório](https://github.com/bbandriola/GuiaDadosGenomicos_INCT-GB/tree/main) para explorar as análises que podem ser realizada com o seu arquivo :dragon:
 
 [^1]: Whole genome sequences of 297 Duolang sheep for litter size. DOI: 10.1038/s41597-025-05448-0
 [^2]: Reference genome choice compromises population genetic analyses. DOI: 10.1016/j.cell.2025.08.034 
