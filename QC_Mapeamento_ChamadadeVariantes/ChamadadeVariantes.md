@@ -15,6 +15,21 @@ Além disso, outras ferramentas como [DeepVariant](https://github.com/google/dee
 ### 1. Gerar um VCF incluindo apenas sítios variantes 
 Em construção :technologist:
 
+Utilizando o programa [BCFtools]():
+```linux
+bcftools mpileup -b bamlist -C50 -f ref.fasta -d 100 -Q30 -q30 --threads 7 -a FORMAT/AD,FORMAT/DP,INFO/AD -I | bcftools call -o output.vcf.gz -Oz -f GQ,GP -V indels -m --threads 7
+```
+
+Utilizando o programa [GATK](): 
+```linux
+# em breve
+```
+
+Utilizando o programa [deepVariants]():
+```linux
+# em breve
+```
+
 ### 2. Calcular as estatísticas básicas para posterior filtragem 
 Com o VCF gerado, vamos calcular as estatísticas básicas para compreendermos sobre a qualidade das variantes que foram chamadas. Vamos começar calculando a Qualidade Phread da base (QUAL), o Número de Alelos por sítio (AN) e a Profundidade Absoluta da sítio (DP).
 ```Linux
