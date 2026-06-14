@@ -123,7 +123,7 @@ O resultado do comando acima é um relatório de qualidade do mapeamento. Para u
 
 Após a finalização dessa etapa, é possível utilizar o arquivo BAM para gerar um [SFS](), estimar [regiões de homozigose](), [heterozigosidade ao longo do genoma](), entre outras análises. Além disso, o arquivo BAM é o primeiro passo para gerarmos um [consenso das sequências da amostra](./SequênciaConsenso.md) e realizarmos a [chamada de variantes](https://github.com/bbandriola/GuiaDadosGenomico_INCT-GB/blob/472b9dd920d725e7a5c8f18b5e606e321dc7b01a/An%C3%A1lises_Pr%C3%A9-filtros/ChamadadeVariantes.md). A partir daqui, siga o tutorial que melhor convém a você. 
 
-Caso queria olhar as demais opções, retorne a [página inicial do repositório](https://github.com/bbandriola/GuiaDadosGenomico_INCT-GB.git) .
+Caso queria olhar as demais opções, retorne a [página inicial do repositório](https://github.com/bbandriola/GuiaDadosGenomico_INCT-GB.git).
 
 ## Pipelines de mapeamento 
 
