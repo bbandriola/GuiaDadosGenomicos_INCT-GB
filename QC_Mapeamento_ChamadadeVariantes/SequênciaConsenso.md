@@ -73,6 +73,9 @@ Para gerar a sequência consenso, precisamos do arquivo BAM (resultante do mapea
 Para mais detalhes de possíveis parâmetros para cada um dos programas e etapas, visite os manuais. 
 
 Manuais: 
+
 :books: [**ANGSD**](https://www.popgen.dk/angsd/index.php/ANGSD)
+
 :books: [**BCFtools**](https://samtools.github.io/bcftools/bcftools.html)
 
+Com os arquivos FASTAS de cada amostra, você pode retornar [página inicial do repositório](https://github.com/bbandriola/GuiaDadosGenomico_INCT-GB.git).
