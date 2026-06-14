@@ -17,8 +17,25 @@ Em construção :technologist:
 
 Utilizando o programa [BCFtools]():
 ```linux
-bcftools mpileup -b bamlist -C50 -f ref.fasta -d 100 -Q30 -q30 --threads 7 -a FORMAT/AD,FORMAT/DP,INFO/AD -I | bcftools call -o output.vcf.gz -Oz -f GQ,GP -V indels -m --threads 7
+bcftools mpileup -b bamlist -C50 -f referência.fasta -d 100 -Q30 -q30 --threads 7 -a FORMAT/AD,FORMAT/DP,INFO/AD -I | bcftools call -o sítiosvariantes_amostras.vcf.gz -Oz -f GQ,GP -V indels -m --threads 7
 ```
+<details>
+   <summary> :writing_hand: Explicação do comando </summary>
+   
+- ```-b```: arquivo com o caminho de todos os arquivos BAM a serem incluídos na geração do VCF.
+- ```-C```: coeficiente para a redução da qualidade do mapeamento em sequência com um número excessivo de discrepâncias.
+- ```-f```: arquivo FASTA da referência.
+- ```-d```: máximo de sequências a serem consideradas por posição.
+- ```-Q```: qualidade miníma da base para ser chamada.
+- ```-q```: qualidade miníma do mapeamento para a base ser chamada.
+- ```-a```: lista de tags para serem adicionadas nas columas FORMAT e INFO.
+- ```-I```: não incluir Indels.
+- ```-o```: arquivo de saída.
+- ```-Oz```: formato do arquivo de saída.
+- ```-f```: campos da coluna FORMAT que serão incluídos em cada amostra. 
+- ```-V```: não incluir Indels (caso algum tenha passado no mpileup).
+
+</details>
 
 Utilizando o programa [GATK](): 
 ```linux
