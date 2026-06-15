@@ -1,3 +1,5 @@
+### EM CONSTRUÇÃO... :technologist: 
+
 # Identificação de contaminações
 
 O procedimento de checagem de contaminação nem sempre é necessário. Uma suspeita de contaminação pode ser identificada no processo de [checagem da qualidade das sequências](./QC.md). Contudo, as vezes só vamos perceber as contaminações quando executarmos uma PCA, por exemplo. 
