@@ -1,3 +1,5 @@
+### EM CONSTRUÇÃO... :technologist: 
+
 # Submissão de dados brutos para o NCBI
 
 Uma das formas de armazenar e disponibilizar os dados gerados em projetos de sequenciamento genômico é depositando os arquivos brutos em uma repositório online. Um dos repositórios mundialmente utilizados é o SRA - Sequence Read Archive, do NCBI. O SRA dispõe de um espaço digital para o deposito de sequências biológicas, por exemplo sequências de DNA, sequências de proteínas, arquivos de metagenômica e dados de sequênciamento de DNA ambiental.
