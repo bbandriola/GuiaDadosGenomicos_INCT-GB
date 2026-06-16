@@ -1,7 +1,7 @@
 ### ESTAMOS EM CONSTRUÇÃO... :technologist: 
 
 # Genoma de Referência
-Um genoma de referência é uma montagem genômica que atende a padrões específicos de qualidade, permitindo seu uso como base para o mapeamento de sequências, anotação genômica e análises comparativas. Para ser incorporado a bancos de dados e servir como recurso confiável. Esse genoma dee atender a critérios mínimos de qualidade e completude tendo como principal objetivo disponibilizar uma representação acurada do genoma de uma espécie, fornecendo o nível de refinamento necessário para análises que dependem de uma referência de alta qualidade.
+Um genoma de referência é uma montagem genômica que atende a padrões específicos de qualidade, permitindo seu uso como base para o mapeamento de sequências, anotação genômica e análises comparativas. Para ser incorporado a bancos de dados e servir como recurso confiável. Esse genoma deve atender a critérios mínimos de qualidade e completude tendo como principal objetivo disponibilizar uma representação acurada do genoma de uma espécie, fornecendo o nível de refinamento necessário para análises que dependem de uma referência de alta qualidade.
 
 Por essa razão, diversos consórcios internacionais de genômica, dedicados à produção de genomas de referência, estabeleceram padrões de qualidade que garantem a utilidade dessas montagens a longo prazo. Esses padrões buscam assegurar que o genoma represente fielmente a sequência de DNA e a estrutura cromossômica da espécie-alvo, minimizando a presença de lacunas e erros de montagem.
 
@@ -11,18 +11,18 @@ Um genoma de referência pode ser construído a partir de diferentes tipos de da
 - Sequências longas com um alto grau de cobertura.
 - Tecnologias de ligação das sequências, como Hi-C 
 
-Os parâmetros de padronização da qualidade de geração dos genomas de referência citados abaixo foram retirados da documentação do [EGP](https://static1.squarespace.com/static/5a5e6c9518b27d27bddaf20f/t/69a8a3cda0a3f86095cb01df/1772659661389/EBP-SequencingAssemblyStandard-V7.pdf).
+Os parâmetros de padronização da qualidade de geração dos genomas de referência citados abaixo foram retirados da documentação do [EBP](https://static1.squarespace.com/static/5a5e6c9518b27d27bddaf20f/t/69a8a3cda0a3f86095cb01df/1772659661389/EBP-SequencingAssemblyStandard-V7.pdf).
 
 Padrões de montagem :technologist:
 
-| Parâmetros | Eucariotos com boa disponibilidade de DNA +  maior complitude | Eucariotos com boa disponibilidade de DNA +  menor complitude | Eucariotos com pouca disponibilidade de DNA | 
+| Parâmetros | Eucariotos com boa disponibilidade de DNA +  maior completude | Eucariotos com boa disponibilidade de DNA +  menor completude | Eucariotos com pouca disponibilidade de DNA | 
 | :--- | :---: | :---: | :---: |
 | Quantidade de DNA | >100 ng DNA por Gigabase | >100 ng DNA por Gigabase | <100 ng DNA por Gigabase | 
-| Tipo de sequenciamento | Sequências longas + RNA-seq + Hi-C | Sequências longas + RNA-seq + Hi-C | Sequências longas + RNA-seq + Hi-C | 
+| Tipo de sequenciamento | Sequências longas + RNA-seq + Hi-C | Sequências longas + RNA-seq + Hi-C | Sequências longas + RNA-seq | 
 | Padrão de qualidade | min. 7.C.Q50 | min. 6.7.Q40 | min. 4.5.Q30 |
 | Contigs NG50 | >10 Mpb | >1 Mpb | >10 kpb | 
 | Scaffold NG50 | = NG50 do cromossomo | >10 Mpb | >100 kbp | 
-| Gaps | <200 | <1,000 | <10.000 |
+| Gaps | <200 | <1.000 | <10.000 |
 | Qualidade da base | >50 | >40 | >30 |0 pb | 
 | Falsas duplicatas | <1% | <5% | <10% | 
 | Curadoria | Automatizada + Manual | Automatizada | Não necessária | 
@@ -32,7 +32,7 @@ Padrões de montagem :technologist:
 | Transcritos mapeáveis | >90% | >80% | >70% |  
 | Designação cromossômica (Hi-C) | >90% | >80% | Não necessário |
 | Cromossomo sexual | Pares homologos localizados | Pelo menos um (e.g. X, Z, Y, ou W) | Fragmentado |
-| Organelas | Um alelo completo | Fragmentada | Não necessário
+| Organelas | Um alelo completo | Fragmentada | Não necessário |
 
 * Mbp: milhão de pares de bases.
 * Por que utilizar o NG50 e não o N50? N50 é a métrica que reflete o tamanho total da montagem do genoma, enquanto o NG50 é o tamanho esperado do genoma (estimado a partir de um genoma próximo ou citometria de fluxo, por exemplo).
@@ -59,7 +59,7 @@ Ao submeter seu genoma de referência, um código de *Sample name* é solicitado
 
 Para vertebrados, se recomenda a utilização de apenas uma das letras da taxonômia superior. 
 
-Exemplo: Aves Scytalopus speluncae 1 -> aScySpel.1
+Exemplo: Bird Scytalopus speluncae 1 -> bScySpel.1
 
 ## Referências
 Lawniczak et al., 2022. Standards recommendations for the Earth BioGenome Project. [DOI:10.1073/pnas.2115639118](
