@@ -1,35 +1,41 @@
 ### ESTAMOS EM CONSTRUÇÃO... :technologist: 
 
 # Genoma de Referência
-Um genoma de referência é um genoma que atinger determinados padrões para ser utilizado como uma referência para mapear, base para anotação genômica e análises de comparação. O genoma de refere3ncia de uma espécie precisa atender a certos critêrios para ser incluído em bases de dados como genoma de referência, além de ser útil para trabalhos que desejam utiliza-lo. O objetivo na geração de um genoma de referência é que esse seja empregado em diversos trabalhos de genômica, podendo garantir refinamento suficiente em análises que exigem a existência de um genoma de referência para atingir seus objetivos. 
+Um genoma de referência é uma montagem genômica que atende a padrões específicos de qualidade, permitindo seu uso como base para o mapeamento de sequências, anotação genômica e análises comparativas. Para ser incorporado a bancos de dados e servir como recurso confiável. Esse genoma dee atender a critérios mínimos de qualidade e completude tendo como principal objetivo disponibilizar uma representação acurada do genoma de uma espécie, fornecendo o nível de refinamento necessário para análises que dependem de uma referência de alta qualidade.
 
-Por isso, diversos consórcios genômicos, que possuem como objetivo a geração de genomas de referência, padronizaram a qualidade para a geração de um genoma de referência que esteja alinhado com o uso desses a longo prazo, que representre de forma fiel as sequências de DNA e estrutura cromossômica da espécie alvo, minimazando ao máximo as lacunas dentro de cada cromossômo. 
+Por essa razão, diversos consórcios internacionais de genômica, dedicados à produção de genomas de referência, estabeleceram padrões de qualidade que garantem a utilidade dessas montagens a longo prazo. Esses padrões buscam assegurar que o genoma represente fielmente a sequência de DNA e a estrutura cromossômica da espécie-alvo, minimizando a presença de lacunas e erros de montagem.
 
-Um genoma de referência pode ser construído a partir de diferentes conjuntos de dados. Abaixo são citados algumas características gerais de um genoma de referência: 
+Um genoma de referência pode ser construído a partir de diferentes tipos de dados de sequenciamento. A seguir, são apresentadas algumas características gerais esperadas de um genoma de referência:
 
 - Minimização dos gaps entre sequências ao longo dos cromossômos. 
 - Sequências longas com um alto grau de cobertura.
 - Tecnologias de ligação das sequências, como Hi-C 
 
-Os parâmetros de padronização da qualidade de geração dos genomas de referência citados abaixo foram retirados do documento gerado pelo [EGP](https://static1.squarespace.com/static/5a5e6c9518b27d27bddaf20f/t/69a8a3cda0a3f86095cb01df/1772659661389/EBP-SequencingAssemblyStandard-V7.pdf).
+Os parâmetros de padronização da qualidade de geração dos genomas de referência citados abaixo foram retirados da documentação do [EGP](https://static1.squarespace.com/static/5a5e6c9518b27d27bddaf20f/t/69a8a3cda0a3f86095cb01df/1772659661389/EBP-SequencingAssemblyStandard-V7.pdf).
 
 Padrões de montagem :technologist:
 
-| Parâmetros | Eucariotos com boa disponibilidade de DNA | Eucariotos com pouca disponibilidade de DNA | 
-| --- | --- | --- |
-| Quantidade de DNA | >100 ng DNA por Gigabase | <100 ng DNA por Gigabase | 
-| Tipo de sequenciamento | Sequências longas + RNA-seq + Hi-C | Sequências longas + RNA-seq + Hi-C | 
-| Padrão de qualidade | 6.C.Q40 | 4.5.Q30 |
-| Contiguidade do genoma (NG50) | > 1 Mpb | >100kb | 
-| Contiguidade dos cromossomos (NG50) | > 1 Mpb scaffolding |  | 
-| Taxa de erro | 1/10.000 pb | 1/10.000 pb | 
-| Falsas duplicatas | < 5% | < 5% | 
-| Completude de Kmers | > 90% | > 90% | 
-| Designação cromossômica (Hi-C) | > 90% | > 90% | 
-| Presença de genes conservados de cópia única (*) | > 90% | > 90% | 
-| Transcritos mapeáveis | > 90% | > 90% |  
+| Parâmetros | Eucariotos com boa disponibilidade de DNA +  maior complitude | Eucariotos com boa disponibilidade de DNA +  menor complitude | Eucariotos com pouca disponibilidade de DNA | 
+| :--- | :---: | :---: | :---: |
+| Quantidade de DNA | >100 ng DNA por Gigabase | >100 ng DNA por Gigabase | <100 ng DNA por Gigabase | 
+| Tipo de sequenciamento | Sequências longas + RNA-seq + Hi-C | Sequências longas + RNA-seq + Hi-C | Sequências longas + RNA-seq + Hi-C | 
+| Padrão de qualidade | min. 7.C.Q50 | min. 6.7.Q40 | min. 4.5.Q30 |
+| Contigs NG50 | >10 Mpb | >1 Mpb | >10 kpb | 
+| Scaffold NG50 | =NG50 do cromossomo | >10 Mpb | >100 kbp | 
+| Gaps | <200 | <1,000 | <10.000 |
+| Qualidade da base | >50 | >40 | >30 |0 pb | 
+| Falsas duplicatas | <1% | <5% | <10% | 
+| Curadoria | Automatizada + Manual | Automatizada | Não necessária | 
+| Completude de Kmers | >95% | >90% | >80% | 
+| Faseamento (Fase do bloco do NG50) | >1 Mpb | >100 kpb | Não requerido | 
+| Presença de genes conservados de cópia única (*) | >95% completo | >80% | >70% | 
+| Transcritos mapeáveis | >90% | >80% | >70% |  
+| Designação cromossômica (Hi-C) | >90% | >80% | Não necessário |
+| Cromossomo sexual | Pares homologos localizados | Pelo menos um (e.g. X, Z, Y, ou W) | Fragmentado |
+| Organelas | Um alelo completo | Fragmentada | Não necessário
 
 * Mbp: milhão de pares de bases.
+* Por que utilizar o NG50 e não o N50? N50 é a métrica que reflete o tamanho total da montagem do genoma, enquanto o NG50 é o tamanho esperado do genoma (estimado a partir de um genoma próximo ou citometria de fluxo, por exemplo). O N
 
 Quando possível, também é encorajado a produção de genomas de referência de acordo com os haplótipos de cada cromossomo, associação do número de cromossomos e cariótipo estimado (quando disponível), além da identificação dos genomas das organelas. Também é importante a identificação de cromossomos sexuais. 
 
@@ -43,7 +49,7 @@ O método de escolha da nomeação deve ser reportada nos metadados da submissã
 
 ### Projeto guarda-chuva
 
-~~Assim como em grandes consórcios, é desejado que todos os genomas produzidos como parte do INCT-GB estejam vinculados ao BioProject do instituto. Para vincular seu genoma de referência ao projeto guarda-chuva do INCT-GB, utilize o código XXXXXXXXX.~~ 
+Assim como em grandes consórcios, é desejado que todos os genomas produzidos como parte do INCT-GB estejam vinculados ao BioProject do instituto. Para vincular seu genoma de referência ao projeto guarda-chuva do INCT-GB, utilize o código XXXXXXXXX.
 
 ### Identificador da amostra
 
