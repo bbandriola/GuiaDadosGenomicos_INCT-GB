@@ -21,7 +21,7 @@ Padrões de montagem :technologist:
 | Tipo de sequenciamento | Sequências longas + RNA-seq + Hi-C | Sequências longas + RNA-seq + Hi-C | Sequências longas + RNA-seq + Hi-C | 
 | Padrão de qualidade | min. 7.C.Q50 | min. 6.7.Q40 | min. 4.5.Q30 |
 | Contigs NG50 | >10 Mpb | >1 Mpb | >10 kpb | 
-| Scaffold NG50 | =NG50 do cromossomo | >10 Mpb | >100 kbp | 
+| Scaffold NG50 | = NG50 do cromossomo | >10 Mpb | >100 kbp | 
 | Gaps | <200 | <1,000 | <10.000 |
 | Qualidade da base | >50 | >40 | >30 |0 pb | 
 | Falsas duplicatas | <1% | <5% | <10% | 
@@ -35,7 +35,7 @@ Padrões de montagem :technologist:
 | Organelas | Um alelo completo | Fragmentada | Não necessário
 
 * Mbp: milhão de pares de bases.
-* Por que utilizar o NG50 e não o N50? N50 é a métrica que reflete o tamanho total da montagem do genoma, enquanto o NG50 é o tamanho esperado do genoma (estimado a partir de um genoma próximo ou citometria de fluxo, por exemplo). O N
+* Por que utilizar o NG50 e não o N50? N50 é a métrica que reflete o tamanho total da montagem do genoma, enquanto o NG50 é o tamanho esperado do genoma (estimado a partir de um genoma próximo ou citometria de fluxo, por exemplo).
 
 Quando possível, também é encorajado a produção de genomas de referência de acordo com os haplótipos de cada cromossomo, associação do número de cromossomos e cariótipo estimado (quando disponível), além da identificação dos genomas das organelas. Também é importante a identificação de cromossomos sexuais. 
 
