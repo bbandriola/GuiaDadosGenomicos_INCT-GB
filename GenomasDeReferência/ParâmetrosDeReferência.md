@@ -19,7 +19,7 @@ Para atingir esses quesitos é necessário a utilização de certas tecnologias 
   PRÓS: produz sequências longas e sequências ultra-longas. As sequências longas possuem alta acurácia e uma taxa de erro <0,5%. As ONT ultralongas podem chegar a um comprimento >100kb. A tecnologia ONT duplex apresenta uma acurácia similar ao PacBio HiFi, com sequências mais longas.
   CONTRAS: possui limitações na utilização de progranas para o processamento dos dados e um Q-score menor que o do PacBio. As sequências ultralongas possuem uma taxa de erro <10%, são mais custosas e requerem um volume alto de DNA.
 
-Além das sequências longas, para genomas diploides <1Gb, para a reconstrução da sequência dos cromossomos corretamente é necessário utilizar uma técnica de montagem de cromossomos (Long-range data), como Hi-C e Pore-C. Essa técnica que detecta a interação fisica entre dois fragmentos do DNA quando associados, fornece informações sobre quais sequências estão localizadas perto uma da outra. 
+Além das sequências longas, para genomas diploides <1Gb, para a reconstrução da sequência dos cromossomos corretamente é necessário utilizar uma técnica de montagem de cromossomos (Long-range data), como Hi-C e Pore-C. Essa técnica que detecta a interação fisica entre dois fragmentos do DNA quando associados, fornecendo informações sobre quais sequências estão localizadas perto uma da outra. 
 
 Definida as tecnologias de sequenciamento a serem utilizadas, partimos para a montagem (no Inglês chamado de *assembly*) do genoma. Para uma montagem *de novo* apresentar alto desempenho, são reportados quatro cruciais passos:
 1. Correção nos erros de acurácia das sequências longas.
@@ -27,7 +27,7 @@ Definida as tecnologias de sequenciamento a serem utilizadas, partimos para a mo
 3. Simplificação do gráfico da montagem com as sequências ultralongas.
 4. Faseamento e montagem dos cromossomos com dados de conformação de cromatina.
 
-Para fazer essa montagem, acesse o tutorial de [montagem de genomas *de novo*](./MontagemdeGenomas.md).
+Para fazer encontrar os comandos de montagem de genomas *de novo*, acesse o tutorial de [montagem de genomas *de novo*](./MontagemdeGenomas.md).
 
 Ao gerar um genoma de referência, nosso objetivo é que os dados sejam boa qualidade para que possam ser úteis em diversos estudos, citamos abaixo os parâmetros de padronização da qualidade com base na documentação do [EBP](https://static1.squarespace.com/static/5a5e6c9518b27d27bddaf20f/t/69a8a3cda0a3f86095cb01df/1772659661389/EBP-SequencingAssemblyStandard-V7.pdf):
 
