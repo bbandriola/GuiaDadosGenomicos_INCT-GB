@@ -1,17 +1,17 @@
 ### ESTAMOS EM CONSTRUÇÃO... :technologist: 
 
 # Genoma de Referência
-Um genoma de referência é uma montagem genômica que atende a padrões específicos de qualidade, permitindo seu uso como base para o mapeamento de sequências, anotação genômica e análises comparativas. Para ser incorporado a bancos de dados e servir como recurso confiável. Esse genoma deve atender a critérios mínimos de qualidade e completude tendo como principal objetivo disponibilizar uma representação acurada do genoma de uma espécie, fornecendo o nível de refinamento necessário para análises que dependem de uma referência de alta qualidade.
+Um genoma de referência é uma montagem genômica que atende a padrões específicos de qualidade. Esses, são utilizados como base para o mapeamento de sequências, anotação genômica e análises comparativas para auxiliar na compreenção de características biológicas dos organismos. Esses genomas devem ser incorporado a bancos de dados e servir como recurso confiável, atendendo a critérios mínimos de qualidade e completude, disponibilizando uma representação acurada do genoma de uma dada espécie. Por essa razão, diversos consórcios de genômica (e.g. [EBP](https://www.earthbiogenome.org/), [VGP](https://vertebrategenomesproject.org/), [B10K](https://b10k.com/), [10KP](https://db.cngb.org/10kp/), [AGC](https://mvs.unimelb.edu.au/research/partnerships/amphibian-genomics-consortium)) dedicados à produção de genomas de referência, estabeleceram padrões de qualidade que garantem a utilização dessas montagens a longo prazo. Esses padrões buscam assegurar que o genoma represente fielmente a sequência de DNA e a estrutura cromossômica da espécie-alvo, minimizando a presença de lacunas e erros de montagem.
 
-Por essa razão, diversos consórcios internacionais de genômica, dedicados à produção de genomas de referência, estabeleceram padrões de qualidade que garantem a utilidade dessas montagens a longo prazo. Esses padrões buscam assegurar que o genoma represente fielmente a sequência de DNA e a estrutura cromossômica da espécie-alvo, minimizando a presença de lacunas e erros de montagem.
-
-Um genoma de referência pode ser construído a partir de diferentes tipos de dados de sequenciamento. A seguir, são apresentadas algumas características gerais esperadas de um genoma de referência:
+Um genoma de referência pode ser construído a partir de diferentes tipos de dados de sequenciamento, mas algumas características gerais são esperadas:
 
 - Minimização dos gaps entre sequências ao longo dos cromossômos. 
 - Sequências longas com um alto grau de cobertura.
-- Tecnologias de ligação das sequências, como Hi-C 
+- Tecnologias de ligação das sequências, como Hi-C.
 
-Os parâmetros de padronização da qualidade de geração dos genomas de referência citados abaixo foram retirados da documentação do [EBP](https://static1.squarespace.com/static/5a5e6c9518b27d27bddaf20f/t/69a8a3cda0a3f86095cb01df/1772659661389/EBP-SequencingAssemblyStandard-V7.pdf).
+Para atingir esses quesitos é necessário a utilização de certas tecnologias de sequenciamento de sequências longas e quantidade de DNA adequado. As sequências longas são necessárias para a produção de um genoma *de novo*, realizar o sequenciamento do transcriptoma completo, resolver variações estruturais, entre outras aplicações. As determinadas sequências longas possuem tamanho maior que 200 pares de bases (pb) até milhões de pb. Elas podem ser de leitura única (ONT) ou circulares (PacBio). A tecnologia [PacBio](https://www.pacb.com/technology/hifi-sequencing/) produz sequências longas com uma alta qualidade de acurácia (do Inglês, high-fidelity -  HiFi). Contudo, alguns dos sequenciadores são sensíveis a qualidade do DNA de entrada (Revio) ou possuem um custo elevado (Onso). A tecnologia da [Oxford Nanopore Technologies (ONT)](https://nanoporetech.com/) produz sequências longas, tendo como uma das principais vantagens a produção de sequências ultra-longas. Contudo, possui limitações na utilização de progranas para o processamento dos dados e um Q-score menor que o do PacBio.  
+
+Para gerar um genoma de referência de boa qualidade que possa ser útil em diversos estudos, citamos abaixo os parâmetros de padronização da qualidade com base na documentação do [EBP](https://static1.squarespace.com/static/5a5e6c9518b27d27bddaf20f/t/69a8a3cda0a3f86095cb01df/1772659661389/EBP-SequencingAssemblyStandard-V7.pdf):
 
 Padrões de montagem :technologist:
 
