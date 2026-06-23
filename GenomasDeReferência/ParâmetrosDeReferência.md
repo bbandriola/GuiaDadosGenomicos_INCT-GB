@@ -12,11 +12,15 @@ Um genoma de referência pode ser construído a partir de diferentes tipos de da
 Para atingir esses quesitos é necessário a utilização de certas tecnologias de sequenciamento de sequências longas e quantidade de DNA adequado. As sequências longas são necessárias para a produção de um genoma *de novo*, realizar o sequenciamento do transcriptoma completo, resolver variações estruturais, entre outras aplicações. As sequências longas, geralmente, apresentam um tamanho >10kb. Elas podem ser de leitura única (ONT) ou circulares (PacBio). 
 
 - **Tecnologia [PacBio](https://www.pacb.com/technology/hifi-sequencing/)**:
+
   PRÓS: produz sequências longas com uma alta qualidade de acurácia (do Inglês, high-fidelity -  HiFi). Taxa de erro <0,5%. Sequências de tamanho >10 kb.
+
   CONTRAS: os sequenciadores são sensíveis a qualidade do DNA de entrada (Revio) ou possuem um custo elevado (Onso).
   
 - **Tecnologia da [Oxford Nanopore Technologies (ONT)](https://nanoporetech.com/)**:
+
   PRÓS: produz sequências longas e sequências ultra-longas. As sequências longas possuem alta acurácia e uma taxa de erro <0,5%. As ONT ultralongas podem chegar a um comprimento >100kb. A tecnologia ONT duplex apresenta uma acurácia similar ao PacBio HiFi, com sequências mais longas.
+
   CONTRAS: possui limitações na utilização de progranas para o processamento dos dados e um Q-score menor que o do PacBio. As sequências ultralongas possuem uma taxa de erro <10%, são mais custosas e requerem um volume alto de DNA.
 
 Além das sequências longas, para genomas diploides <1Gb, para a reconstrução da sequência dos cromossomos corretamente é necessário utilizar uma técnica de montagem de cromossomos (Long-range data), como Hi-C e Pore-C. Essa técnica que detecta a interação fisica entre dois fragmentos do DNA quando associados, fornecendo informações sobre quais sequências estão localizadas perto uma da outra. 
