@@ -6,12 +6,30 @@ Um genoma de referência é uma montagem genômica que atende a padrões especí
 Um genoma de referência pode ser construído a partir de diferentes tipos de dados de sequenciamento, mas algumas características gerais são esperadas:
 
 - Minimização dos gaps entre sequências ao longo dos cromossômos. 
-- Sequências longas com um alto grau de cobertura.
-- Tecnologias de ligação das sequências, como Hi-C.
+- Sequências longas com alta acurácia de base.
+- Proporcionalidade na representação das sequências.
 
-Para atingir esses quesitos é necessário a utilização de certas tecnologias de sequenciamento de sequências longas e quantidade de DNA adequado. As sequências longas são necessárias para a produção de um genoma *de novo*, realizar o sequenciamento do transcriptoma completo, resolver variações estruturais, entre outras aplicações. As determinadas sequências longas possuem tamanho maior que 200 pares de bases (pb) até milhões de pb. Elas podem ser de leitura única (ONT) ou circulares (PacBio). A tecnologia [PacBio](https://www.pacb.com/technology/hifi-sequencing/) produz sequências longas com uma alta qualidade de acurácia (do Inglês, high-fidelity -  HiFi). Contudo, alguns dos sequenciadores são sensíveis a qualidade do DNA de entrada (Revio) ou possuem um custo elevado (Onso). A tecnologia da [Oxford Nanopore Technologies (ONT)](https://nanoporetech.com/) produz sequências longas, tendo como uma das principais vantagens a produção de sequências ultra-longas. Contudo, possui limitações na utilização de progranas para o processamento dos dados e um Q-score menor que o do PacBio.  
+Para atingir esses quesitos é necessário a utilização de certas tecnologias de sequenciamento de sequências longas e quantidade de DNA adequado. As sequências longas são necessárias para a produção de um genoma *de novo*, realizar o sequenciamento do transcriptoma completo, resolver variações estruturais, entre outras aplicações. As sequências longas, geralmente, apresentam um tamanho >10kb. Elas podem ser de leitura única (ONT) ou circulares (PacBio). 
 
-Para gerar um genoma de referência de boa qualidade que possa ser útil em diversos estudos, citamos abaixo os parâmetros de padronização da qualidade com base na documentação do [EBP](https://static1.squarespace.com/static/5a5e6c9518b27d27bddaf20f/t/69a8a3cda0a3f86095cb01df/1772659661389/EBP-SequencingAssemblyStandard-V7.pdf):
+- **Tecnologia [PacBio](https://www.pacb.com/technology/hifi-sequencing/)**:
+  PRÓS: produz sequências longas com uma alta qualidade de acurácia (do Inglês, high-fidelity -  HiFi). Taxa de erro <0,5%. Sequências de tamanho >10 kb.
+  CONTRAS: os sequenciadores são sensíveis a qualidade do DNA de entrada (Revio) ou possuem um custo elevado (Onso).
+  
+- **Tecnologia da [Oxford Nanopore Technologies (ONT)](https://nanoporetech.com/)**:
+  PRÓS: produz sequências longas e sequências ultra-longas. As sequências longas possuem alta acurácia e uma taxa de erro <0,5%. As ONT ultralongas podem chegar a um comprimento >100kb. A tecnologia ONT duplex apresenta uma acurácia similar ao PacBio HiFi, com sequências mais longas.
+  CONTRAS: possui limitações na utilização de progranas para o processamento dos dados e um Q-score menor que o do PacBio. As sequências ultralongas possuem uma taxa de erro <10%, são mais custosas e requerem um volume alto de DNA.
+
+Além das sequências longas, para genomas diploides <1Gb, para a reconstrução da sequência dos cromossomos corretamente é necessário utilizar uma técnica de montagem de cromossomos (Long-range data), como Hi-C e Pore-C. Essa técnica que detecta a interação fisica entre dois fragmentos do DNA quando associados, fornece informações sobre quais sequências estão localizadas perto uma da outra. 
+
+Definida as tecnologias de sequenciamento a serem utilizadas, partimos para a montagem (no Inglês chamado de *assembly*) do genoma. Para uma montagem *de novo* apresentar alto desempenho, são reportados quatro cruciais passos:
+1. Correção nos erros de acurácia das sequências longas.
+2. Montagem do genoma com as sequências já curadas.
+3. Simplificação do gráfico da montagem com as sequências ultralongas.
+4. Faseamento e montagem dos cromossomos com dados de conformação de cromatina.
+
+Para fazer essa montagem, acesse o tutorial de [montagem de genomas *de novo*](./MontagemdeGenomas.md).
+
+Ao gerar um genoma de referência, nosso objetivo é que os dados sejam boa qualidade para que possam ser úteis em diversos estudos, citamos abaixo os parâmetros de padronização da qualidade com base na documentação do [EBP](https://static1.squarespace.com/static/5a5e6c9518b27d27bddaf20f/t/69a8a3cda0a3f86095cb01df/1772659661389/EBP-SequencingAssemblyStandard-V7.pdf):
 
 Padrões de montagem :technologist:
 
@@ -19,9 +37,9 @@ Padrões de montagem :technologist:
 | :--- | :---: | :---: | :---: |
 | Quantidade de DNA | >100 ng DNA por Gigabase | >100 ng DNA por Gigabase | <100 ng DNA por Gigabase | 
 | Tipo de sequenciamento | Sequências longas + RNA-seq + Hi-C | Sequências longas + RNA-seq + Hi-C | Sequências longas + RNA-seq | 
-| Padrão de qualidade | min. 7.C.Q50 | min. 6.7.Q40 | min. 4.5.Q30 |
-| Contigs NG50 | >10 Mpb | >1 Mpb | >10 kpb | 
-| Scaffold NG50 | = NG50 do cromossomo | >10 Mpb | >100 kbp | 
+| Padrão de qualidade* | min. 7.C.Q50 | min. 6.7.Q40 | min. 4.5.Q30 |
+| Contigs NG50** | >10 Mpb | >1 Mpb | >10 kpb | 
+| Scaffold NG50** | = NG50 do cromossomo | >10 Mpb | >100 kbp | 
 | Gaps | <200 | <1.000 | <10.000 |
 | Qualidade da base | >50 | >40 | >30 |0 pb | 
 | Falsas duplicatas | <1% | <5% | <10% | 
@@ -34,8 +52,11 @@ Padrões de montagem :technologist:
 | Cromossomo sexual | Pares homologos localizados | Pelo menos um (e.g. X, Z, Y, ou W) | Fragmentado |
 | Organelas | Um alelo completo | Fragmentada | Não necessário |
 
-* Mbp: milhão de pares de bases.
-* Por que utilizar o NG50 e não o N50? N50 é a métrica que reflete o tamanho total da montagem do genoma, enquanto o NG50 é o tamanho esperado do genoma (estimado a partir de um genoma próximo ou citometria de fluxo, por exemplo).
+** Por que utilizar o NG50 e não o N50? N50 é a métrica que reflete o tamanho total da montagem do genoma, enquanto o NG50 é o tamanho esperado do genoma (estimado a partir de um genoma próximo ou citometria de fluxo, por exemplo).
+
+### * Código de padrão de qualidade
+
+
 
 Quando possível, também é encorajado a produção de genomas de referência de acordo com os haplótipos de cada cromossomo, associação do número de cromossomos e cariótipo estimado (quando disponível), além da identificação dos genomas das organelas. Também é importante a identificação de cromossomos sexuais. 
 
@@ -68,6 +89,8 @@ https://doi.org/10.1073/pnas.2115639118).
 Park et al., 2023. Benchmark study for evaluating the quality of reference genomes and gene annotations in 114 species. [DOI:10.3389/fvets.2023.1128570](https://doi.org/10.3389/fvets.2023.1128570).
 
 [Base de dados RefSeq - NCBI]( https://www.ncbi.nlm.nih.gov/refseq/about/).
+
+
 
 https://github.com/diegomics/GEP2
 https://github.com/diegomics/GAME 
