@@ -94,7 +94,7 @@ Exemplo: Bird Scytalopus speluncae 1 -> bScySpel.1
 
 ### Diretrizes de citação de recursos do INCT-GB
 
-Sempre que seus dados forem gerados com recursos do INCT-GB se faz necessário o reconhecimento do apoio cedido através da citação do número do processo CNPq em publicações e demais documentos. Você pode checar as diretrizes de citação [aqui](https://docs.google.com/document/d/18nuMD2QsBxuAgXP-oRV9r--0ewpXZdoSpFfdF2ey0xo/edit?tab=t.0).
+Sempre que seus dados forem gerados com recursos do INCT-GB, se faz necessário o reconhecimento do apoio cedido através da citação do número do processo CNPq em publicações e demais documentos. Você pode checar as diretrizes de citação [aqui](https://docs.google.com/document/d/18nuMD2QsBxuAgXP-oRV9r--0ewpXZdoSpFfdF2ey0xo/edit?tab=t.0).
 
 ## REFERÊNCIAS
 
