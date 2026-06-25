@@ -26,7 +26,8 @@ fastp -i seq1_1.fastq.gz -I seq1_2.fastq.gz -o seq1_1_trimmed.fq.gz -O seq1_2_tr
 <details>  
   <summary> :writing_hand: Explicação do comando</summary>
 
-  -```fastp```: chamar o comando.
+
+  - ```fastp```: chamar o comando.
   - ```-i``` : sequência *foward*.
   - ```-I``` : sequência *reverse*.
   - ```-o``` : resultado do arquivo filtrado da sequência *foward*.
