@@ -95,13 +95,10 @@ Exemplo: Bird Scytalopus speluncae 1 -> bScySpel.1
 
 Sempre que seus dados forem gerados com recursos do INCT-GB se faz necessário o reconhecimento do apoio cedido através da citação do número do processo CNPq em publicações e demais documentos. Você pode checar as diretrizes de citação [aqui](https://docs.google.com/document/d/18nuMD2QsBxuAgXP-oRV9r--0ewpXZdoSpFfdF2ey0xo/edit?tab=t.0).
 
-.3389## REFERÊNCIAS
+## REFERÊNCIAS
+
 Lawniczak, M. K. N., et al. 2022. Standards recommendations for the Earth BioGenome Project. [DOI:10.1073/pnas.2115639118](
 https://doi.org/10.1073/pnas.2115639118). </p>
 Park, S., et al. 2023. Benchmark study for evaluating the quality of reference genomes and gene annotations in 114 species. [DOI:10.3389/fvets.2023.1128570](https://doi.org/10/fvets.2023.1128570).</p>
 Durbin, H., & Li, R. 2024. Genome assembly in the telomere-to-telomere era. [DOI:10.1038/s41576-024-00718-w](https://doi.org/10.1038/s41576-024-00718-w).</p>
 Blaxter, M., et al. 2025. The Earth BioGenome Project Phase II: illuminating the eukaryotic tree of life. [DOI:10.3389/fsci.2025.1514835](https://doi.org/10.3389/fsci.2025.1514835).
-[Base de dados RefSeq - NCBI]( https://www.ncbi.nlm.nih.gov/refseq/about/).</p>
-
-
-
