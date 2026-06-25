@@ -1,13 +1,13 @@
 # Genoma de Referência
-Um genoma de referência é uma montagem genômica que atende a padrões específicos de qualidade. Esses, são utilizados como base para o mapeamento de sequências, anotação genômica e análises comparativas, auxiliando na compreensão de características biológicas dos organismos. Esses genomas devem ser incorporados a bancos de dados e servir como recurso confiável, atendendo a critérios mínimos de qualidade e completude, disponibilizando uma representação acurada do genoma de uma dada espécie. Por essa razão, diversos consórcios de genômica (e.g. [EBP](https://www.earthbiogenome.org/), [VGP](https://vertebrategenomesproject.org/), [B10K](https://b10k.com/), [10KP](https://db.cngb.org/10kp/), [AGC](https://mvs.unimelb.edu.au/research/partnerships/amphibian-genomics-consortium)) dedicados à produção de genomas de referência, estabeleceram padrões de qualidade que garantem a utilização dessas montagens a longo prazo. Esses padrões buscam assegurar que o genoma represente fielmente a sequência de DNA e a estrutura cromossômica da espécie-alvo, minimizando a presença de lacunas e erros de montagem.
+Um genoma de referência é uma montagem genômica que atende a padrões específicos de qualidade. Os genomas de referência são utilizados como base para o mapeamento de sequências, a anotação genômica e análises comparativas, auxiliando na compreensão de características biológicas dos organismos. Esses devem ser incorporados a bancos de dados e servir como recurso confiável, atendendo a critérios mínimos de qualidade e completude, disponibilizando uma representação acurada do genoma de uma determinada espécie. Por essa razão, diversos consórcios de genômica (e.g. [EBP](https://www.earthbiogenome.org/), [VGP](https://vertebrategenomesproject.org/), [B10K](https://b10k.com/), [10KP](https://db.cngb.org/10kp/), [AGC](https://mvs.unimelb.edu.au/research/partnerships/amphibian-genomics-consortium)), dedicados à produção de genomas de referência, estabeleceram padrões de qualidade que garantem a utilização dessas montagens a longo prazo. Esses critérios buscam assegurar que o genoma represente fielmente a sequência de DNA e a estrutura cromossômica da espécie-alvo, minimizando a presença de lacunas e erros de montagem.
 
-Um genoma de referência pode ser construído a partir de diferentes tipos de dados de sequenciamento, mas algumas características gerais são esperadas:
+Um genoma de referência pode ser construído a partir de diferentes dados de sequenciamento, mas algumas características gerais são esperadas:
 
-- Minimização dos gaps entre sequências ao longo dos cromossômos. 
-- Sequências longas com alta acurácia de base.
-- Proporcionalidade na representação das sequências.
+- Minimização dos gaps entre sequências ao longo dos cromossomos.
+- Sequências longas com alta acurácia de bases.
+- Representação proporcional das sequências.
 
-Para atingir esses quesitos é necessário a utilização de certas tecnologias de sequenciamento de sequências longas e quantidade de DNA adequado. As sequências longas são necessárias para a produção de um genoma *de novo*, realizar o sequenciamento do transcriptoma completo, resolver variações estruturais, entre outras aplicações. As sequências longas, geralmente, apresentam um tamanho >10kb, podendo ser de leitura única (ONT) ou circulares (PacBio). 
+Para atingir esses requisitos, é necessária a utilização de determinadas tecnologias de sequenciamento de longas sequências e uma quantidade de DNA adequado. As sequências longas são necessárias para a produção de um genoma *de novo*, para o sequenciamento do transcriptoma completo, resolver variações estruturais, entre outras aplicações. Essas sequências longas, geralmente, apresentam um tamanho superior a 10kb e podem ser de leitura única (ONT) ou circulares (PacBio). 
 
 - **Tecnologia [PacBio](https://www.pacb.com/technology/hifi-sequencing/)**:
 
@@ -21,9 +21,10 @@ Para atingir esses quesitos é necessário a utilização de certas tecnologias 
 
   CONTRAS: possui limitações na utilização de programas para o processamento dos dados e um Q-score menor que as do PacBio. As sequências ultralongas possuem uma taxa de erro <10%, são mais custosas e requerem um volume alto de DNA.
 
-Além das sequências longas, para genomas diploides <1Gb, reconstruir as sequências cromossômicas corretamente requer a utilização de técnicas de montagem de cromossomos (*Long-range data*), como Hi-C e Pore-C. Essa técnica detecta a interação física entre dois fragmentos de DNA quando associados, fornecendo informações sobre quais sequências estão localizadas perto uma da outra. 
+Além das sequências longas, para genomas diploides maiores que 1Gb, reconstruir as sequências cromossômicas corretamente requer a utilização de técnicas de montagem de cromossomos (*Long-range data*), como Hi-C e Pore-C. Essa técnica detecta a interação física entre dois fragmentos de DNA quando associados, fornecendo informações sobre quais sequências estão localizadas perto uma da outra. 
 
-Definida as tecnologias de sequenciamento a serem utilizadas, partimos para a montagem do genoma (no Inglês, *genome assembly*). Para uma montagem *de novo* apresentar alto desempenho, são reportados quatro cruciais passos:
+Definida as tecnologias de sequenciamento, partimos para a montagem do genoma (no Inglês, *genome assembly*). Para uma montagem *de novo* apresentar alto desempenho, são reportados quatro cruciais passos:
+
 1. Correção nos erros de acurácia das sequências longas.
 2. Montagem do genoma com as sequências já curadas.
 3. Simplificação do gráfico da montagem com as sequências ultralongas.
@@ -31,11 +32,11 @@ Definida as tecnologias de sequenciamento a serem utilizadas, partimos para a mo
 
 Para encontrar os comandos de montagem de genomas *de novo*, acesse o tutorial de [montagem de genomas *de novo*](./MontagemdeGenomas.md).
 
-Ao gerar um genoma de referência, nosso objetivo é que os dados sejam de boa qualidade. Uma das métricas lançadas inicialmente pelo [VGP]() e, posteriormente, simplificada pelo [EBP](), define o padrão de qualidade das bases: 
+Ao gerar um genoma de referência, nosso objetivo é que os dados sejam de boa qualidade. Uma das métricas lançadas inicialmente pelo [VGP](https://vertebrategenomesproject.org/) e, posteriormente, simplificada pelo [EBP](https://www.earthbiogenome.org/), define o padrão de qualidade das bases de acordo com o seguinte código: 
 
 ### <p align="center"> 6.C.Q40 </p>
 
-* 6: representa a **continuidade de Contig**. Outros possíveis valores representam:
+* 6: representa a **continuidade de Contigs**. Outros possíveis valores representam:
   * C: NG50 = Chr N50.
   * 7: NG50 >10 Mpb.
   * 6: NG50 >1 Mpb.
@@ -44,7 +45,7 @@ Ao gerar um genoma de referência, nosso objetivo é que os dados sejam de boa q
   * C: scaffolds em nível cromossômico.
   * 7: NG50 dos scaffolds >10 Mpb.
   * 5: NG50 dos scaffolds >100 kpb 
-* Q40: representa a acurácia de base, determinada pelo valor de Phread que reflete a taxa de erro em X pb. Um Q40 significa uma taxa de erro de base inferior a 1 base em 10.000 nucleotídeos, ou precisão de 99,99%.   
+* Q40: representa a acurácia de base, determinada pelo valor de Phread que reflete a taxa de erro em X pb. Um Q40 significa uma taxa de erro de 1 base em 10.000 nucleotídeos, ou precisão de 99,99%.   
 
 Abaixo são citados demais parâmetros de qualidade com base na documentação do [EBP](https://static1.squarespace.com/static/5a5e6c9518b27d27bddaf20f/t/69a8a3cda0a3f86095cb01df/1772659661389/EBP-SequencingAssemblyStandard-V7.pdf) :technologist::
 
@@ -67,11 +68,11 @@ Abaixo são citados demais parâmetros de qualidade com base na documentação d
 | Cromossomo sexual | Ordem correta; sem gaps | Pares homologos localizados | Pelo menos um (e.g. X ou Z) | Fragmentado |
 | Organelas | Um alelo completo | Um alelo completo | Fragmentada | Não necessário |
 
-** Por que utilizar o NG50 e não o N50? N50 é a métrica que reflete o tamanho total da montagem do genoma, enquanto o NG50 é o tamanho esperado do genoma (estimado a partir de um genoma próximo ou citometria de fluxo, por exemplo).
+** Diferença entre NG50 e N50? N50 é a métrica que reflete o tamanho total da montagem do genoma, enquanto o NG50 é o tamanho esperado do genoma (estimado a partir de um genoma próximo ou citometria de fluxo, por exemplo).
 
 ### Nomenclatura cromossômica 
 
-Caso já haja uma anotação e designação de orientação a uma determinada espécie, se indica a utilização dessa. Caso não haja, recomenda-se nomear os cromossomos por tamanho, levando em consideração *scaffolds* que foram reconhecidos como parte de um determinado cromossomo, mas não puderam ser localizados corretamente. Nesse caso, há uma indicação na análise de sintenia de que determinado *scaffold* pertence a determinado cromossomo, porém não foi possível determinar a posição exata. 
+Caso já exista uma anotação e designação de orientação cromossômica para uma determinada espécie, recomenda-se a utilização dessa nomenclatura. Caso não haja, recomenda-se nomear os cromossomos com base no tamanho, levando em consideração os *scaffolds* que foram reconhecidos como pertencentes a um determinado cromossomo, mas que não puderam ser localizados corretamente. Nesse caso, análises de sintenia indicam que determinado *scaffold* pertence a determinado cromossomo, porém sua localização não foi pôde ser determinar. 
 
 O método de escolha da nomeação deve ser reportada nos metadados da submissão.   
 
