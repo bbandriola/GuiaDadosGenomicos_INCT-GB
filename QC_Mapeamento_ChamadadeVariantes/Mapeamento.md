@@ -79,10 +79,34 @@ gunzip GCF_965140285.1_rLepKem1.hap1_genomic.fna.gz
 ```
 </details>
 
-Uma vez que temos o genoma de referência de interesse, precisamos realizar a indexação desse arquivo. A indexação permite a ordenação do genoma de referência em porções, indicando a ordem das sequências ao longo do arquivo. Nesse caso, utilizaremos do comando *baw index*. 
+Uma vez que temos o genoma de referência de interesse, precisamos realizar a indexação desse arquivo. A indexação permite a ordenação do genoma de referência em porções, indicando a ordem das sequências ao longo do arquivo. A escolha de como indexar seu genoma de referência, dependerá do programa de alinhamento que será utilizados. Para mapear com o BWA, utilizaremos do comando *bwa index*. 
+
 ```linux
-bwa index reference_genomic.fna
+bwa index genoma_de_referencia.fna
 ```
+<details>
+   <summary> :writing_hand: Arquivos de saída </summary>
+  
+   - ``` genoma_de_referencia.fna.amb```
+   - ``` genoma_de_referencia.fna.ann```
+   - ``` genoma_de_referencia.fna.bwt```
+   - ``` genoma_de_referencia.fna.pac```
+   - ``` genoma_de_referencia.fna.sa```
+
+</details>
+
+Caso você decida mapear com o minimap2, é necessário utilizar o seguinte comando:
+```linux
+minimap2 -d genoma_de_referencia.mmi genoma_de_referencia.fasta
+```
+
+<details>
+   <summary> :writing_hand: Arquivos de saída </summary>
+
+O comando acima gera uma única saída. Esse arquivo pode ser utilizado no lugar da referência na linha para mapear. Existem outras formar de gerar um index no minimap2. Cheque qual a melhor no seu caso. 
+   - ```genoma_de_referencia.mmi```
+
+</details>
 
 Após a indexação, passamos para o mapeamento. 
 
@@ -105,6 +129,7 @@ minimap2 -ax sr reference_genomic.fna seq1_1_trimmed.fq.gz seq1_2_trimmed.fq.gz 
    <summary> :writing_hand: Explicação do comando </summary>
    
    - ```-ax```: parâmetro para especificar sequências curtas provenientes de sequenciamento Illumina.
+   - ```reference_genomic.fna```: nesse caso, utilizamos apenas o fasta da referência e o minimap irá gerar a indexação padrão para mapear em conjunto com a linha de mapeamento. Caso você já tenha indexado, pode utilizar o arquivo gerado no lugar dp arquivo FASTA da referência. 
 
 </details>
 
