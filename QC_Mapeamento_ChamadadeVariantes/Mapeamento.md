@@ -5,7 +5,7 @@ O processo de mapeamento genômico refere-se aos procedimentos que permitem orga
 De modo geral, dados provenientes de diferentes tecnologias de sequenciamento podem ser utilizados para o mapeamento. Entretanto, essa abordagem é mais frequentemente aplicada quando sequenciamos sequências curtas. Para a obtenção de um bom resultado, dois fatores são importantes: a qualidade do genoma de referência escolhido (proximidade filogenética e qualidade da montagem) e a cobertura das sequências brutas geradas (5×, 10×, 20×...). Esses fatores influenciam diretamente a qualidade do mapeamento, sua contiguidade, a confiabilidade das bases identificadas e, consequentemente, influenciará as análises posteriores. 
 
 Os processos que envolvem o mapeamento são: 
-1. Checagem de qualidade das [sequências brutas](./QC.md)
+1. [Checagem de qualidade das sequências brutas](./QC.md)
 2. Filtragem pré-mapeamento
    - Remoção dos adaptadores
    - Filtragem de sequências de baixa qualidade
