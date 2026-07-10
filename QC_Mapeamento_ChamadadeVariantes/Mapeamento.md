@@ -141,7 +141,12 @@ sambamba markdup seq1_ref.bam | samtools index > dupmark_seq1_ref.bam
 ```
 Se você quiser não apenas marcar as duplicatas de PCR, mas também exclui-las, adicione o parâmetro ```-r``` na linha acima. 
 
-Por fim, para avaliar o resultado do nosso mapeamento, utilizaremos o programa **samtools** com o módulo [*flagstat*](https://www.htslib.org/doc/samtools-flagstat.html): 
+Antes de avaliarmos nosso mapeamento, precisamos indexar nosso arquivo BAM para ser utilizado em análises posteriores. Para isso, utilizamos a função [*index*](https://www.htslib.org/doc/samtools-index.html) do [samtools](https://www.htslib.org/doc/samtools.html): 
+```linux
+samtools index dupmark_seq1_ref.bam 
+```
+
+Por fim, para avaliar o resultado do nosso mapeamento, utilizaremos o [samtools](https://www.htslib.org/doc/samtools.html) com o módulo [*flagstat*](https://www.htslib.org/doc/samtools-flagstat.html): 
 ```linux
 samtools flagstat dupmark_seq1_ref.bam
 ```
