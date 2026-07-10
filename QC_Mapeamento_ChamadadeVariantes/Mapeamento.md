@@ -1,6 +1,6 @@
 # Mapeamento de genomas
 
-Quando falamos em mapeamento genômico, estamos nos referindo aos procedimentos que permitem organizar as sequências brutas obtidas do sequenciamento em relação a uma sequência guia, como um genoma de referência. O genoma de referência pode ter sido montado pelo seu próprio grupo de pesquisa, utilizando técnicas discutidas em [outros tutoriais desse repositório](../GenomasDeReferência), ou pode ter sido gerado por outros grupos e disponibilizado em bancos de dados públicos, como o [NCBI](https://www.ncbi.nlm.nih.gov/datasets/genome/).
+O processo de mapeamento genômico refere-se aos procedimentos que permitem organizar as sequências brutas obtidas do sequenciamento em relação a uma sequência guia, um genoma de referência. O genoma de referência pode ter sido montado pelo seu próprio grupo de pesquisa, utilizando técnicas discutidas em [outros tutoriais desse repositório](../GenomasDeReferência), ou pode ter sido gerado por outros grupos e disponibilizado em bancos de dados públicos, como o [NCBI](https://www.ncbi.nlm.nih.gov/datasets/genome/).
 
 De modo geral, dados provenientes de diferentes tecnologias de sequenciamento podem ser utilizados para o mapeamento. Entretanto, essa abordagem é mais frequentemente aplicada quando sequenciamos sequências curtas. Para a obtenção de um bom resultado, dois fatores são importantes: a qualidade do genoma de referência escolhido (proximidade filogenética e qualidade da montagem) e a cobertura das sequências brutas geradas (5×, 10×, 20×...). Esses fatores influenciam diretamente a qualidade do mapeamento, sua contiguidade, a confiabilidade das bases identificadas e, consequentemente, influenciará as análises posteriores. 
 
@@ -11,7 +11,7 @@ Os processos que envolvem o mapeamento são:
    - Filtragem de sequências de baixa qualidade
 3. Mapeamento das sequências contra o genoma de referência
 4. Marcação das sequências de duplicata
-5. Geração da sequência consenso
+5. [Geração da sequência consenso](./SequênciaConsenso.md)
 
 ## Mapeamento de sequências Illumina 
 
