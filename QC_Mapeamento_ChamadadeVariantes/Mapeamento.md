@@ -117,7 +117,7 @@ O [BWA](https://github.com/lh3/BWA) é um programa muito popular para o mapeamen
 
 O comando do **bwa mem** é extremamente simples: 
 ```linux
-bwa-mem2 mem reference_genomic.fna seq1_1_trimmed.fq.gz seq1_2_trimmed.fq.gz | samtools view -b | samtools sort -O bam -o seq1_ref.bam
+bwa-mem2 mem reference_genomic.fna seq1_1_trimmed.fq.gz seq1_2_trimmed.fq.gz | samtools sort -O bam -o seq1_ref.bam
 ```
 
 O [minimap2](https://github.com/lh3/minimap2) é um programa versátil que lida com diferentes tipos de sequenciamento (PacBio, ONP, Illumina) descrito como 3x mais rápido que o BWA-MEM. A linha de comando para realizar o mapeamento pode ser:
