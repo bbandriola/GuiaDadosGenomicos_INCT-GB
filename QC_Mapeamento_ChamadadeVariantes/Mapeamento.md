@@ -137,7 +137,8 @@ Com as sequências brutas mapeadas, obtemos nosso segundo tipo de arquivo: o arq
 
 A próxima etapa do processamento dos dados é marcar as sequências de duplicas. As sequências de duplicatas são resultados de cópias idênticas de fragmentos do DNA, podem ter origem biológica ou serem artefatos do sequênciamento (artefatos de PCR). É importante marcarmos essas regiões para posterior filtragem. A marcação das sequências de duplicata pode ser feita com o programa [sambamba markup](https://lomereiter.github.io/sambamba/docs/sambamba-markdup.html). Por fim, vamos indexar nosso arquivo BAM.
 ```linux
-sambamba markdup seq1_ref.bam | samtools index > dupmark_seq1_ref.bam 
+sambamba markdup seq1_ref.bam dupmark_seq1_ref.bam
+samtools index dupmark_seq1_ref.bam 
 ```
 Se você quiser não apenas marcar as duplicatas de PCR, mas também exclui-las, adicione o parâmetro ```-r``` na linha acima. 
 
