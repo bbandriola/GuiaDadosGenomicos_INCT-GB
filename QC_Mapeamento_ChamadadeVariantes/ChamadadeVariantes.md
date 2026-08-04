@@ -1,21 +1,27 @@
 ## Chamada de Variantes
 
-O processo de chamada de variantes possui como intuito reduzir a matrix do dados para aqueles sítios que possuem alguma variação, seja ela estrutural (ex: Indels, Inversões) ou variações nucleotídicas (do inglês, Single Nucleotide Polymorphism - SNPs). Inicialmente, faremos uma chamada de variantes incluindo todos os sítios variantes, sem nenhum filtro. Em seguida, para gerar uma matrix de variantes confiável, aplicamos filtros básicos: 
+O processo de chamada de variantes possui como intuito reduzir a matrix do dados para aqueles sítios que possuem alguma variação em relação a referência, seja ela estrutural (ex: Indels, Inversões) ou variações nucleotídicas, tanto de nucleotídicos únicos (do inglês, Single Nucleotide Polymorphism - SNPs), ou múltiplos (do inglês, Muti-nculeotide Polymorphisms - MNPs). Este procedimento irá gerar um arquivo final chamado [VCF](https://samtools.github.io/hts-specs/VCFv4.2.pdf). Este arquivo possui diversas colunas e informações importantes que devem ser levadas em consideração quando montando o seu arquivo. Ao longo do tutorial falaremos mais sobre eles. 
+
+No processo de chamada de variantes, inicialmente, incluímos todos os sítios variantes, sem nenhum filtro. Em seguida, para gerar uma matrix de variantes confiável, aplicamos filtros, como: 
 - Profundidade
 - Qualidade da base
 - Número de alelos
 
-São diversas as ferramentas para realizar a etapa de chamada de variantes. As mais comumente utilizadas são: 
-- [GATK](https://gatk.broadinstitute.org/hc/en-us/categories/360002302312)
-- [BCFtools](https://samtools.github.io/bcftools/bcftools.html)
-- [VCFtools](https://vcftools.github.io/man_latest.html)
-- [ANGSD](https://www.popgen.dk/angsd/index.php/ANGSD)
-- [DeepVariant](https://github.com/google/deepvariant)
+Um importante conceito que você irá se deparar ao ler os artigos é a filtragem definida como *hard-filtering*. O [*hard-filtering*](https://gatk.broadinstitute.org/hc/en-us/articles/360035531112--How-to-Filter-variants-either-with-VQSR-or-by-hard-filtering#2), ou em português filtragem pesada, é uma série de passos determinados pelo GATK que garante uma qualidade adequada e acurácea para as bases que serão chamadas. Esses filtros removem variantes com qualidade de mapeamento da base < 40, qualidade da base < 30, profundidade < 2 (aqui sugerimos que a profundidade seja de acordo com a média de cada indivíduo, sendo a profundidade miníma 1/3 da média e a máxima 3* a média), número de variantes em cada fitas >60, entre outros filtros que podem ser aplicados. Apesar de ter sido uma prática retirada do GATK, o *hard-filtering* pode e deve ser feito com qualquer um dos programas escolhidos para realizar esta etapa.
+
+Os dois programas mais comuns em estudos genômicos com animais não-modelos são o [GATK HaplotypeCaller](https://gatk.broadinstitute.org/hc/en-us/categories/360002302312) e o [BCFtools mpileup](https://samtools.github.io/bcftools/bcftools.html). Devido essa alta aplicação, diversos estudos comparam os dois e discutem seus desempenhos. No trabalho de [Lefouili e colaboradores (2022)](https://doi.org/10.1038/s41598-022-15563-2) os autores constataram maior taxa de recuperação de sítios variantes com BCFtools mpileup e maior presença de falsos positivos quando utilizaram o GATK HaplotypeCaller, geralmente relacionadas as regiões repetitivas, com sequências de boa qualidade. Eles ainda sugerem o uso do BCFtools como uma ferramenta com maior acurácea e, quando o/a pesquisador/a decidir pela utilização do GATK, a referência deve ser a mais próxima possível da espécies alvo em estudos populacionais. 
+
+Mas além desses dois programas, ainda há diversas outras ferramentas que podem ser utilizadas com a mesma finalidade. As mais comuns são: 
+- [VCFtools](https://vcftools.github.io/man_latest.html): mais utilizado no processo e filtragem de VCFs já prontos.
+- [ANGSD](https://www.popgen.dk/angsd/index.php/ANGSD): mais especificamente para chamada de variantes com dados de baixa cobertura.
+- [DeepVariant](https://github.com/google/deepvariant): necessita de núcleos de GPU para atingir um maior desempenho.
 - [strobealign](https://github.com/ksahlin/strobealign)
 
-Cada um dos programas citados acima possuem suas vantagens, desvantagens e tipo de dados necessários para execução correta. Abaixo serão exemplificados alguns dos comandos utilizados pata a geração de um arquivo de variantes. Para mais informações, acesse o manual do programa desejado. 
+Cada um dos programas citados acima possuem suas vantagens, desvantagens e requerimentos computacionais para execução. Para mais informações, sempre consulto o manual do programa desejado.
 
-### Geração de um VCF incluindo apenas sítios variantes 
+Abaixo serão exemplificados duas formas de gerar o VCF, utilizando o BCFtools e o GATK. 
+
+### Geração de um VCF com o BCFtools
 Em construção :technologist:
 
 Utilizando o programa [BCFtools]():
@@ -40,7 +46,9 @@ bcftools mpileup -b bamlist -C50 -f referência.fasta -d 100 -Q30 -q30 --threads
 
 </details>
 
-Utilizando o programa [GATK](): 
+
+### Geração de um VCF com o GATK
+
 ```linux
 # em breve
 ```
