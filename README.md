@@ -24,6 +24,8 @@ Os programas utilizados em análises genômicas possuem diversas versões. Algum
 
 Cada servidor/super computador utilizará o gerenciador de pacote mais adequado ou estabelecido previamento pelo grupo de administradores da máquina. Portanto, converse com o administrador do servidor que você utilizará para saber como você deverá realizar o download de programas para conseguir executá-los da forma correta. Em alguns tutoriais, você verá a menção ao gerenciador de pacote [Conda](https://anaconda.org/). O Conda é um ótimo gerenciador de programas, de fácil implementação e uso. 
 
+Ao longo dos tutoriais, você verá que há uma gama de diferentes programas que realizam as mesmas tarefas (alguns mais rápidos, outros com outras exigências...). Para facilitar a sua procura por um programa que seja adequado às suas necessidades, você pode consultar a tabela [Programas de análise de dados genômicos](https://app.notion.com/p/3626457f0f6d806a85b5ca14bc6f123e?v=3626457f0f6d8012aec0000cfedda990&source=copy_link). Fique à vontade para explorar como achar melhor e fazer sugestões, caso ache pertinente.
+
 ## Dicas 
 * Os tutoriais apresentam sugestões de linhas de comando, mas links para a documentação oficial de cada programa estarão sempre disponíveis. É encorajado consultar os manuais das ferramentas de interesse e explorar os demais parâmetros disponíveis, muitos deles podem ser úteis no seu caso.
 * Todos os comandos são acompanhados de explicações das suas funções :triangular_flag_on_post: Busque sempre compreender o que você está fazendo. Isso facilita na identifiação e resolução de problemas ao executar um comando (o que é bem comum :woman_shrugging:).
