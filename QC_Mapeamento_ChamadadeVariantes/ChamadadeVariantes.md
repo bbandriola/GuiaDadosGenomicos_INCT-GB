@@ -9,7 +9,7 @@ No processo de chamada de variantes, inicialmente, incluímos todos os sítios v
 
 Um importante conceito que você irá se deparar ao ler os artigos é a filtragem definida como *hard-filtering*. O [*hard-filtering*](https://gatk.broadinstitute.org/hc/en-us/articles/360035531112--How-to-Filter-variants-either-with-VQSR-or-by-hard-filtering#2), ou em português filtragem pesada, é uma série de passos determinados pelo GATK que garante uma qualidade adequada e acurácea para as bases que serão chamadas. Esses filtros removem variantes com qualidade de mapeamento da base < 40, qualidade da base < 30, profundidade < 2 (aqui sugerimos que a profundidade seja de acordo com a média de cada indivíduo, sendo a profundidade miníma 1/3 da média e a máxima 3* a média), número de variantes em cada fitas >60, entre outros filtros que podem ser aplicados. Apesar de ter sido uma prática retirada do GATK, o *hard-filtering* pode e deve ser feito com qualquer um dos programas escolhidos para realizar esta etapa.
 
-Os dois programas mais comuns em estudos genômicos com animais não-modelos são o [GATK HaplotypeCaller](https://gatk.broadinstitute.org/hc/en-us/categories/360002302312) e o [BCFtools mpileup](https://samtools.github.io/bcftools/bcftools.html). Devido essa alta aplicação, diversos estudos comparam os dois e discutem seus desempenhos. No trabalho de [Lefouili e colaboradores (2022)](https://doi.org/10.1038/s41598-022-15563-2) os autores constataram maior taxa de recuperação de sítios variantes com BCFtools mpileup e maior presença de falsos positivos quando utilizaram o GATK HaplotypeCaller, geralmente relacionadas as regiões repetitivas, com sequências de boa qualidade. Eles ainda sugerem o uso do BCFtools como uma ferramenta com maior acurácea e, quando o/a pesquisador/a decidir pela utilização do GATK, a referência deve ser a mais próxima possível da espécies alvo em estudos populacionais. 
+Os dois programas mais comuns em estudos genômicos com animais não-modelos são o [GATK HaplotypeCaller](https://gatk.broadinstitute.org/hc/en-us/categories/360002302312) e o [BCFtools](https://samtools.github.io/bcftools/bcftools.html). Devido essa alta aplicação, diversos estudos comparam os dois e discutem seus desempenhos. No trabalho de [Lefouili e colaboradores (2022)](https://doi.org/10.1038/s41598-022-15563-2) os autores constataram maior taxa de recuperação de sítios variantes com o BCFtools mpileup e maior presença de falsos positivos quando utilizaram o GATK HaplotypeCaller, geralmente relacionadas as regiões repetitivas, com sequências de boa qualidade. Eles ainda sugerem o uso do BCFtools como uma ferramenta com maior acurácea e, quando o/a pesquisador/a decidir pela utilização do GATK, em estudos populacionais a referência deve ser a mais próxima possível da espécies alvo. 
 
 Mas além desses dois programas, ainda há diversas outras ferramentas que podem ser utilizadas com a mesma finalidade. As mais comuns são: 
 - [VCFtools](https://vcftools.github.io/man_latest.html): mais utilizado no processo e filtragem de VCFs já prontos.
@@ -24,13 +24,14 @@ Abaixo serão exemplificados duas formas de gerar o VCF, utilizando o BCFtools e
 ### Geração de um VCF com o BCFtools
 Em construção :technologist:
 
-Utilizando o programa [BCFtools]():
+Utilizando o programa [BCFtools](https://samtools.github.io/bcftools/bcftools.html):
 ```linux
-bcftools mpileup -b bamlist -C50 -f referência.fasta -d 100 -Q30 -q30 --threads 7 -a FORMAT/AD,FORMAT/DP,INFO/AD -I | bcftools call -o sítiosvariantes_amostras.vcf.gz -Oz -f GQ,GP -V indels -m --threads 7
+bcftools mpileup -b bamlist -C50 -f referência.fasta -d 100 -Q30 -q30 --threads 7 -a FORMAT/AD,FORMAT/DP,INFO/AD -I | bcftools call -o sítiosvariantes_amostras.vcf.gz -Oz -f GQ,GP -v -V indels -m --threads 7
 ```
 <details>
    <summary> :writing_hand: Explicação do comando </summary>
-   
+
+A primeira coisa que precisamos observar aqui são os comandos *mpileup* (sumariza a informação das sequências em cada posição) e *call* (chamada de variantes) que serão os modulos para chamar as variantes.   
 - ```-b```: arquivo com o caminho de todos os arquivos BAM a serem incluídos na geração do VCF.
 - ```-C```: coeficiente para a redução da qualidade do mapeamento em sequência com um número excessivo de discrepâncias.
 - ```-f```: arquivo FASTA da referência.
@@ -42,21 +43,30 @@ bcftools mpileup -b bamlist -C50 -f referência.fasta -d 100 -Q30 -q30 --threads
 - ```-o```: arquivo de saída.
 - ```-Oz```: formato do arquivo de saída.
 - ```-f```: campos da coluna FORMAT que serão incluídos em cada amostra. 
-- ```-V```: não incluir Indels (caso algum tenha passado no mpileup).
+- ```-V```: não incluir Indels. Caso queira incluir, não usar este comando.
+- ```-v```: chama apenas sítios varientes.
 
 </details>
 
+Um detalhe para levar em consideração é a chamada dos tipos de variantes ou sítios que você gostaria de incluir em seu arquivo VCF. Algumas análises, como π e *dxy*, necessitam de todos os sítios para possibilitar a estimativa correta. Caso você tenha a intenção de realizar essas análises há uma pequena mudança no comando acima: 
+
+```linux
+bcftools mpileup -b bamlist -C50 -f referência.fasta -d 100 -Q30 -q30 --threads 7 -a FORMAT/AD,FORMAT/DP,INFO/AD -I | bcftools call -o amostras.vcf.gz -Oz -f GQ,GP -m --threads 7
+```
+
+Nota-se que a única mudança foi a retirada do parâmetro ```-v``` e ```-V```. Outra mudança é o tamanho do arquivo. Como ele contêm todos os sítios, o arquivo terá um tamanho muito maior. Garanta que você possui espaço de armazenamento o suficiente para gerar o arquivo. 
 
 ### Geração de um VCF com o GATK
 
-```linux
-# em breve
-```
+Com o programa [GATK]() a chamada de variantes é um processo que exige mais comandos. Por isso, acesse o tutorial [Chamada de Variantes com o GATK](./ChamadaDeVariantesGATK)
+
 
 Utilizando o programa [deepVariants]():
 ```linux
 # em breve
 ```
+
+Após a geração do arquivo de variantes, podemos checar algumas informações importantes para compreender os nossos dados e avaliar se estão ok para serem utilizados nas análises subsequêntes. Uma das primeiras etapas para compreender a distribuição dos nossos dados, pode ser averiguada realizando uma PCA. Assim, podemos compreender se há um desvio do esperado. Ademais, podemos realizar checagens para filtrar nossos dados da melhor forma.  
 
 ### Estatísticas básicas para posterior filtragem 
 Com o VCF gerado, vamos calcular as estatísticas básicas para compreendermos sobre a qualidade das variantes que foram chamadas. Vamos começar calculando a Qualidade Phread da base (QUAL), o Número de Alelos por sítio (AN) e a Profundidade Absoluta da sítio (DP).
