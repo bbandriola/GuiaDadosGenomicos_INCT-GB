@@ -58,7 +58,7 @@ Nota-se que a única mudança foi a retirada do parâmetro ```-v``` e ```-V```. 
 
 ### Geração de um VCF com o GATK
 
-Com o programa [GATK]() a chamada de variantes é um processo que exige mais comandos. Por isso, acesse o tutorial [Chamada de Variantes com o GATK](./ChamadaDeVariantesGATK)
+Com o programa [GATK]() a chamada de variantes é um processo que exige mais comandos. Por isso, acesse o tutorial [Chamada de Variantes com o GATK](./ChamadaDeVariantesGATK.md)
 
 
 Utilizando o programa [deepVariants]():
